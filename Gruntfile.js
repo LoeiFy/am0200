@@ -16,6 +16,20 @@ module.exports = function(grunt) {
                         'assets/app/index.js'
                     ]
                 }
+            },
+            
+            plugin: {
+                options: {
+                    banner: '/* jquery.easing | jquery.animate-enhanced | hammer --- see http://lorem.in/LICENSE */ \n'
+                },
+                files: {
+                    'dist/plugin/plugin.js': [
+                        'static/easing/jquery.easing.js',
+                        'static/enhanced/jquery.animate-enhanced.js',
+                        'static/hammer/hammer.min.js',
+                        'static/hammer/jquery.hammer.min.js'
+                    ]
+                }
             }
 
         },
@@ -105,7 +119,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
 
     // for production 
-    grunt.registerTask('app', ['uglify:app']);
+    grunt.registerTask('app', ['uglify:plugin']);
     grunt.registerTask('css', ['cssmin:app']);
     grunt.registerTask('html', ['replace:app', 'htmlmin:app']);
     grunt.registerTask('all', ['uglify:app', 'cssmin:app', 'replace:app', 'htmlmin:app']);

@@ -1,3 +1,14 @@
-div, h1 {
-    visibility: visible !important;
+@charset "utf-8";
+
+body, div, h1, h2, h3, p, blockquote, ul, li {
+	margin: 0;
+	padding: 0;
+}
+ul { list-style: none; }
+a { text-decoration: none; }
+img { border: 0; }
+header, footer, section, nav, figure, mark {
+	display: block;
+	margin: 0;
+	padding: 0;
 }
