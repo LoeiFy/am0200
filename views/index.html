@@ -47,17 +47,16 @@
     <script>basket.require({url:'dist/global.css',key:'css',unique:@@css,execute:false}).then(function(responses){_stylesheet.appendStyleSheet(responses[0],function(){basket.require({url:'/static/jquery/jquery.js',key:'jquery',unique:@@jquery}).then(function(){basket.require({url:'/dist/plugin.js',key:'plugin',unique:@@plugin}).then(function(){basket.require({url:'/dist/global.js',key:'js',unique:@@js})})})})})</script>
     <!-- /build -->
 </head>
-<body>
-	<section id="home">
+<body class="oh">
+	<section id="home" class="wrap">
 	</section>
 
-	<section id="thumb">
-	</section>
-
-	<section id="gallery">
+	<section id="gallery" class="wrap">
 	</section>
 	
-	<section id="info">
+	<section id="info" class="wrap">
 	</section>
+
+    <div id="pot"></div>
 </body>
 </html>

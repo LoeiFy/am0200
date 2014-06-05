@@ -1,7 +1,26 @@
-/*! jQuery plugin for Hammer.JS - v1.1.3 - 2014-05-20
- * http://eightmedia.github.com/hammer.js
- *
- * Copyright (c) 2014 Jorik Tangelder <j.tangelder@gmail.com>;
- * Licensed under the MIT license */
+/*
+ * Hammer.JS jQuery plugin
+ * version 0.3
+ * author: Eight Media
+ * https://github.com/EightMedia/hammer.js
+ */
+jQuery.fn.hammer = function(options)
+{
+    return this.each(function()
+    {
+        var hammer = new Hammer(this, options);
 
-!function(a,b){"use strict";function c(a,c){Date.now||(Date.now=function(){return(new Date).getTime()}),a.utils.each(["on","off"],function(d){a.utils[d]=function(a,e,f){c(a)[d](e,function(a){var d=c.extend({},a.originalEvent,a);d.button===b&&(d.button=a.which-1),f.call(this,d)})}}),a.Instance.prototype.trigger=function(a,b){var d=c(this.element);return d.has(b.target).length&&(d=c(b.target)),d.trigger({type:a,gesture:b})},c.fn.hammer=function(b){return this.each(function(){var d=c(this),e=d.data("hammer");e?e&&b&&a.utils.extend(e.options,b):d.data("hammer",new a(this,b||{}))})}}"function"==typeof define&&define.amd?define(["hammerjs","jquery"],c):c(a.Hammer,a.jQuery||a.Zepto)}(window);
+        var $el = jQuery(this);
+        $el.data("hammer", hammer);
+
+        var events = ['hold','tap','doubletap','transformstart','transform','transformend','dragstart','drag','dragend','swipe','release'];
+
+        for(var e=0; e<events.length; e++) {
+            hammer['on'+ events[e]] = (function(el, eventName) {
+                return function(ev) {
+                    el.trigger(jQuery.Event(eventName, ev));
+                };
+            })($el, events[e]);
+        }
+    });
+};
