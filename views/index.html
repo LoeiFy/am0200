@@ -14,13 +14,37 @@
     <!-- build:css /assets/module/css/base.css -->
     <!-- /build -->
 
-    <!-- build:js /assets/app/index.js -->
+    <!-- build:css /assets/module/css/global.css -->
+    <!-- /build -->
+
+    <!-- build:css /assets/index.css -->
+    <!-- /build -->
+
+    <!-- build:js /static/jquery/jquery.js -->
+    <!-- /build -->
+
+    <!-- build:js /static/hammer/hammer.js -->
+    <!-- /build -->
+
+    <!-- build:js /static/hammer/jquery.hammer.js -->
+    <!-- /build -->
+
+    <!-- build:js /static/easing/jquery.easing.js -->
+    <!-- /build -->
+
+    <!-- build:js /static/enhanced/jquery.animate-enhanced.js -->
+    <!-- /build -->
+
+    <!-- build:js /assets/module/js/base.js -->
+    <!-- /build -->
+
+    <!-- build:js /assets/index.js -->
     <!-- /build -->
 
     <!-- build:remove -->
     <style>@@style</style>
     <script src="/static/basket/basket.js?000"></script>
-    <script>basket.require({url:'/dist/css/global.css',key:'css',unique:@@css,execute:false}).then(function(responses){_stylesheet.appendStyleSheet(responses[0],function(){basket.require({url:'/static/zepto/zepto.js',key:'zepto',unique:@@zepto}).then(function(){basket.require({url:'/dist/app/index.js',key:'index',unique:@@index})})})})</script>
+    <script>basket.require({url:'dist/global.css',key:'css',unique:@@css,execute:false}).then(function(responses){_stylesheet.appendStyleSheet(responses[0],function(){basket.require({url:'/static/jquery/jquery.js',key:'jquery',unique:@@jquery}).then(function(){basket.require({url:'/dist/plugin.js',key:'plugin',unique:@@plugin}).then(function(){basket.require({url:'/dist/global.js',key:'js',unique:@@js})})})})})</script>
     <!-- /build -->
 </head>
 <body>

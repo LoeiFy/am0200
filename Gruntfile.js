@@ -8,12 +8,11 @@ module.exports = function(grunt) {
         // merge minify js
         uglify: {
 
-            app: {
+            global: {
                 files: {
-                    'dist/app/index.js': [
+                    'dist/global.js': [
                         '<%= module.base %>',
-                        '<%= module.touch %>',
-                        'assets/app/index.js'
+                        'assets/index.js'
                     ]
                 }
             },
@@ -23,11 +22,11 @@ module.exports = function(grunt) {
                     banner: '/* jquery.easing | jquery.animate-enhanced | hammer --- see http://lorem.in/LICENSE */ \n'
                 },
                 files: {
-                    'dist/plugin/plugin.js': [
+                    'dist/plugin.js': [
                         'static/easing/jquery.easing.js',
                         'static/enhanced/jquery.animate-enhanced.js',
-                        'static/hammer/hammer.min.js',
-                        'static/hammer/jquery.hammer.min.js'
+                        'static/hammer/hammer.js',
+                        'static/hammer/jquery.hammer.js'
                     ]
                 }
             }
@@ -38,11 +37,11 @@ module.exports = function(grunt) {
         // merge minify css
         cssmin: {
 
-            app: {
+            global: {
                 files: {
-                    'dist/css/global.css': [
+                    'dist/global.css': [
                         '<%= module.css %>',
-                        'assets/app/index.css'
+                        'assets/index.css'
                     ]
                 }
             }
@@ -52,7 +51,7 @@ module.exports = function(grunt) {
         // replace string
         replace: {
 
-            app: {
+            html: {
                 options: {
                     patterns: [
                         {
@@ -60,21 +59,25 @@ module.exports = function(grunt) {
                             replacement: '<%= grunt.file.read("assets/module/css/base.css") %>'
                         },
                         {
-                            match: 'zepto',
-                            replacement: '<%= ver.zepto %>'
+                            match: 'jquery',
+                            replacement: '<%= ver.jquery %>'
                         },
                         {
                             match: 'css',
                             replacement: '<%= ver.css %>'
                         },
                         {
-                            match: 'index',
-                            replacement: '<%= ver.app.index %>'
+                            match: 'plugin',
+                            replacement: '<%= ver.plugin %>'
+                        },
+                        {
+                            match: 'js',
+                            replacement: '<%= ver.js %>'
                         }
                     ]
                 },
                 files: [
-                    { expand: true, flatten: true, src: ['views/app/*'], dest: 'html/.tmp/app/' }
+                    { expand: true, flatten: true, src: ['views/*'], dest: '.tmp/' }
                 ]
             }
 
@@ -83,7 +86,7 @@ module.exports = function(grunt) {
         // minify html
         htmlmin: {
 
-            app: {
+            html: {
 
                 options: {
                     removeComments: true,
@@ -91,7 +94,7 @@ module.exports = function(grunt) {
                 },
 
                 files: {
-                    'html/app/index.html': 'html/.tmp/app/index.html'
+                    'index.html': '.tmp/index.html'
                 }
 
             }
@@ -101,9 +104,9 @@ module.exports = function(grunt) {
         // process test html
         processhtml: {
 
-            app: {
+            html: {
                 files: {
-                    'html/app/index.html': ['views/app/index.html']
+                    'index.html': ['views/index.html']
                 }
             }
 
@@ -119,11 +122,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
 
     // for production 
-    grunt.registerTask('app', ['uglify:plugin']);
-    grunt.registerTask('css', ['cssmin:app']);
-    grunt.registerTask('html', ['replace:app', 'htmlmin:app']);
-    grunt.registerTask('all', ['uglify:app', 'cssmin:app', 'replace:app', 'htmlmin:app']);
+    grunt.registerTask('js', ['uglify:global', 'uglify:plugin']);
+    grunt.registerTask('css', ['cssmin:global']);
+    grunt.registerTask('html', ['replace:html', 'htmlmin:html']);
+    grunt.registerTask('all', ['uglify:global', 'uglify:plugin', 'cssmin:global', 'replace:html', 'htmlmin:html']);
 
     // for development
-    grunt.registerTask('test', ['processhtml:app']);
+    grunt.registerTask('test', ['processhtml:html']);
 };

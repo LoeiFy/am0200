@@ -1,0 +1,1 @@
+var API={name:"app",getName:function(){return this.name}};$(function(){});
