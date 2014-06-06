@@ -8,13 +8,10 @@ var API = {
         return this.name
     },
 
-    getTop: function(id) {
-        console.log($(id).position().top)
-    },
-
-    goTop: function(id) {
-        $('body, html').animate({'scrollTop': $(id).position().top}, 700, 'easeInOutQuint', function() {
-            console.log('done')
+    goTop: function(pos, func) {
+        var func = func || function() {};
+        $('body, html').animate({'scrollTop': pos}, 700, 'easeInOutQuint', function() {
+            func()
         })
     },
 
@@ -28,7 +25,6 @@ var API = {
         $('body').hammer({
             prevent_default: true
         }).on('tap', function(e) {
-            console.log(e)
             var ex = e.position[0].x,
                 ey = e.position[0].y;
             
