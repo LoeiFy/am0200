@@ -31,20 +31,18 @@ $(function() {
     })
 
 
-/*
-    $('#home, #gallery, #info').hammer({
-        prevent_default: true
-    }).on('tap', function() {
-        moveDown(true)
-    }).on('mousewheel DOMMouseScroll', function(e) {
+    $('#home, #gallery, #info').on('mousewheel DOMMouseScroll', function(e) {
         e.preventDefault()
-        if (pos_hash) {
-            var data = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
-            if (data < 0) moveDown(true);
-            if (data > 0) moveDown(false);
-        } 
+        var data = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+        
+        if (API.scroll_mark && Math.abs(data) > 100) {
+            API.scroll_mark = false;
+            if (data < 0) API.doAction(true, API.section_pos.split('#')[1]);
+            if (data > 0) API.doAction(false, API.section_pos.split('#')[1]);
+
+            setTimeout(function() {API.scroll_mark = true}, 1000)
+        }
     })
-*/
 
 
     window.addEventListener('popstate', function(e) {

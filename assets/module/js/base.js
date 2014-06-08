@@ -6,6 +6,8 @@ var API = {
 
     section_pos: '#home',
 
+    scroll_mark: true,
+
     setSize: function(id) {
     	$(id).css('height', window.innerHeight)
     	$(id).css('width', window.innerWidth)
