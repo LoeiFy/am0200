@@ -26,13 +26,13 @@ var API = {
             case '#gallery':
                 pos = 1;
                 title = 'Lorem Ipsum 2014 / Gallery';
-                url = '/gallery';
+                url = '/gallery/';
             break;
             
             case '#info':
                 pos = 2;
                 title = 'Lorem Ipsum 2014 / Info';
-                url = '/info';
+                url = '/info/';
             break;
         } 
 

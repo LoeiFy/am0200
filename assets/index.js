@@ -19,8 +19,6 @@ $(function() {
         setTimeout(size, 0)
     })
     
-    history.replaceState({'pos': 0, 'title': 'Lorem Ipsum 2014'}, 'Lorem Ipsum 2014', '/');
-
     API.tapPlot('#home, #gallery, #info', '#pot', function(id) {
         API.doAction(true, id)
     })
@@ -35,7 +33,7 @@ $(function() {
         e.preventDefault()
         var data = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
         
-        if (API.scroll_mark && Math.abs(data) > 100) {
+        if (API.scroll_mark) {
             API.scroll_mark = false;
             if (data < 0) API.doAction(true, API.section_pos.split('#')[1]);
             if (data > 0) API.doAction(false, API.section_pos.split('#')[1]);
@@ -46,11 +44,15 @@ $(function() {
 
 
     window.addEventListener('popstate', function(e) {
-        var state = e.state;
-        if (!state) return;
+        var url = window.location.pathname;
+        url = url.substring(1, url.length - 1);
 
-        API.sectionMove(state.pos * API.section_height, function() {
-            document.title = state.title;
+        if (url == '/') url = 'home';
+
+        var attr = API.getPorperty('#'+ url);
+
+        API.sectionMove(attr.pos * API.section_height, function() {
+            document.title = attr.title;
         })
     })
 })
