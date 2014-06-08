@@ -53,10 +53,36 @@ function pushUrl(title, pos, url) {
 }
 
 $(function() {
-    API.goTop(0)
 
-    API.tapAnimate()
+    API.tapPlot('#pot')
 
+    size()
+    function size() {
+        API.section_height = window.innerHeight;
+        API.setSize('#home, #gallery, #info')
+        if (API.section_pos == '') return;
+        API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
+    }
+    $(window).resize(function(){
+        setTimeout(size, 0)
+    })
+    
+    history.replaceState({'pos': 0, 'title': 'Lorem Ipsum 2014'}, 'Lorem Ipsum 2014', '/');
+
+    API.tapPlot('#home, #gallery, #info', '#pot', function(id) {
+        var id = '#'+ $('#'+ id).next()[0].id;
+        if (id == '#pot') return;
+
+        var attr = API.getPorperty(id);
+
+        API.sectionMove(attr.pos * API.section_height)
+        API.section_pos = id;
+        
+        API.pushUrl(attr.title, attr.url, attr.pos)
+    })
+
+
+/*
     $('#home, #gallery, #info').hammer({
         prevent_default: true
     }).on('tap', function() {
@@ -74,12 +100,14 @@ $(function() {
         if (e.keyCode == 40) moveDown(true);
         if (e.keyCode == 38) moveDown(false);
     })
+*/
 
     window.addEventListener('popstate', function(e) {
         var state = e.state;
         if (!state) return;
-        document.title = state.title;
-        section_note = state.pos;
-        API.goTop(section_note * $('#gallery').position().top)
+
+        API.sectionMove(state.pos * API.section_height, function() {
+            document.title = state.title;
+        })
     })
 })
