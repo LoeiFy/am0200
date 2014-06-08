@@ -4,7 +4,7 @@ var API = {
 
     section_height: 0,
 
-    section_pos: '',
+    section_pos: '#home',
 
     setSize: function(id) {
     	$(id).css('height', window.innerHeight)
@@ -35,6 +35,23 @@ var API = {
         } 
 
         return {'pos': pos, 'title': title, 'url': url}
+    },
+
+    doAction: function(mark, id) {
+        if (mark) {
+            var id = '#'+ $('#'+ id).next()[0].id;
+            if (id == '#pot') return;
+        } else {
+            if (!$(API.section_pos).prev()[0]) return;
+            var id = '#'+ $(API.section_pos).prev()[0].id;
+        }
+
+        var attr = API.getPorperty(id);
+
+        API.sectionMove(attr.pos * API.section_height)
+        API.section_pos = id;
+        
+        API.pushUrl(attr.title, attr.url, attr.pos)
     },
 
     sectionMove: function(position, f) {
