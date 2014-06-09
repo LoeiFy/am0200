@@ -59,7 +59,8 @@ $(function() {
     $('html').hammer({
         prevent_default: true
     }).on('swipe', function(e) {
-        alert(e.direction)
+        if (e.direction == 'up') API.doAction(true, API.section_pos.split('#')[1]);
+        if (e.direction == 'down') API.doAction(false, API.section_pos.split('#')[1]);
     })
 
 })
