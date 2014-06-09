@@ -12,6 +12,10 @@ module.exports = function(grunt) {
                 files: {
                     'dist/global.js': [
                         '<%= module.base %>',
+                        '<%= module.doAction %>',
+                        '<%= module.getPorperty %>',
+                        '<%= module.pushUrl %>',
+                        '<%= module.sectionMove %>',
                         '<%= module.tapPlot %>',
                         'assets/index.js'
                     ]

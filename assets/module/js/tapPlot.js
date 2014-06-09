@@ -1,3 +1,9 @@
+/**
+ * mouse click or tap effect
+ *
+ * f: callback function
+ */
+
 API.tapPlot = function(tag, target, f) {
     $(tag).hammer({
         prevent_default: true

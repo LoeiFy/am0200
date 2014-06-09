@@ -6,8 +6,6 @@
 
 $(function() {
 
-    API.tapPlot('#pot')
-
     size()
     function size() {
         API.section_height = window.innerHeight;

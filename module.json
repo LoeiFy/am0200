@@ -1,5 +1,9 @@
 {
-	"css"		: "assets/module/css/global.css",
-    "base"      : "assets/module/js/base.js",
-    "tapPlot"   : "assets/module/js/tapPlot.js"
+	"css"		    : "assets/module/css/global.css",
+    "base"          : "assets/module/js/base.js",
+    "tapPlot"       : "assets/module/js/tapPlot.js",
+    "doAction"      : "assets/module/js/doAction.js",
+    "getPorperty"   : "assets/module/js/getPorperty.js",
+    "pushUrl"       : "assets/module/js/pushUrl.js",
+    "sectionMove"   : "assets/module/js/sectionMove.js"
 }
