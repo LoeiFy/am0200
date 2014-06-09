@@ -1,4 +1,5 @@
 {
 	"css"		: "assets/module/css/global.css",
-    "base"      : "assets/module/js/base.js"
+    "base"      : "assets/module/js/base.js",
+    "tapPlot"   : "assets/module/js/tapPlot.js"
 }

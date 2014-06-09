@@ -55,4 +55,11 @@ $(function() {
             document.title = attr.title;
         })
     })
+
+    $('html').hammer({
+        prevent_default: true
+    }).on('swipe', function(e) {
+        alert(e.direction)
+    })
+
 })
