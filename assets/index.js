@@ -1,6 +1,6 @@
-/*
+/**
  *
- * init
+ * ready !
  *
  */
 
@@ -17,7 +17,7 @@ $(function() {
         setTimeout(size, 0)
     })
 
-   	window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
     $('#home').css('top', 0)
 
     API.tapPlot('#home, #gallery, #info', '#pot', function(id) {

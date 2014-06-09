@@ -9,6 +9,9 @@ module.exports = function(grunt) {
         uglify: {
 
             global: {
+                options: {
+                    banner: '/* http://lorem.in  @author Loeify@gmail.com */ \n'
+                },
                 files: {
                     'dist/global.js': [
                         '<%= module.base %>',
