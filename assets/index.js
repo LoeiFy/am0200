@@ -12,6 +12,7 @@ $(function() {
     function size() {
         API.section_height = window.innerHeight;
         API.setSize('#home, #gallery, #info')
+   		window.scrollTo(0, 0)
         if (API.section_pos == '') return;
         API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
     }
