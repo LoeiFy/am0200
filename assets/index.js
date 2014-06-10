@@ -13,7 +13,7 @@ $(function() {
         if (API.section_pos == '') return;
         API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
     }
-    $(window).resize(function(){
+    $(window).on('resize orientationchange', function(){
         setTimeout(size, 0)
     })
 
