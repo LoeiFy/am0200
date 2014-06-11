@@ -14,6 +14,10 @@ var API = {
     setSize: function(id) {
     	$(id).css('height', window.innerHeight)
     	$(id).css('width', window.innerWidth)
-    }
+    },
+    
+	touchDevice: function() {
+		return !!('ontouchstart' in window);
+	}
 
 };

@@ -13,9 +13,16 @@ $(function() {
         if (API.section_pos == '') return;
         API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
     }
-    $(window).on('resize orientationchange', function(){
-        setTimeout(size, 0)
-    })
+
+    if (API.touchDevice()) {
+        $(window).on('orientationchange', function(){
+            setTimeout(size, 0)
+        })
+    } else {
+        $(window).on('resize', function(){
+            setTimeout(size, 0)
+        })
+    }
 
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
