@@ -53,15 +53,31 @@
     <script>basket.require({url:'dist/global.css',key:'css',unique:@@css,execute:false}).then(function(responses){_stylesheet.appendStyleSheet(responses[0],function(){basket.require({url:'/static/jquery/jquery.js',key:'jquery',unique:@@jquery}).then(function(){basket.require({url:'/dist/plugin.js',key:'plugin',unique:@@plugin}).then(function(){basket.require({url:'/dist/global.js',key:'js',unique:@@js})})})})})</script>
     <!-- /build -->
 </head>
-<body class="oh">
-	<section id="home" class="wrap">
-	</section>
+<body class="oh bgf">
 
-	<section id="gallery" class="wrap">
-	</section>
+    <section id="home" class="rel bgf">
+        <div class="bb w h">
+            <h1 class="tac" style="margin-top: 40%; font-size: 30px; color: red;">home</h1>
+        </div>
+    </section>
+
+    <section id="guolu" class="rel bgf">
+        <div class="bb w h">
+            <h1 class="tac" style="margin-top: 40%; font-size: 30px; color: red;">guolu</h1>
+        </div>
+    </section>
+
+    <section id="jaku" class="rel bgf">
+        <div class="bb w h">
+            <h1 class="tac" style="margin-top: 40%; font-size: 30px; color: red;">jaku</h1>
+        </div>
+    </section>
 	
-	<section id="info" class="wrap">
-	</section>
+    <section id="info" class="rel bgf">
+        <div class="bb w h">
+            <h1 class="tac" style="margin-top: 40%; font-size: 30px; color: red;">info</h1>
+        </div>
+    </section>
 
     <div id="pot"></div>
 </body>

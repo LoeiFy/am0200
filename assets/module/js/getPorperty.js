@@ -14,14 +14,20 @@ API.getPorperty = function(id) {
             url = '/';
         break;
 
-        case '#gallery':
+        case '#guolu':
             pos = 1;
-            title = 'Lorem Ipsum 2014 / Gallery';
-            url = '/gallery/';
+            title = 'Lorem Ipsum 2014 / GuoLu';
+            url = '/guolu/';
+        break;
+
+        case '#jaku':
+            pos = 2;
+            title = 'Lorem Ipsum 2014 / Jaku';
+            url = '/jaku/';
         break;
         
         case '#info':
-            pos = 2;
+            pos = 3;
             title = 'Lorem Ipsum 2014 / Info';
             url = '/info/';
         break;

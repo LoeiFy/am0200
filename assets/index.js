@@ -9,7 +9,7 @@ $(function() {
     size()
     function size() {
         API.section_height = window.innerHeight;
-        API.setSize('#home, #gallery, #info')
+        API.setSize('#home, #guolu, #jaku, #info')
         if (API.section_pos == '') return;
         API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
     }
@@ -20,7 +20,7 @@ $(function() {
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
 
-    API.tapPlot('#home, #gallery, #info', '#pot', function(id) {
+    API.tapPlot('#home, #guolu, #jaku, #info', '#pot', function(id) {
         API.doAction(true, id)
     })
 
@@ -30,7 +30,7 @@ $(function() {
     })
 
 
-    $('#home, #gallery, #info').on('mousewheel DOMMouseScroll', function(e) {
+    $('#home, #guolu, #jaku, #info').on('mousewheel DOMMouseScroll', function(e) {
         e.preventDefault()
         var data = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
         

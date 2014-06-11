@@ -33,6 +33,8 @@ body {
     margin-right: auto;
 }
 
+.bgf { background: #fff; }
+
 .db { display: block; }
 .dib { display: inline-block; }
 .hide { display: none; }
@@ -50,3 +52,10 @@ body {
 .oh { overflow: hidden; }
 
 .w { width: 100%; }
+.h { height: 100%; }
+
+.bb {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
