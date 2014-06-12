@@ -14,22 +14,16 @@ API.getPorperty = function(id) {
             url = '/';
         break;
 
-        case '#guolu':
+        case '#portfolio':
             pos = 1;
-            title = 'Lorem Ipsum 2014 / GuoLu';
-            url = '/guolu/';
-        break;
-
-        case '#jaku':
-            pos = 2;
-            title = 'Lorem Ipsum 2014 / Jaku';
-            url = '/jaku/';
+            title = 'Portfolio | Lorem Ipsum 2014';
+            url = '/portfolio/';
         break;
         
-        case '#info':
-            pos = 3;
-            title = 'Lorem Ipsum 2014 / Info';
-            url = '/info/';
+        case '#about':
+            pos = 2;
+            title = 'About | Lorem Ipsum 2014';
+            url = '/about/';
         break;
     } 
 

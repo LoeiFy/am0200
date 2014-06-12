@@ -35,8 +35,22 @@
     color: #888;
 }
 
-#guolu > div {
-    border: 40px solid #f4f4f4;
-    border-bottom-width: 70px;
-    background: #222;
+
+/* portfolio */
+#slider {
+    left: 0;
+}
+.item {
+    display: inline-block;
+    background: #42494E; 
+}
+.item img {
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+}
+.item > div {
+    display: none;
 }
