@@ -34,3 +34,9 @@
 #home p span {
     color: #888;
 }
+
+#guolu > div {
+    border: 40px solid #f4f4f4;
+    border-bottom-width: 70px;
+    background: #222;
+}
