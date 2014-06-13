@@ -20,6 +20,8 @@ module.exports = function(grunt) {
                         '<%= module.pushUrl %>',
                         '<%= module.sectionMove %>',
                         '<%= module.tapPlot %>',
+                        '<%= module.sliderMove %>',
+                        '<%= module.sliderAction %>',
                         'assets/index.js'
                     ]
                 }

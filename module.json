@@ -5,5 +5,7 @@
     "doAction"      : "assets/module/js/doAction.js",
     "getPorperty"   : "assets/module/js/getPorperty.js",
     "pushUrl"       : "assets/module/js/pushUrl.js",
-    "sectionMove"   : "assets/module/js/sectionMove.js"
+    "sectionMove"   : "assets/module/js/sectionMove.js",
+    "sliderMove"    : "assets/module/js/sliderMove.js",
+    "sliderAction"  : "assets/module/js/sliderAction.js"
 }

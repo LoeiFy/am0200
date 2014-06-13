@@ -15,6 +15,7 @@ $(function() {
 
 
         $('#slider').css('width', $('.item').length * window.innerWidth)
+        API.sliderMove('#slider', API.slider_pos)
 
         $('.item').each(function() {
             $(this).css('width', window.innerWidth).find('img').css({
@@ -46,8 +47,8 @@ $(function() {
 
         var url = window.location.pathname;
         if (url.indexOf('portfolio') != -1) {
-            if (e.keyCode == 39) API.sliderMove(true);
-            if (e.keyCode == 37) API.sliderMove(false);
+            if (e.keyCode == 39) API.sliderAction('.item', true);
+            if (e.keyCode == 37) API.sliderAction('.item', false);
         }
     })
 
