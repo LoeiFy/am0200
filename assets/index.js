@@ -37,8 +37,18 @@ $(function() {
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
 
-    API.tapPlot('#home, #portfolio, #about', '#pot', function(id) {
-        API.doAction(true, id)
+    API.tapPlot('#home, #portfolio, #about', '#pot', function(id, x) {
+        if (id == 'portfolio') {
+            if (API.slider_pos < $('.item').length - 1 && x / window.innerWidth > 0.5) {
+                API.sliderAction('.item', true)
+            } else if (API.slider_pos > 0 && x / window.innerWidth < 0.5) {
+                API.sliderAction('.item', false)
+            } else {
+                API.doAction(true, id)
+            }
+        } else {
+            API.doAction(true, id)
+        }
     })
 
     $(document).keydown(function(e) {
@@ -84,6 +94,10 @@ $(function() {
     }).on('swipe', function(e) {
         if (e.direction == 'up') API.doAction(true, API.section_pos.split('#')[1]);
         if (e.direction == 'down') API.doAction(false, API.section_pos.split('#')[1]);
+        if (window.location.pathname.indexOf('portfolio') != -1) {
+            if (e.direction == 'left') API.sliderAction('.item', true);
+            if (e.direction == 'right') API.sliderAction('.item', false);
+        } 
     })
 
 })

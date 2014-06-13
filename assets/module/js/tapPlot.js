@@ -28,6 +28,6 @@ API.tapPlot = function(tag, target, f) {
             $(target).css('visibility', 'hidden')
         })
 
-        f(e.target.id)
+        f(e.target.id, ex)
     })
 };
