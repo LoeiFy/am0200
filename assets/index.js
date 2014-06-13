@@ -34,6 +34,8 @@ $(function() {
         setTimeout(size, 0)
     })
 
+    window.onload = function() {size()}
+
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
 
