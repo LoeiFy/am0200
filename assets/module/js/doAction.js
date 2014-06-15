@@ -2,6 +2,7 @@
  * page move & change url
  *
  * mark: true -> up, false -> down
+ *
  */
 
 API.doAction = function(mark, id) {
@@ -19,4 +20,10 @@ API.doAction = function(mark, id) {
     API.section_pos = id;
     
     API.pushUrl(attr.title, attr.url, attr.pos)
+
+    if (API.touchDevice()) {
+        API.section_height = window.innerHeight;
+        API.setSize('#home, #portfolio, #about')
+    }
+
 };

@@ -4,7 +4,31 @@
  *
  */
 
+
+window.onload = function() {
+    console.log('dnone')
+}
+
 $(function() {
+
+    var work_0 = API.sliderInfo(0); 
+        work_1 = API.sliderInfo(1); 
+
+    appendItem(work_0.sum, 0)
+    appendItem(work_1.sum, 1)
+    function appendItem(sum, id) {
+        var str = '';
+        for (var i = 0; i < sum; i ++) {
+            str += '<div id="'+ id + i +'" class="item w h rel"></div>'
+        }
+        $('#slider').append(str)
+    }
+
+    function appendImg(id, sum) {
+        for (var i = 0; i < sum; i ++) {
+            API.loadImage(id, i)
+        }
+    }
 
     size()
     function size() {
@@ -21,11 +45,6 @@ $(function() {
             $(this).css('width', window.innerWidth).find('img').css({
                 marginLeft: - $(this).find('img').width() / 2 +'px', 
                 marginTop: - $(this).find('img').height() / 2 +'px' 
-            }).on('load', function() {
-                $(this).css({
-                    marginLeft: - $(this).width() / 2 +'px', 
-                    marginTop: - $(this).height() / 2 +'px' 
-                })
             })
         })
     }
@@ -34,7 +53,12 @@ $(function() {
         setTimeout(size, 0)
     })
 
-    window.onload = function() {size()}
+    window.onload = function() {
+        console.log('done')
+        size()
+        appendImg(0, work_0.sum)
+        appendImg(1, work_1.sum)
+    }
 
     window.scrollTo(0, 0)
     $('#home').css('top', 0)

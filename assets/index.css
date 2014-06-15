@@ -42,7 +42,22 @@
 }
 .item {
     display: inline-block;
-    background: #42494E;
+    background: #e8e8e8;
+}
+.item:after {
+    content: 'loading..';
+    position: absolute;
+    display: block;
+    padding: 3px 0;
+    background: #fff;
+    color: #333;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    margin-left: -40px;
+    margin-top: -14px;
+    text-align: center;
+    font-size: 14px;
 }
 .item img {
     max-width: 90%;
@@ -50,7 +65,26 @@
     height: auto;
     left: 50%;
     top: 50%;
+    z-index: 1;
 }
-.item > div {
-    display: none;
+#info {
+    background: #fff;
+    bottom: 30px;
+    right: 10px;
+    padding: 20px;
+    width: 30%;
+}
+#info.close {
+    padding: 10px;
+    width: auto;
+}
+#info h3 {
+    color: #3b3a37;
+    font-size: 24px;
+}
+#info p {
+    color: #3b3a37;
+    margin-top: 10px;
+    font-size: 14px;
+
 }

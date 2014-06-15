@@ -22,6 +22,7 @@ module.exports = function(grunt) {
                         '<%= module.tapPlot %>',
                         '<%= module.sliderMove %>',
                         '<%= module.sliderAction %>',
+                        '<%= module.sliderInfo %>',
                         'assets/index.js'
                     ]
                 }

@@ -7,5 +7,6 @@
     "pushUrl"       : "assets/module/js/pushUrl.js",
     "sectionMove"   : "assets/module/js/sectionMove.js",
     "sliderMove"    : "assets/module/js/sliderMove.js",
-    "sliderAction"  : "assets/module/js/sliderAction.js"
+    "sliderAction"  : "assets/module/js/sliderAction.js",
+    "sliderInfo"  	: "assets/module/js/sliderInfo.js"
 }
