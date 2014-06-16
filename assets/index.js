@@ -4,11 +4,6 @@
  *
  */
 
-
-window.onload = function() {
-    console.log('dnone')
-}
-
 $(function() {
 
     var work_0 = API.sliderInfo(0); 
@@ -53,12 +48,11 @@ $(function() {
         setTimeout(size, 0)
     })
 
-    window.onload = function() {
-        console.log('done')
+    setTimeout(function() {
         size()
         appendImg(0, work_0.sum)
         appendImg(1, work_1.sum)
-    }
+    }, 0)
 
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
