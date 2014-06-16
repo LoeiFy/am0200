@@ -9,12 +9,17 @@ $(function() {
     var work_0 = API.sliderInfo(0); 
         work_1 = API.sliderInfo(1); 
 
-    appendItem(work_0.sum, 0)
-    appendItem(work_1.sum, 1)
-    function appendItem(sum, id) {
-        var str = '';
-        for (var i = 0; i < sum; i ++) {
-            str += '<div id="'+ id + i +'" class="item w h rel"></div>'
+    appendItem(work_0, 0)
+    appendItem(work_1, 1)
+    function appendItem(work, id) {
+        var str = '<div class="info item bb w h rel">'+
+                  '<div class="infoinner w h abs">'+
+                  '<h3>'+ work.title +'</h3>'+
+                  '<p>'+ work.content +'</p>'+
+                  '<a href="http://'+ work.url +'">'+ work.url +'</a>'+
+                  '</div></div>';
+        for (var i = 0; i < work.sum; i ++) {
+            str += '<div id="'+ id + i +'" class="item image w h rel"></div>'
         }
         $('#slider').append(str)
     }

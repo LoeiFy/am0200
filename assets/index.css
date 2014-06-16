@@ -44,7 +44,7 @@
     display: inline-block;
     background: #e8e8e8;
 }
-.item:after {
+.item.image:after {
     content: 'loading..';
     position: absolute;
     display: block;
@@ -67,12 +67,9 @@
     top: 50%;
     z-index: 1;
 }
-#info {
-    background: #fff;
-    bottom: 30px;
-    right: 10px;
-    padding: 20px;
-    width: 30%;
+.info {
+    border: 40px solid #e8e8e8;
+    background: #222;
 }
 #info.close {
     padding: 10px;
