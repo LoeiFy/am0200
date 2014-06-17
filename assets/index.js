@@ -16,7 +16,8 @@ $(function() {
                   '<div class="infoinner w h bb abs">'+
                   '<h3>'+ work.title +'</h3>'+
                   '<p>'+ work.content +'</p>'+
-                  '<a class="abs" href="'+ work.url +'">'+ work.url +'</a>'+
+                  '<a class="abs link" target="_blank" href="'+ work.url +'">'+ work.url +'</a>'+
+                  '<div class="next abs"></div>'+
                   '</div></div>';
         for (var i = 0; i < work.sum; i ++) {
             str += '<div id="'+ id + i +'" class="item image w h rel"></div>'
@@ -62,7 +63,7 @@ $(function() {
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
 
-    API.tapPlot('#home, #portfolio, #about', '#pot', function(id, x) {
+    API.tapPlot('#home, #portfolio, #about, .link', '#pot', function(id, x) {
         if (id == 'portfolio') {
             if (API.slider_pos < $('.item').length - 1 && x / window.innerWidth > 0.5) {
                 API.sliderAction('.item', true)

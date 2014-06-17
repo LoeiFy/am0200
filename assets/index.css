@@ -97,3 +97,28 @@
 .infoinner a:hover {
     border: 2px solid #3b3a37;
 }
+.next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkt-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 2px solid #7c7c7c;
+    right: 60px;
+    bottom: 60px;
+}
+.next:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #7c7c7c;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    position: absolute;
+    top: 12px;
+    left: 8px;
+}
