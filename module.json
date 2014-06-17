@@ -1,5 +1,5 @@
 {
-	"css"		    : "assets/module/css/global.css",
+    "css"           : "assets/module/css/global.css",
     "base"          : "assets/module/js/base.js",
     "tapPlot"       : "assets/module/js/tapPlot.js",
     "doAction"      : "assets/module/js/doAction.js",
@@ -8,5 +8,6 @@
     "sectionMove"   : "assets/module/js/sectionMove.js",
     "sliderMove"    : "assets/module/js/sliderMove.js",
     "sliderAction"  : "assets/module/js/sliderAction.js",
-    "sliderInfo"  	: "assets/module/js/sliderInfo.js"
+    "sliderInfo"    : "assets/module/js/sliderInfo.js",
+    "fullImage"     : "assets/module/js/fullImage.js"
 }

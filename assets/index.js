@@ -4,6 +4,33 @@
  *
  */
 
+var CanvasImage = function(ele,img) {
+	this.element = ele;
+	this.image = img;
+
+	this.element.width = this.image.width;
+	this.element.height = this.image.height;
+
+	this.context = this.element.getContext("2d");
+	
+	this.context.drawImage(this.image,0,0)
+};
+
+CanvasImage.prototype.blur = function(i) {
+	this.context.globalAlpha = 0.5;
+
+	for (var y = -i; y <= i; y += 2) {
+		for (var x = -i; x <= i; x += 2) {
+			this.context.drawImage(this.element, x, y)
+
+			if (x >= 0 && y >= 0) {
+				this.context.drawImage(this.element, -(x-1), -(y-1))
+			}
+		}
+	}
+	this.context.globalAlpha = 1
+};
+
 $(function() {
 
     var work_0 = API.sliderInfo(0); 
@@ -31,13 +58,36 @@ $(function() {
         }
     }
 
+	$('#blur').each(function() {
+
+	    var it = this,
+			img = new Image;
+
+		img.src = '/static/image/about.jpg';
+
+		img.onload = function() {
+
+            if (API.touchDevice()) {
+
+                $('#about > div').html('<img src="'+ img.src +'" id="blur" />')
+
+            } else {
+
+			    var bg = new CanvasImage(it,this);
+			    bg.blur(2)
+
+            }
+
+			API.fullImage('#blur', 985, 667)
+		}
+	})
+
     size()
     function size() {
         API.section_height = window.innerHeight;
         API.setSize('#home, #portfolio, #about')
         if (API.section_pos == '') return;
         API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
-
 
         $('#slider').css('width', $('.item').length * window.innerWidth)
         API.sliderMove('#slider', API.slider_pos)
@@ -48,6 +98,8 @@ $(function() {
                 marginTop: - $(this).find('img').height() / 2 +'px' 
             })
         })
+
+		API.fullImage('#blur', 985, 667)
     }
 
     $(window).on('resize orientationchange', function(){

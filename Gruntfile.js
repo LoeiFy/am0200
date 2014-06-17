@@ -23,6 +23,7 @@ module.exports = function(grunt) {
                         '<%= module.sliderMove %>',
                         '<%= module.sliderAction %>',
                         '<%= module.sliderInfo %>',
+                        '<%= module.fullImage %>',
                         'assets/index.js'
                     ]
                 }
