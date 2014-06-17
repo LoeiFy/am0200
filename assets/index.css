@@ -37,8 +37,13 @@
 
 
 /* portfolio */
+#portfolio {
+    background: #e8e8e8;
+}
 #slider {
     left: 0;
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 }
 .item {
     display: inline-block;
