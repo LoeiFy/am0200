@@ -13,10 +13,10 @@ $(function() {
     appendItem(work_1, 1)
     function appendItem(work, id) {
         var str = '<div class="info item bb w h rel">'+
-                  '<div class="infoinner w h abs">'+
+                  '<div class="infoinner w h bb abs">'+
                   '<h3>'+ work.title +'</h3>'+
                   '<p>'+ work.content +'</p>'+
-                  '<a href="http://'+ work.url +'">'+ work.url +'</a>'+
+                  '<a class="abs" href="'+ work.url +'">'+ work.url +'</a>'+
                   '</div></div>';
         for (var i = 0; i < work.sum; i ++) {
             str += '<div id="'+ id + i +'" class="item image w h rel"></div>'
