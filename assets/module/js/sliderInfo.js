@@ -16,7 +16,7 @@ API.sliderInfo = function(id) {
         break;
 
         case 1:
-            title = 'Jaku — Icon';
+            title = 'Jaku Icon — Website';
             content = 'Jaku Icon showcase, all icons via http://jakurepo.com/ All icons are the property of their respective artists and may not be modified, sold, or redistributed without their consent';
             url = 'http://jaku.guo.lu';
             sum = 5;

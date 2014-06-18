@@ -110,7 +110,7 @@
     -moz-border-radius: 50%;
     border: 2px solid #7c7c7c;
     right: 60px;
-    bottom: 60px;
+    bottom: 42px;
 }
 .next:after {
     content: '';

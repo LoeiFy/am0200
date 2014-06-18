@@ -143,13 +143,17 @@ $(function() {
     $('#home, #portfolio, #about').on('mousewheel DOMMouseScroll', function(e) {
         e.preventDefault()
         var data = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
-        
+
+        var time = 500;
+        if (navigator.platform == 'MacIntel' || navigator.platform == 'MacPPC') time = 1000;
+
         if (API.scroll_mark) {
             API.scroll_mark = false;
+
             if (data < 0) API.doAction(true, API.section_pos.split('#')[1]);
             if (data > 0) API.doAction(false, API.section_pos.split('#')[1]);
 
-            setTimeout(function() {API.scroll_mark = true}, 1000)
+            setTimeout(function() {API.scroll_mark = true}, time)
         }
     })
 
