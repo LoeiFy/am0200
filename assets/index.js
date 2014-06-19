@@ -58,6 +58,7 @@ $(function() {
         }
     }
 
+    var imgatt, imgw = 1200, imgh = 800;
 	$('#blur').each(function() {
 
 	    var it = this,
@@ -67,18 +68,34 @@ $(function() {
 
 		img.onload = function() {
 
-            if (API.touchDevice()) {
+            $('#about > div').prepend('<img class="rel" src="'+ img.src +'" id="orimg" />')
 
-                $('#about > div').html('<img src="'+ img.src +'" id="blur" />')
-
-            } else {
+            if (!API.touchDevice()) {
 
 			    var bg = new CanvasImage(it,this);
-			    bg.blur(2)
+			    bg.blur(5)
+
+			    API.fullImage('#blur', imgw, imgh)
 
             }
 
-			API.fullImage('#blur', 985, 667)
+			imgatt = API.fullImage('#orimg', imgw, imgh)
+
+            $('#blurimg').hover(function() {
+
+                $('#blur, #orimg').animate({
+                    width: imgatt.w + 30 +'px',
+                    height: imgatt.h + 30 * imgh / imgw +'px'
+                })
+
+            }, function() {
+
+                $('#blur, #orimg').animate({
+                    width: imgatt.w +'px',
+                    height: imgatt.h +'px'
+                })
+
+            })
 		}
 	})
 
@@ -99,7 +116,10 @@ $(function() {
             })
         })
 
-		API.fullImage('#blur', 985, 667)
+        if ($('#orimg').length) {
+		    API.fullImage('#blur', imgw, imgh)
+		    imgatt = API.fullImage('#orimg', imgw, imgh)
+        }
     }
 
     $(window).on('resize orientationchange', function(){

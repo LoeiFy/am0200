@@ -127,3 +127,17 @@
     top: 12px;
     left: 8px;
 }
+    
+#blurimg {
+    width: 60%;
+    left: 0;
+    top: 0; 
+    border-right: 4px solid rgba(0,0,0,.6)
+}
+#about .info {
+    background: rgba(0,0,0,.5);
+    left: 0;
+    top: 0;
+}
+.text {
+}
