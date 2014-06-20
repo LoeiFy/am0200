@@ -129,15 +129,42 @@
 }
     
 #blurimg {
-    width: 60%;
+    width: 64%;
+    height: 100%;
     left: 0;
     top: 0; 
-    border-right: 4px solid rgba(0,0,0,.6)
+    border-right: 2px solid rgba(0,0,0,.6);
+    box-shadow: 2px 0 0 rgba(0,0,0,.6); 
+    -webkit-box-shadow: 2px 0 0 rgba(0,0,0,.6); 
+    -moz-box-shadow: 2px 0 0 rgba(0,0,0,.6); 
 }
-#about .info {
+#blurimg > div {
     background: rgba(0,0,0,.5);
     left: 0;
     top: 0;
 }
+
 .text {
+    bottom: 75px;
+    left: 80px;
+}
+
+.text h3 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.text p {
+    color: #eee;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.text p:after {
+    content: '';
+    height: 1px;
+    background: #ddd;
+    width: 15px;
+    display: block;
+    margin-top: 35px;
 }
