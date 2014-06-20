@@ -106,7 +106,9 @@ module.exports = function(grunt) {
                 },
 
                 files: {
-                    'index.html': '.tmp/index.html'
+                    'index.html': '.tmp/index.html',
+                    'portfolio/index.html': '.tmp/index.html',
+                    'about/index.html': '.tmp/index.html'
                 }
 
             }
@@ -118,7 +120,9 @@ module.exports = function(grunt) {
 
             html: {
                 files: {
-                    'index.html': ['views/index.html']
+                    'index.html': ['views/index.html'],
+                    'portfolio/index.html': ['views/index.html'],
+                    'about/index.html': ['views/index.html']
                 }
             }
 

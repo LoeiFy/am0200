@@ -149,6 +149,11 @@ $(function() {
         }
     })
 
+    var path = window.location.pathname;
+
+    if (path.indexOf('portfolio') != -1) API.doAction(true, 'home')
+    if (path.indexOf('about') != -1) API.doAction(true, 'portfolio')
+
     $(document).keydown(function(e) {
         if (e.keyCode == 40) API.doAction(true, API.section_pos.split('#')[1]);
         if (e.keyCode == 38) API.doAction(false, API.section_pos.split('#')[1]);
@@ -201,5 +206,7 @@ $(function() {
             if (e.direction == 'right') API.sliderAction('.item', false);
         } 
     })
+
+    console.log('https://github.com/LoeiFy')
 
 })
