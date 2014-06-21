@@ -58,13 +58,13 @@ $(function() {
         }
     }
 
-    var imgatt, imgw = 1200, imgh = 800;
+    var imgatt, imgw = 1000, imgh = 702;
 	$('#blur').each(function() {
 
 	    var it = this,
 			img = new Image;
 
-		img.src = '/static/image/about.jpg';
+		img.src = '/static/image/about2.jpg';
 
 		img.onload = function() {
 

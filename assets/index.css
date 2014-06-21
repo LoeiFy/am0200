@@ -168,3 +168,69 @@
     display: block;
     margin-top: 35px;
 }
+
+@media screen and (max-width: 480px) {
+    .logo {
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+    }
+
+    #home p span {
+        display: none;
+    }
+
+    .infoinner {
+        border: 10px solid #e8e8e8;
+    }
+
+    .infoinner h3 {
+        font-size: 18px;
+        margin: 30px 30px 20px 30px;
+    }
+
+    .infoinner p {
+        font-size: 14px;
+        margin: 0 30px 0 30px;
+        line-height: 20px;
+    }
+
+    .infoinner a {
+        padding: 7px 14px;
+        font-size: 16px;
+        bottom: 20px;
+        left: 30px;
+    }
+
+    .next {
+        border: none;
+        right: 17px;
+        bottom: 17px;
+    }
+
+    .next:after {
+        width: 7px;
+        height: 7px;
+    }
+
+    #blurimg {
+        width: 100%;
+        border-right: none;
+        box-shadow: 0 0 0 rgba(0,0,0,.6);
+        -webkit-box-shadow: 0 0 0 rgba(0,0,0,.6);
+        -moz-box-shadow: 0 0 0 rgba(0,0,0,.6);
+    }
+
+    .text {
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .text h3 {
+        font-size: 16px;
+    }
+
+    .text p {
+        font-size: 12px;
+    }
+}
