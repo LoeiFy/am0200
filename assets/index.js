@@ -207,6 +207,8 @@ $(function() {
         } 
     })
 
+    $('section').css('visibility', 'visible')
+
     console.log('https://github.com/LoeiFy')
 
 })
