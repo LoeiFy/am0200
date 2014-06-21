@@ -5,6 +5,7 @@
  */
 
 API.tapPlot = function(tag, target, f) {
+
     $(tag).hammer({
         prevent_default: true
     }).on('tap', function(e) {
@@ -29,6 +30,7 @@ API.tapPlot = function(tag, target, f) {
         })
 
         if (!e.target.id) return;
+
         f(e.target.id, ex)
     })
 };

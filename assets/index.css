@@ -133,13 +133,13 @@
     height: 100%;
     left: 0;
     top: 0; 
-    border-right: 2px solid rgba(0,0,0,.6);
-    box-shadow: 2px 0 0 rgba(0,0,0,.6); 
-    -webkit-box-shadow: 2px 0 0 rgba(0,0,0,.6); 
-    -moz-box-shadow: 2px 0 0 rgba(0,0,0,.6); 
+    border-right: 2px solid rgba(91,59,48,.6);
+    box-shadow: 2px 0 0 rgba(91,59,48,.6); 
+    -webkit-box-shadow: 2px 0 0 rgba(91,59,48,.6); 
+    -moz-box-shadow: 2px 0 0 rgba(91,59,48,.6); 
 }
 #blurimg > div {
-    background: rgba(0,0,0,.5);
+    background: rgba(91,59,48,.5);
     left: 0;
     top: 0;
 }
@@ -170,6 +170,12 @@
 }
 
 @media screen and (max-width: 480px) {
+    
+    #home > div {
+        border-top: none;
+        border-bottom: none;
+    }
+
     .logo {
         -webkit-transform: scale(0.6);
         -moz-transform: scale(0.6);

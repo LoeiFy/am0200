@@ -64,7 +64,7 @@ $(function() {
 	    var it = this,
 			img = new Image;
 
-		img.src = '/static/image/about2.jpg';
+		img.src = '/static/image/about.jpg';
 
 		img.onload = function() {
 
