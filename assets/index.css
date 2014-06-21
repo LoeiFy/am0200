@@ -169,6 +169,10 @@
     margin-top: 35px;
 }
 
+section {
+    visibility: visible !important;
+}
+
 @media screen and (max-width: 480px) {
     
     #home > div {
