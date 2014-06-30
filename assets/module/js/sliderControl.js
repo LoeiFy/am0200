@@ -1,9 +1,8 @@
-/**
- * slider action
- *
- */
 
-API.sliderAction = function(tag, mark) {
+// slider control
+
+API.sliderControl = function(tag, mark) {
+
     if (mark) {
         API.slider_pos ++
     } else {
@@ -21,4 +20,5 @@ API.sliderAction = function(tag, mark) {
     }
 
     API.sliderMove('#slider', API.slider_pos)
+
 };

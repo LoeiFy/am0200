@@ -14,14 +14,16 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'dist/global.js': [
-                        '<%= module.base %>',
-                        '<%= module.doAction %>',
-                        '<%= module.getPorperty %>',
-                        '<%= module.pushUrl %>',
+                        '<%= module.define %>',
+                        '<%= module.pageControl %>',
+                        '<%= module.pageInfo %>',
+                        '<%= module.setSize %>',
+                        '<%= module.loadImage %>',
+                        '<%= module.touchDevice %>',
                         '<%= module.sectionMove %>',
                         '<%= module.tapPlot %>',
                         '<%= module.sliderMove %>',
-                        '<%= module.sliderAction %>',
+                        '<%= module.sliderControl %>',
                         '<%= module.sliderInfo %>',
                         '<%= module.fullImage %>',
                         'assets/index.js'

@@ -1,8 +1,5 @@
-/**
- * mouse click or tap effect
- *
- * f: callback function
- */
+ 
+// mouse click or tap effect
 
 API.tapPlot = function(tag, target, f) {
 

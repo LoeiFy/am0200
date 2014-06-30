@@ -1,10 +1,7 @@
-/**
- * get porperty
- *
- * return object
- */
 
-API.getPorperty = function(id) {
+// get page porperty
+
+API.pageInfo = function(id) {
     var pos, title, url;
 
     switch (id) {
@@ -27,5 +24,5 @@ API.getPorperty = function(id) {
         break;
     } 
 
-    return {'pos': pos, 'title': title, 'url': url}
+    return {pos: pos, title: title, url: url}
 };

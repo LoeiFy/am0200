@@ -1,10 +1,8 @@
-/**
- * get slider info
- *
- * return object
- */
+
+// get slider info
 
 API.sliderInfo = function(id) {
+
     var title, content, sum;
 
     switch (id) {
@@ -23,5 +21,6 @@ API.sliderInfo = function(id) {
         break;
     } 
 
-    return {'title': title, 'content': content, 'url': url, 'sum': sum}
+    return {title: title, content: content, url: url, sum: sum}
+
 };

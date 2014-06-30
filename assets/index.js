@@ -77,7 +77,7 @@ $(function() {
 			    var bg = new CanvasImage(it,this);
 			    bg.blur(5)
 
-			    API.fullImage('#blur', imgw, imgh, true)
+			    API.fullImage('#blur', imgw, imgh)
 
                 $('#blurimg').hover(function() {
 
@@ -104,7 +104,7 @@ $(function() {
         API.section_height = window.innerHeight;
         API.setSize('#home, #portfolio, #about')
         if (API.section_pos == '') return;
-        API.sectionMove(API.getPorperty(API.section_pos).pos * API.section_height)
+        API.sectionMove(API.pageInfo(API.section_pos).pos * API.section_height)
 
         $('#slider').css('width', $('.item').length * window.innerWidth)
         API.sliderMove('#slider', API.slider_pos)
@@ -117,7 +117,7 @@ $(function() {
         })
 
         if ($('#orimg').length) {
-		    API.fullImage('#blur', imgw, imgh, true)
+		    API.fullImage('#blur', imgw, imgh)
 		    imgatt = API.fullImage('#orimg', imgw, imgh)
         }
     }
@@ -139,30 +139,30 @@ $(function() {
     API.tapPlot('#home, #portfolio, #about, .link', '#pot', function(id, x) {
         if (id == 'portfolio') {
             if (API.slider_pos < $('.item').length - 1 && x / window.innerWidth > 0.5) {
-                API.sliderAction('.item', true)
+                API.sliderControl('.item', true)
             } else if (API.slider_pos > 0 && x / window.innerWidth < 0.5) {
-                API.sliderAction('.item', false)
+                API.sliderControl('.item', false)
             } else {
-                API.doAction(true, id)
+                API.pageControl(true, id)
             }
         } else {
-            API.doAction(true, id)
+            API.pageControl(true, id)
         }
     })
 
     var path = window.location.pathname;
 
-    if (path.indexOf('portfolio') != -1) API.doAction(true, 'home')
-    if (path.indexOf('about') != -1) API.doAction(true, 'portfolio')
+    if (path.indexOf('portfolio') != -1) API.pageControl(true, 'home')
+    if (path.indexOf('about') != -1) API.pageControl(true, 'portfolio')
 
     $(document).keydown(function(e) {
-        if (e.keyCode == 40) API.doAction(true, API.section_pos.split('#')[1]);
-        if (e.keyCode == 38) API.doAction(false, API.section_pos.split('#')[1]);
+        if (e.keyCode == 40) API.pageControl(true, API.section_pos.split('#')[1]);
+        if (e.keyCode == 38) API.pageControl(false, API.section_pos.split('#')[1]);
 
         var url = window.location.pathname;
         if (url.indexOf('portfolio') != -1) {
-            if (e.keyCode == 39) API.sliderAction('.item', true);
-            if (e.keyCode == 37) API.sliderAction('.item', false);
+            if (e.keyCode == 39) API.sliderControl('.item', true);
+            if (e.keyCode == 37) API.sliderControl('.item', false);
         }
     })
 
@@ -176,8 +176,8 @@ $(function() {
         if (API.scroll_mark) {
             API.scroll_mark = false;
 
-            if (data < 0) API.doAction(true, API.section_pos.split('#')[1]);
-            if (data > 0) API.doAction(false, API.section_pos.split('#')[1]);
+            if (data < 0) API.pageControl(true, API.section_pos.split('#')[1]);
+            if (data > 0) API.pageControl(false, API.section_pos.split('#')[1]);
 
             setTimeout(function() {API.scroll_mark = true}, time)
         }
@@ -190,7 +190,7 @@ $(function() {
 
         if (url == '/') url = 'home';
 
-        var attr = API.getPorperty('#'+ url);
+        var attr = API.pageInfo('#'+ url);
 
         API.sectionMove(attr.pos * API.section_height, function() {
             document.title = attr.title;
@@ -200,11 +200,11 @@ $(function() {
     $('html').hammer({
         prevent_default: true
     }).on('swipe', function(e) {
-        if (e.direction == 'up') API.doAction(true, API.section_pos.split('#')[1]);
-        if (e.direction == 'down') API.doAction(false, API.section_pos.split('#')[1]);
+        if (e.direction == 'up') API.pageControl(true, API.section_pos.split('#')[1]);
+        if (e.direction == 'down') API.pageControl(false, API.section_pos.split('#')[1]);
         if (window.location.pathname.indexOf('portfolio') != -1) {
-            if (e.direction == 'left') API.sliderAction('.item', true);
-            if (e.direction == 'right') API.sliderAction('.item', false);
+            if (e.direction == 'left') API.sliderControl('.item', true);
+            if (e.direction == 'right') API.sliderControl('.item', false);
         } 
     })
 
