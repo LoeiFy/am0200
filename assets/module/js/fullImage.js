@@ -3,7 +3,9 @@
  *
  */
 
-API.fullImage = function(id, w, h) {
+API.fullImage = function(id, w, h, mark) {
+
+    var mark = mark || false;
 
 	var _height = window.innerHeight,
 	    _width = window.innerWidth,
@@ -16,7 +18,7 @@ API.fullImage = function(id, w, h) {
 	}
 
 	$(id).css('left', (_width - $(id).width()) / 2)
-	$(id).css('top', (_height - $(id).height()) / 2)
+    $(id).css('top', (_height - $(id).height()) / 2)
 
     return {'w': $(id).width(), 'h': $(id).height()}
 

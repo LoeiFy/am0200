@@ -135,10 +135,7 @@
     height: 100%;
     left: 0;
     top: 0; 
-    border-right: 2px solid rgba(91,59,48,.6);
-    box-shadow: 2px 0 0 rgba(91,59,48,.6); 
-    -webkit-box-shadow: 2px 0 0 rgba(91,59,48,.6); 
-    -moz-box-shadow: 2px 0 0 rgba(91,59,48,.6); 
+    border-right: 1px solid rgba(91,59,48,.6);
 }
 #blurimg > div {
     background: rgba(91,59,48,.5);
@@ -154,6 +151,11 @@
 .text h3 {
     color: #fff;
     font-size: 24px;
+    font-weight: lighter;
+}
+
+.text h3 span {
+    font-weight: bold;
 }
 
 .text p {
@@ -169,6 +171,22 @@
     width: 15px;
     display: block;
     margin-top: 35px;
+}
+
+@media screen and (max-width: 800px) {
+ 
+    #blurimg {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+ 
+    #blurimg {
+        width: 100%;
+    }
+
 }
 
 @media screen and (max-width: 480px) {

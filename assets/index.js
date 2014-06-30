@@ -70,32 +70,32 @@ $(function() {
 
             $('#about > div').prepend('<img class="rel" src="'+ img.src +'" id="orimg" />')
 
+            imgatt = API.fullImage('#orimg', imgw, imgh)
+
             if (!API.touchDevice()) {
 
 			    var bg = new CanvasImage(it,this);
 			    bg.blur(5)
 
-			    API.fullImage('#blur', imgw, imgh)
+			    API.fullImage('#blur', imgw, imgh, true)
+
+                $('#blurimg').hover(function() {
+
+                    $('#blur, #orimg').animate({
+                        width: imgatt.w + 30 +'px',
+                        height: imgatt.h + 30 * imgh / imgw +'px'
+                    })
+
+                }, function() {
+
+                    $('#blur, #orimg').animate({
+                        width: imgatt.w +'px',
+                        height: imgatt.h +'px'
+                    })
+
+                })
 
             }
-
-			imgatt = API.fullImage('#orimg', imgw, imgh)
-
-            $('#blurimg').hover(function() {
-
-                $('#blur, #orimg').animate({
-                    width: imgatt.w + 30 +'px',
-                    height: imgatt.h + 30 * imgh / imgw +'px'
-                })
-
-            }, function() {
-
-                $('#blur, #orimg').animate({
-                    width: imgatt.w +'px',
-                    height: imgatt.h +'px'
-                })
-
-            })
 		}
 	})
 
@@ -117,7 +117,7 @@ $(function() {
         })
 
         if ($('#orimg').length) {
-		    API.fullImage('#blur', imgw, imgh)
+		    API.fullImage('#blur', imgw, imgh, true)
 		    imgatt = API.fullImage('#orimg', imgw, imgh)
         }
     }
