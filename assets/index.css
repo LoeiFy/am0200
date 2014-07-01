@@ -3,6 +3,7 @@
     position: absolute;
     border-radius: 50%;
     visibility: hidden;
+    z-index: 2;
 }
 
 section {
