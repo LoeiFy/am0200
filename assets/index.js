@@ -4,105 +4,23 @@
  *
  */
 
-var CanvasImage = function(ele,img) {
-	this.element = ele;
-	this.image = img;
-
-	this.element.width = this.image.width;
-	this.element.height = this.image.height;
-
-	this.context = this.element.getContext("2d");
-	
-	this.context.drawImage(this.image,0,0)
-};
-
-CanvasImage.prototype.blur = function(i) {
-	this.context.globalAlpha = 0.5;
-
-	for (var y = -i; y <= i; y += 2) {
-		for (var x = -i; x <= i; x += 2) {
-			this.context.drawImage(this.element, x, y)
-
-			if (x >= 0 && y >= 0) {
-				this.context.drawImage(this.element, -(x-1), -(y-1))
-			}
-		}
-	}
-	this.context.globalAlpha = 1
-};
-
 $(function() {
 
-    var work_0 = API.sliderInfo(0); 
+    // to top
+    window.scrollTo(0, 0)
+    $('#home').css('top', 0)
+
+    // append work items
+    var work_0 = API.sliderInfo(0), 
         work_1 = API.sliderInfo(1); 
+    API.workItem(work_0, 0, '#slider')
+    API.workItem(work_1, 1, '#slider')
 
-    appendItem(work_0, 0)
-    appendItem(work_1, 1)
-    function appendItem(work, id) {
-        var str = '<div class="info item bb w h rel">'+
-                  '<div class="infoinner w h bb abs">'+
-                  '<h3>'+ work.title +'</h3>'+
-                  '<p>'+ work.content +'</p>'+
-                  '<a class="abs link" target="_blank" href="'+ work.url +'">'+ work.url +'</a>'+
-                  '<div class="next abs"></div>'+
-                  '</div></div>';
-        for (var i = 0; i < work.sum; i ++) {
-            str += '<div id="'+ id + i +'" class="item image w h rel"></div>'
-        }
-        $('#slider').append(str)
-    }
-
-    function appendImg(id, sum) {
-        for (var i = 0; i < sum; i ++) {
-            API.loadImage(id, i)
-        }
-    }
-
-    var imgatt, imgw = 1000, imgh = 702;
-	$('#blur').each(function() {
-
-	    var it = this,
-			img = new Image;
-
-		img.src = '/static/image/about.jpg';
-
-		img.onload = function() {
-
-            $('#about > div').prepend('<img class="rel" src="'+ img.src +'" id="orimg" />')
-
-            imgatt = API.fullImage('#orimg', imgw, imgh)
-
-            if (!API.touchDevice()) {
-
-			    var bg = new CanvasImage(it,this);
-			    bg.blur(5)
-
-			    API.fullImage('#blur', imgw, imgh)
-
-                $('#blurimg').hover(function() {
-
-                    $('#blur, #orimg').animate({
-                        width: imgatt.w + 30 +'px',
-                        height: imgatt.h + 30 * imgh / imgw +'px'
-                    })
-
-                }, function() {
-
-                    $('#blur, #orimg').animate({
-                        width: imgatt.w +'px',
-                        height: imgatt.h +'px'
-                    })
-
-                })
-
-            }
-		}
-	})
-
-    size()
+    // adjust size 
     function size() {
         API.section_height = window.innerHeight;
         API.setSize('#home, #portfolio, #about')
+
         if (API.section_pos == '') return;
         API.sectionMove(API.pageInfo(API.section_pos).pos * API.section_height)
 
@@ -117,25 +35,58 @@ $(function() {
         })
 
         if ($('#orimg').length) {
-		    API.fullImage('#blur', imgw, imgh)
-		    imgatt = API.fullImage('#orimg', imgw, imgh)
+		    API.fullImage('#blur', API.img_width, API.img_height)
+		    API.img_attr = API.fullImage('#orimg', API.img_width, API.img_height)
         }
     }
 
+    // on screen change
     $(window).on('resize orientationchange', function(){
         setTimeout(size, 0)
     })
 
+    // delay
     setTimeout(function() {
         size()
-        appendImg(0, work_0.sum)
-        appendImg(1, work_1.sum)
-        draw()
+
+        API.appendImg(0, work_0.sum)
+        API.appendImg(1, work_1.sum)
+
+        API.svgDraw(2, 'i')
     }, 0)
 
-    window.scrollTo(0, 0)
-    $('#home').css('top', 0)
+    // url to page
+    var path = window.location.pathname;
+    if (path.indexOf('portfolio') != -1) API.pageControl(true, 'home')
+    if (path.indexOf('about') != -1) API.pageControl(true, 'portfolio')
 
+    // canvas blur image
+	var img = new Image;
+	img.src = '/static/image/about.jpg';
+    img.onload = function() {
+        $('#about > div').prepend('<img class="rel" src="'+ img.src +'" id="orimg" />')
+        API.img_attr = API.fullImage('#orimg', API.img_width, API.img_height)
+
+        if (!API.touchDevice()) {
+			var bg = new API.canvasBlur($('#blur')[0],this);
+			bg.blur(5)
+			API.fullImage('#blur', API.img_width, API.img_height)
+
+            $('#blurimg').hover(function() {
+                $('#blur, #orimg').animate({
+                    width: API.img_attr.w + 30 +'px',
+                    height: API.img_attr.h + 30 * API.img_height / API.img_width +'px'
+                })
+             }, function() {
+                $('#blur, #orimg').animate({
+                    width: API.img_attr.w +'px',
+                    height: API.img_attr.h +'px'
+                })
+            })
+        }
+	}
+
+    // mouse click or tap
     API.tapPlot('#home, #portfolio, #about, .link', '#pot', function(id, x) {
         if (id == 'portfolio') {
             if (API.slider_pos < $('.item').length - 1 && x / window.innerWidth > 0.5) {
@@ -150,22 +101,30 @@ $(function() {
         }
     })
 
-    var path = window.location.pathname;
-
-    if (path.indexOf('portfolio') != -1) API.pageControl(true, 'home')
-    if (path.indexOf('about') != -1) API.pageControl(true, 'portfolio')
-
+    // keyboard control
     $(document).keydown(function(e) {
-        if (e.keyCode == 40) API.pageControl(true, API.section_pos.split('#')[1]);
-        if (e.keyCode == 38) API.pageControl(false, API.section_pos.split('#')[1]);
+        switch (e.keyCode) {
 
-        var url = window.location.pathname;
-        if (url.indexOf('portfolio') != -1) {
-            if (e.keyCode == 39) API.sliderControl('.item', true);
-            if (e.keyCode == 37) API.sliderControl('.item', false);
-        }
+            case 40:
+                API.pageControl(true, API.section_pos.split('#')[1])
+            break;
+
+            case 38:
+                API.pageControl(false, API.section_pos.split('#')[1])
+            break;
+
+            case 39:
+                if (window.location.pathname.indexOf('portfolio') != -1) API.sliderControl('.item', true);
+            break;
+
+            case 37:
+                if (window.location.pathname.indexOf('portfolio') != -1) API.sliderControl('.item', false);
+            break;
+
+        } 
     })
 
+    // on mouse scroll
     $('#home, #portfolio, #about').on('mousewheel DOMMouseScroll', function(e) {
         e.preventDefault()
         var data = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
@@ -183,10 +142,10 @@ $(function() {
         }
     })
 
-
+    // popstate control
     window.addEventListener('popstate', function(e) {
-        var url = window.location.pathname;
-        url = url.substring(1, url.length - 1);
+        var url = window.location.pathname,
+            url = url.substring(1, url.length - 1);
 
         if (url == '/') url = 'home';
 
@@ -197,46 +156,34 @@ $(function() {
         })
     })
 
+    // on swipe
     $('html').hammer({
         prevent_default: true
     }).on('swipe', function(e) {
-        if (e.direction == 'up') API.pageControl(true, API.section_pos.split('#')[1]);
-        if (e.direction == 'down') API.pageControl(false, API.section_pos.split('#')[1]);
-        if (window.location.pathname.indexOf('portfolio') != -1) {
-            if (e.direction == 'left') API.sliderControl('.item', true);
-            if (e.direction == 'right') API.sliderControl('.item', false);
-        } 
+        switch (e.direction) {
+
+            case 'up':
+                API.pageControl(true, API.section_pos.split('#')[1])
+            break;
+
+            case 'down':
+                API.pageControl(false, API.section_pos.split('#')[1])
+            break;
+
+            case 'left':
+                if (window.location.pathname.indexOf('portfolio') != -1) API.sliderControl('.item', true);
+            break;
+
+            case 'right':
+                if (window.location.pathname.indexOf('portfolio') != -1) API.sliderControl('.item', false);
+            break;
+
+        }
     })
 
+    // show the content
     $('section').css('visibility', 'visible')
 
-    var current_frame = 0;
-    var total_frames = 60;
-    var path = new Array();
-    var length = new Array();
-    for(var i=0; i<2;i++){
-	    path[i] = document.getElementById('i'+i);
-	    l = path[i].getTotalLength();
-	    length[i] = l;
-	    path[i].style.strokeDasharray = l + ' ' + l; 
-	    path[i].style.strokeDashoffset = l;
-    }
-    var handle = 0;
- 
- 
-    var draw = function() {
-        var progress = current_frame/total_frames;
-        if (progress > 1) {
-            window.cancelAnimationFrame(handle);
-        } else {
-            current_frame++;
-            for(var j=0; j<path.length;j++){
-	        path[j].style.strokeDashoffset = Math.floor(length[j] * (1 - progress));
-        }
-        handle = window.requestAnimationFrame(draw);
-        }
-    };
-
-    console.log('https://github.com/LoeiFy')
+    console.info('https://github.com/LoeiFy')
 
 })

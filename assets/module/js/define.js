@@ -11,6 +11,12 @@ var API = {
 
     slider_pos: 0,
 
-    work_pos: '#00'
+    work_pos: '#00',
+
+    img_attr: {},
+
+    img_width: 1000,
+
+    img_height: 702
 
 };

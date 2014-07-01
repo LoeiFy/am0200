@@ -10,6 +10,10 @@
     "sectionMove"   : "assets/module/js/sectionMove.js",
     "sliderMove"    : "assets/module/js/sliderMove.js",
     "sliderControl" : "assets/module/js/sliderControl.js",
+    "svgDraw"       : "assets/module/js/svgDraw.js",
+    "canvasBlur"    : "assets/module/js/canvasBlur.js",
+    "workItem"      : "assets/module/js/workItem.js",
+    "appendImg"     : "assets/module/js/appendImg.js",
     "sliderInfo"    : "assets/module/js/sliderInfo.js",
     "fullImage"     : "assets/module/js/fullImage.js"
 }

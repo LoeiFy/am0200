@@ -128,6 +128,9 @@
     position: absolute;
     top: 12px;
     left: 8px;
+    -webkit-animation: fade 2s infinite linear;
+ 	-moz-animation: fade 2s infinite linear;
+  	animation: fade 2s infinite linear;
 }
     
 #blurimg {
@@ -259,4 +262,40 @@
     .text p {
         font-size: 12px;
     }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

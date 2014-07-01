@@ -24,6 +24,10 @@ module.exports = function(grunt) {
                         '<%= module.tapPlot %>',
                         '<%= module.sliderMove %>',
                         '<%= module.sliderControl %>',
+                        '<%= module.svgDraw %>',
+                        '<%= module.canvasBlur %>',
+                        '<%= module.workItem %>',
+                        '<%= module.appendImg %>',
                         '<%= module.sliderInfo %>',
                         '<%= module.fullImage %>',
                         'assets/index.js'
