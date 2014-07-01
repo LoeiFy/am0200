@@ -9,6 +9,7 @@ $(function() {
     // to top
     window.scrollTo(0, 0)
     $('#home').css('top', 0)
+    size()
 
     // append work items
     var work_0 = API.sliderInfo(0), 
