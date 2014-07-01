@@ -1,8 +1,5 @@
-/**
- *
- * ready !
- *
- */
+
+// ready
 
 $(function() {
 

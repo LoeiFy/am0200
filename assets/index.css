@@ -5,6 +5,10 @@
     visibility: hidden;
 }
 
+section {
+    z-index: 1;
+}
+
 /* home */
 #home > div {
     background: #fff;
