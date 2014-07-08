@@ -15,8 +15,8 @@ var API = {
 
     img_attr: {},
 
-    img_width: 1000,
+    img_width: 1600,
 
-    img_height: 702
+    img_height: 1066
 
 };

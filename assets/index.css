@@ -143,10 +143,10 @@ section {
     height: 100%;
     left: 0;
     top: 0; 
-    border-right: 1px solid rgba(91,59,48,.6);
+    border-right: 1px solid rgba(34,37,70,.6);
 }
 #blurimg > div {
-    background: rgba(91,59,48,.5);
+    background: rgba(34,37,70,.5);
     left: 0;
     top: 0;
 }
