@@ -67,7 +67,7 @@ $(function() {
 
         if (!API.touchDevice()) {
 			var bg = new API.canvasBlur($('#blur')[0],this);
-			bg.blur(4)
+			bg.blur(6)
 			API.fullImage('#blur', API.img_width, API.img_height)
 
             $('#blurimg').hover(function() {

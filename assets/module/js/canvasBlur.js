@@ -21,7 +21,7 @@ API.canvasBlur.prototype.blur = function(i) {
 
 	for (var y = -i; y <= i; y += 2) {
 		for (var x = -i; x <= i; x += 2) {
-			this.context.drawImage(this.element, x + .5, y + .5)
+			this.context.drawImage(this.element, x + 1, y + 1)
 
 			if (x >= 0 && y >= 0) {
 				this.context.drawImage(this.element, -(x-1), -(y-1))
