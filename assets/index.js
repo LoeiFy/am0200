@@ -84,19 +84,42 @@ $(function() {
         }
 	}
 
+    // mouse hover
+    //API.cursor('#home, #portfolio, #about')
+
     // mouse click or tap
-    API.tapPlot('#home, #portfolio, #about, .link', '#pot', function(id, x) {
-        if (id == 'portfolio') {
-            if (API.slider_pos < $('.item').length - 1 && x / window.innerWidth > 0.5) {
-                API.sliderControl('.item', true)
-            } else if (API.slider_pos > 0 && x / window.innerWidth < 0.5) {
-                API.sliderControl('.item', false)
-            } else {
+    API.tapPlot('#home, #portfolio, #about, .link', '#pot', function(id, x, y) {
+        var cx = x / window.innerWidth,
+            cy = y / window.innerHeight;
+
+        switch (id) {
+
+            case 'home':
                 API.pageControl(true, id)
-            }
-        } else {
-            API.pageControl(true, id)
+            break;
+
+            case 'portfolio':
+
+                if (API.slider_pos < $('.item').length - 1 && cx > 0.5) {
+                    API.sliderControl('.item', true)
+                } else if (API.slider_pos > 0 && cx < 0.5) {
+                    API.sliderControl('.item', false)
+                } else {
+                    if (cy < 1.5) {
+                        API.pageControl(false, id)
+                    } else {
+                        API.pageControl(true, id)
+                    }
+                }
+
+            break;
+
+            case 'about':
+                if (cy < 2.5) API.pageControl(false, id)
+            break;
+
         }
+
     })
 
     // keyboard control

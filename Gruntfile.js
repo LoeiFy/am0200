@@ -15,6 +15,7 @@ module.exports = function(grunt) {
                 files: {
                     'dist/global.js': [
                         '<%= module.define %>',
+                        '<%= module.cursor %>',
                         '<%= module.pageControl %>',
                         '<%= module.pageInfo %>',
                         '<%= module.setSize %>',

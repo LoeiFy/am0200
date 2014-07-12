@@ -1,6 +1,7 @@
 {
     "css"           : "assets/module/css/global.css",
     "define"        : "assets/module/js/define.js",
+    "cursor"        : "assets/module/js/cursor.js",
     "setSize"       : "assets/module/js/setSize.js",
     "loadImage"     : "assets/module/js/loadImage.js",
     "touchDevice"   : "assets/module/js/touchDevice.js",

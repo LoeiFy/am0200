@@ -28,6 +28,6 @@ API.tapPlot = function(tag, target, f) {
 
         if (!e.target.id) return;
 
-        f(e.target.id, ex)
+        f(e.target.id, ex, ey)
     })
 };
