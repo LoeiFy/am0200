@@ -1,6 +1,3 @@
-loeify.github.com
-=================
+# loeify.github.com
 
-Lorem ipsum dolor sit amet..
-
-* Powered by  https://github.com/LoeiFy/WFrame
+visit: http://lorem.in
