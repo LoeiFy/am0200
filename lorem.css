@@ -1,0 +1,22 @@
+body, div, h1, h2, h3, p, blockquote, ul, li {
+	margin: 0;
+	padding: 0;
+    font-weight: normal;
+}
+ul { list-style: none; }
+a, a:hover { text-decoration: none; }
+header, footer, section, nav, figure, mark {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+html, body {
+    background: #fff;
+    height: 100%;
+    font-size: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
+}
