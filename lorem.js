@@ -77,8 +77,7 @@ function getImage(url) {
         loadImage(url)
     }
     var bg = new canvasBlur(document.getElementById('bg'), img)
-    bg.blur(6)
-    //console.log(img.width)
+    //bg.blur(6)
 } 
 
 /* 
