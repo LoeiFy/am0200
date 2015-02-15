@@ -35,10 +35,24 @@ function base64Encode(inputStr) {
 }
 
 /* 
+ * get image form localStorage or url
+ */
+function getImage(url) {
+    var imgsrc = window.localStorage.getItem('image'),
+        img = new Image();
+
+    img.src = imgsrc;
+    img.onerror = function() {
+        loadImage(url)
+    }
+    console.log(img.width)
+} 
+
+/* 
  * image load progress
  * http://blogs.adobe.com/webplatform/2012/01/13/html5-image-progress-events/
  */
-function loadImage(url) {
+function loadImage(imageURI) {
     var request;
                     
     request = new XMLHttpRequest();
@@ -48,11 +62,14 @@ function loadImage(url) {
     };
 
     request.onprogress = function(e) {
-        console.log(e.loaded +'###'+ e.total)
+        console.log(e.loaded / e.total)
     };
 
     request.onload = function() {
-        console.log('showimg')
+        var img = new Image();
+        img.src = 'data:image/jpeg;base64,' + base64Encode(request.responseText);
+        console.log(img.width)
+        window.localStorage.setItem('image', img.src)
     };
 
     request.onloadend = function() {
@@ -63,3 +80,17 @@ function loadImage(url) {
     request.overrideMimeType('text/plain; charset=x-user-defined')
     request.send(null)
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    //loadImage('jpg.jpg')
+    getImage('jpg.jpg')
+})
+
+
+
+
+
+
+
+
+
