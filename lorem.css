@@ -18,5 +18,5 @@ html, body {
 }
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: sans-serif;
+    overflow: hidden;
 }

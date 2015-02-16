@@ -65,6 +65,27 @@ canvasBlur.prototype.blur = function(i) {
     this.context.globalAlpha = 1;
 }
 
+/*
+ * full background
+ */
+function fullBg(id, w, h) {
+	var _height = window.innerHeight,
+	    _width = window.innerWidth,
+        ratio = h / w;
+
+	if (_height / _width > ratio) {
+        id.style.height = _height +'px';
+        id.style.width = _height / ratio +'px';
+	} else {
+        id.style.width = _width +'px';
+        id.style.height = _width * ratio +'px';
+	}
+
+    id.style.position = 'relative';
+    id.style.left = (_width - parseInt(id.style.width)) / 2 +'px';
+    id.style.top = (_height - parseInt(id.style.height)) / 2 +'px';
+}
+
 /* 
  * get image form localStorage or url
  */
@@ -78,6 +99,8 @@ function getImage(url) {
     }
     var bg = new canvasBlur(document.getElementById('bg'), img)
     //bg.blur(6)
+    
+    fullBg(document.getElementById('bg'), img.width, img.height)
 } 
 
 /* 
