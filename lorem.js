@@ -1,3 +1,6 @@
+// define
+var tag, loadtag, imgver, imgurl;
+
 /* 
  * base64 Encode
  * http://www.philten.com/us-xmlhttprequest-image/
@@ -90,17 +93,33 @@ function fullBg(id, w, h) {
  * get image form localStorage or url
  */
 function getImage(url) {
-    var imgsrc = window.localStorage.getItem('image'),
+    var imagesrc = window.localStorage.getItem('canvasimgsrc'),
+        imagever = window.localStorage.getItem('canvasimgver'),
         img = new Image();
 
-    img.src = imgsrc;
+    if (imagever != imgver) {
+        loadImage(url)
+        return;
+    }
+
+    img.src = imagesrc;
     img.onerror = function() {
         loadImage(url)
     }
-    var bg = new canvasBlur(document.getElementById('bg'), img)
-    //bg.blur(6)
+
+    img.onload = function() {
+        var bg = new canvasBlur(tag, img);
+        bg.blur(6)
     
-    fullBg(document.getElementById('bg'), img.width, img.height)
+        fullBg(tag, img.width, img.height)
+        window.onresize = function() {
+            fullBg(tag, img.width, img.height)
+        }
+
+        setTimeout(function() {
+            tag.style.opacity = 1;
+        }, 500)
+    }
 } 
 
 /* 
@@ -113,22 +132,35 @@ function loadImage(imageURI) {
     request = new XMLHttpRequest();
                 
     request.onloadstart = function() {
-        console.log('start')
+        tag.insertAdjacentHTML('afterend', '<div id="loading"></div>')
+        loadtag = document.getElementById('loading');
     };
 
     request.onprogress = function(e) {
-        console.log(e.loaded / e.total)
+        loadtag.style.width = e.loaded / e.total * window.innerWidth +'px';
     };
 
     request.onload = function() {
         var img = new Image();
         img.src = 'data:image/jpeg;base64,' + base64Encode(request.responseText);
-        console.log(img.width)
-        window.localStorage.setItem('image', img.src)
+        window.localStorage.setItem('canvasimgsrc', img.src)
+        window.localStorage.setItem('canvasimgver', imgver)
+
+        var bg = new canvasBlur(tag, img);
+        bg.blur(6)
+    
+        fullBg(tag, img.width, img.height)
+        window.onresize = function() {
+            fullBg(tag, img.width, img.height)
+        }
+
+        setTimeout(function() {
+            tag.style.opacity = 1;
+        }, 500)
     };
 
     request.onloadend = function() {
-        console.log('done')
+        loadtag.parentNode.removeChild(loadtag)
     };
     
     request.open("GET", imageURI, true)
@@ -136,9 +168,11 @@ function loadImage(imageURI) {
     request.send(null)
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    //loadImage('jpg.jpg')
-    getImage('jpg.jpg')
+document.addEventListener('DOMContentLoaded', function() { 
+    tag = document.getElementById('canvas');
+    imgver = tag.getAttribute('ver');
+    imgurl = tag.getAttribute('url');
+    getImage(imgurl)
 })
 
 
