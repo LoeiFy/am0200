@@ -1,5 +1,11 @@
-// define
-var tag, loadtag, imgver, imgurl;
+function CBFimg(args) {
+    // define
+    args.ver = args.ver || 0;
+    args.blur = args.blur > 0 ? parseInt(args.blur) : 0;
+    args.tag = document.getElementById(args.id);
+
+    getImage(args.url, args)
+}
 
 /* 
  * base64 Encode
@@ -92,32 +98,33 @@ function fullBg(id, w, h) {
 /* 
  * get image form localStorage or url
  */
-function getImage(url) {
+function getImage(url, args) {
     var imagesrc = window.localStorage.getItem('canvasimgsrc'),
         imagever = window.localStorage.getItem('canvasimgver'),
         img = new Image();
 
-    if (imagever != imgver) {
-        loadImage(url)
+    if (imagever != args.ver) {
+        loadImage(url, args)
         return;
     }
 
     img.src = imagesrc;
     img.onerror = function() {
-        loadImage(url)
+        loadImage(url, args)
     }
 
     img.onload = function() {
-        var bg = new canvasBlur(tag, img);
-        bg.blur(6)
+        var bg = new canvasBlur(args.tag, img);
+        
+        if (args.blur) bg.blur(args.blur);
     
-        fullBg(tag, img.width, img.height)
+        fullBg(args.tag, img.width, img.height)
         window.onresize = function() {
-            fullBg(tag, img.width, img.height)
+            fullBg(args.tag, img.width, img.height)
         }
 
         setTimeout(function() {
-            tag.style.opacity = 1;
+            args.tag.style.opacity = 1;
         }, 500)
     }
 } 
@@ -126,13 +133,13 @@ function getImage(url) {
  * image load progress
  * http://blogs.adobe.com/webplatform/2012/01/13/html5-image-progress-events/
  */
-function loadImage(imageURI) {
-    var request;
+function loadImage(imageURI, args) {
+    var request, loadtag;
                     
     request = new XMLHttpRequest();
                 
     request.onloadstart = function() {
-        tag.insertAdjacentHTML('afterend', '<div id="loading"></div>')
+        args.tag.insertAdjacentHTML('afterend', '<div id="loading"></div>')
         loadtag = document.getElementById('loading');
     };
 
@@ -144,18 +151,19 @@ function loadImage(imageURI) {
         var img = new Image();
         img.src = 'data:image/jpeg;base64,' + base64Encode(request.responseText);
         window.localStorage.setItem('canvasimgsrc', img.src)
-        window.localStorage.setItem('canvasimgver', imgver)
+        window.localStorage.setItem('canvasimgver', args.ver)
 
-        var bg = new canvasBlur(tag, img);
-        bg.blur(6)
+        var bg = new canvasBlur(args.tag, img);
+        
+        if (args.blur) bg.blur(args.blur);
     
-        fullBg(tag, img.width, img.height)
+        fullBg(args.tag, img.width, img.height)
         window.onresize = function() {
-            fullBg(tag, img.width, img.height)
+            fullBg(args.tag, img.width, img.height)
         }
 
         setTimeout(function() {
-            tag.style.opacity = 1;
+            args.tag.style.opacity = 1;
         }, 500)
     };
 
@@ -169,17 +177,10 @@ function loadImage(imageURI) {
 }
 
 document.addEventListener('DOMContentLoaded', function() { 
-    tag = document.getElementById('canvas');
-    imgver = tag.getAttribute('ver');
-    imgurl = tag.getAttribute('url');
-    getImage(imgurl)
+    CBFimg({
+        id: 'canvas',
+        url: 'jpg.jpg',
+        ver: 0,
+        blur: 6
+    })
 })
-
-
-
-
-
-
-
-
-
