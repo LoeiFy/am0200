@@ -104,7 +104,7 @@ function getImage(url, args) {
         imagever = window.localStorage.getItem('canvasimgver'),
         img = new Image();
 
-    if (imagever != args.ver) {
+    if (parseInt(imagever) !== args.ver) {
         loadImage(url, args)
         return;
     }
@@ -183,6 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
         id: 'canvas',
         url: 'jpg.jpg',
         ver: 0,
-        blur: 6
+        blur: 5
     })
 })
