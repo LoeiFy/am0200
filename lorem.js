@@ -1,3 +1,4 @@
+// get args
 function CBFimg(args) {
     // define
     args.ver = args.ver || 0;
@@ -176,6 +177,7 @@ function loadImage(imageURI, args) {
     request.send(null)
 }
 
+// DOM ready
 document.addEventListener('DOMContentLoaded', function() { 
     CBFimg({
         id: 'canvas',
