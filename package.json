@@ -1,0 +1,20 @@
+{
+  "name": "lorem-ipsum",
+  "description": "Lorem ipsum dolor sit amet..",
+  "version": "0.0.0",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-processhtml": "^0.3.3",
+    "grunt-replace": "^0.7.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LoeiFy/loeify.github.com.git"
+  },
+  "author": "LoeiFy@gmail.com",
+  "license": "MIT"
+}
