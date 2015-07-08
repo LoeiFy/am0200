@@ -3,8 +3,4 @@
 *.swo
 *.log
 *~
-*.[a|o]
 .DS_Store
-.tmp/*
-
-node_modules/*
