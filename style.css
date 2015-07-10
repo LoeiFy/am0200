@@ -4,3 +4,17 @@ body {
 a {
     text-decoration: none;
 }
+html {
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background: #182327;
+}
+#canvas {
+    height: 100%;
+}
+canvas {
+    display: block;
+}
