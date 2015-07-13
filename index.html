@@ -10,11 +10,22 @@
 <title>Lorem Ipsum 2015</title>
 <link rel="shortcut icon" href="ico.png">
 <link rel="stylesheet" href="style.css" />
+<script src="particles.js"></script>
+<script src="script.js"></script>
 </head>
 <body>
 <div id="canvas"></div>
-
-<script src="particles.js"></script>
-<script src="script.js"></script>
+<div style="position: absolute; top: 0; left: 0; width: 64%; height: 100%;">
+  <svg width="100%" height="100%">
+    <defs>
+      <mask id="mask">
+        <rect width="100%" height="100%" fill="#fff" />
+        <text x="500" y="200" class="text" fill="#000">lorem</text>
+        <text x="500" y="500" class="text" fill="#000">ipsum</text>
+      </mask>
+    </defs>
+    <rect width="100%" height="100%" mask="url(#mask)" fill="#fff" />
+  </svg>
+</div>
 </body>
 </html>

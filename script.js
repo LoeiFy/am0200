@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'type': 'circle'
             },
             'opacity': {
-                'value': 0.5,
+                'value': 0.7,
                 'random': true
             },
             'size': {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'enable': true,
                 'distance': 130,
                 'color': '#4f5b60',
-                'opacity': 0.4,
+                'opacity': 0.5,
                 'width': 1
             },
             'move': {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         'interactivity': {
-            'detect_on': 'canvas',
+            'detect_on': 'window',
             'events': {
                 'onhover': {
                     'enable': true,
