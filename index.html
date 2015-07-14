@@ -14,17 +14,19 @@
 <script src="script.js"></script>
 </head>
 <body>
+<div id="w">
 <div id="canvas"></div>
-<div style="position: absolute; top: 0; left: 0; width: 64%; height: 100%;">
-  <svg width="100%" height="100%">
+</div>
+<div style="position: absolute; top: 0; width: 100%; height: 100%;">
+  <svg>
     <defs>
       <mask id="mask">
         <rect width="100%" height="100%" fill="#fff" />
-        <text x="500" y="200" class="text" fill="#000">lorem</text>
-        <text x="500" y="500" class="text" fill="#000">ipsum</text>
+        <text x="-10" y="200" class="text" fill="#000">Lorem</text>
+        <text x="0" y="500" class="text" fill="#000">Ipsum</text>
       </mask>
     </defs>
-    <rect width="100%" height="100%" mask="url(#mask)" fill="#fff" />
+    <rect width="100%" height="100%" id="ret" mask="url(#mask)" fill="#fff" />
   </svg>
 </div>
 </body>

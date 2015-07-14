@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             'color': {
-                'value': '#abab81'
+                'value': '#fff'
             },
             'shape': {
                 'type': 'circle'
             },
             'opacity': {
-                'value': 0.7,
+                'value': 1,
                 'random': true
             },
             'size': {
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'line_linked': {
                 'enable': true,
                 'distance': 130,
-                'color': '#4f5b60',
-                'opacity': 0.5,
+                'color': '#fff',
+                'opacity': 1,
                 'width': 1
             },
             'move': {
@@ -69,3 +69,5 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
 })
+
+// the PageVisibility API
