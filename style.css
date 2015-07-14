@@ -40,7 +40,6 @@ svg {
 }
 .text {
     font-family: 'fortysecondstreethbregular';
-    font-size: 200px;
-}
-#ret {
+    font-size: 150px;
+    text-transform: uppercase;
 }
