@@ -40,31 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 'bounce': false
             }
         },
-        'interactivity': {
-            'detect_on': 'window',
-            'events': {
-                'onhover': {
-                    'enable': true,
-                    'mode': 'grab'
-                },
-                'onclick': {
-                    'enable': true,
-                    'mode': 'push'
-                },
-                'resize': true
-            },
-            'modes': {
-                'grab': {
-                    'distance': 100,
-                    'line_linked': {
-                        'opacity': 1
-                    }
-                },
-                'push': {
-                    'particles_nb': 2
-                }
-            }
-        },
         'retina_detect': true
     })
 
