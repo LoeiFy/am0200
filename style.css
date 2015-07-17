@@ -9,16 +9,20 @@ body {
     background: #fff;
 }
 
-main {
+#main {
     padding-top: 70px;
     border-top: 3px solid #333;
 }
 
 header {
-    width: 158px;
     margin: 0 auto;
-    height: 178px;
     position: relative;
+    width: 320px;
+    height: 360px;
+    transform: scale(.5);
+    -webkit-transform: scale(.5);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
 }
 
 #canvas {
