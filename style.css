@@ -10,13 +10,14 @@ body {
 }
 
 main {
+    padding-top: 70px;
     border-top: 3px solid #333;
 }
 
 header {
-    width: 900px;
+    width: 158px;
     margin: 0 auto;
-    height: 300px;
+    height: 178px;
     position: relative;
 }
 
@@ -32,7 +33,7 @@ header {
     content: '';
     display: block;
     height: 100%;
-    opacity: .5;
+    opacity: .3;
     background: -moz-linear-gradient(45deg, #ce4cd4 0%, #0a94d5 100%);
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#ce4cd4), color-stop(100%,#0a94d5));
     background: -webkit-linear-gradient(45deg, #ce4cd4 0%,#0a94d5 100%);

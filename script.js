@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     particlesJS('canvas', {
         'particles': {
             'number': {
-                'value': 100,
+                'value': 300,
                 'density': {
                     'enable': true,
-                    'value_area': 700
+                    'value_area': 500
                 }
             },
             'color': {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             'line_linked': {
                 'enable': true,
-                'distance': 130,
+                'distance': 100,
                 'color': '#fff',
                 'opacity': 1,
                 'width': 1
