@@ -40,9 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 'bounce': false
             }
         },
-        'retina_detect': true
+        'retina_detect': false
     })
 
 })
 
-// the PageVisibility API
+console.info('https://github.com/LoeiFy')
+console.info('particles.js => https://github.com/VincentGarreau/particles.js/')
