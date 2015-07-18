@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    /*
     particlesJS('canvas', {
         'particles': {
             'number': {
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'retina_detect': false
     })
+    */
 
 })
 

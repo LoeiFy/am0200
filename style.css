@@ -1,8 +1,25 @@
-body {
+@font-face {
+    font-family: 'Sansation_Light';
+    src: url('Sansation_Light.ttf') format('truetype');
+}
+body, article, section, h1, h2, h3, h4, p {
     margin: 0;
+}
+article, section {
+    display: block;
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
 }
 a {
     text-decoration: none;
+    color: #0a272b;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 body {
@@ -10,12 +27,11 @@ body {
 }
 
 #main {
-    padding-top: 0px;
     border-top: 3px solid #333;
 }
 
 header {
-    margin: 0 auto;
+    margin-left: 70px;
     position: relative;
     width: 320px;
     height: 360px;
@@ -30,8 +46,10 @@ header {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(background.jpg) no-repeat center;
+    background: #000 url(background.jpg) no-repeat center;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
 }
 #canvas:before {
     width: 100%;
@@ -60,4 +78,39 @@ svg {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+article {
+    margin-left: 148px;
+    font-family: 'Sansation_Light', sans-serif;
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+h1 {
+    font-size: 20px;
+    color: #1d1f22;
+}
+h3 {
+    font-size: 14px;
+    color: #999;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+section {
+    margin-bottom: 40px;
+}
+#info {
+    margin-top: 0;
+}
+section h2 {
+    color: #1d1f22;
+    font-size: 22px;
+}
+section p {
+    margin-top: 3px;
+    color: #888;
+}
+section a {
+    margin-top: 3px;
 }
