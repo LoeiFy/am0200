@@ -46,7 +46,7 @@ window.onload = function() {
         'retina_detect': false
     })
 
+    console.info('https://github.com/LoeiFy')
+    console.info('particles.js => https://github.com/VincentGarreau/particles.js/')
 }
 
-console.info('https://github.com/LoeiFy')
-console.info('particles.js => https://github.com/VincentGarreau/particles.js/')

@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#version 0.0
+
+CACHE:
+style.css
+particles.js
+script.js
+background.jpg
+ico.png
+Sansation_Light.ttf
+
+NETWORK:
+*
