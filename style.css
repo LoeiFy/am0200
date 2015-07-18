@@ -24,6 +24,8 @@ a:hover {
 
 body {
     background: #fff;
+    word-wrap: break-word;
+    overflow-x: hidden;
 }
 
 #main {
@@ -113,4 +115,23 @@ section p {
 }
 section a {
     margin-top: 3px;
+}
+@media screen and (max-width: 600px) {
+    header {
+        margin-left: 0;
+    }
+    article {
+        margin-left: 80px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    header {
+        transform: scale(.4);
+        -webkit-transform: scale(.4);
+        -moz-transform: scale(.4);
+    }
+    article {
+        margin-left: 20px;
+    }
 }
