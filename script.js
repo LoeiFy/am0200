@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
+
+    document.getElementById('canvas').classList.add('image')
 
     particlesJS('canvas', {
         'particles': {
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'retina_detect': false
     })
 
-})
+}
 
 console.info('https://github.com/LoeiFy')
 console.info('particles.js => https://github.com/VincentGarreau/particles.js/')
