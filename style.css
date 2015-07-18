@@ -87,9 +87,12 @@ svg {
 
 article {
     margin-left: 148px;
-    font-family: 'Sansation_Light', sans-serif;
     line-height: 1.6;
+    font-family: sans-serif;
     padding-bottom: 60px;
+}
+article.font {
+    font-family: 'Sansation_Light', sans-serif;
 }
 h1 {
     font-size: 20px;

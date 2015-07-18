@@ -1,6 +1,7 @@
 window.onload = function() {
 
     document.getElementById('canvas').classList.add('image')
+    document.getElementsByTagName('article')[0].classList.add('font')
 
     particlesJS('canvas', {
         'particles': {
