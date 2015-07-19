@@ -48,5 +48,6 @@ window.onload = function() {
 
     console.info('https://github.com/LoeiFy')
     console.info('particles.js => https://github.com/VincentGarreau/particles.js/')
+    console.info('font => Sansation')
 }
 
