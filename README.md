@@ -1,4 +1,4 @@
 loeify.github.com
 =================
 
-Lorem ipsum dolor sit amet..
+http://lorem.in

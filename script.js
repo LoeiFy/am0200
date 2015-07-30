@@ -46,8 +46,8 @@ window.onload = function() {
         'retina_detect': false
     })
 
-    console.info('https://github.com/LoeiFy')
-    console.info('particles.js => https://github.com/VincentGarreau/particles.js/')
-    console.info('font => Sansation')
+    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy")
+    console.log("%c particles.js %c","background:#24272A; color:#ffffff","","https://github.com/VincentGarreau/particles.js/")
+    console.log("%c font %c","background:#24272A; color:#ffffff","","Sansation")
 }
 
