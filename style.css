@@ -111,7 +111,7 @@ section {
 #info {
     margin-bottom: 40px;
 }
-section h2 {
+section h2 a {
     color: #1d1f22;
     font-size: 22px;
 }
