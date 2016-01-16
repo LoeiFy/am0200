@@ -35,8 +35,8 @@ body {
 header {
     margin-left: 70px;
     position: relative;
-    width: 320px;
-    height: 360px;
+    width: 744px;
+    height: 552px;
     transform: scale(.5);
     -webkit-transform: scale(.5);
     -moz-transform: scale(.5);
@@ -105,22 +105,8 @@ h3 {
     margin-bottom: 20px;
     text-transform: uppercase;
 }
-section {
-    margin-bottom: 40px;
-}
 #info {
     margin-bottom: 40px;
-}
-section h2 a {
-    color: #1d1f22;
-    font-size: 22px;
-}
-section p {
-    margin-top: 3px;
-    color: #888;
-}
-section a {
-    margin-top: 3px;
 }
 @media screen and (max-width: 600px) {
     header {
