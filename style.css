@@ -2,21 +2,22 @@
     font-family: 'Sansation_Light';
     src: url('Sansation_Light.ttf') format('truetype');
 }
-body, article, section, h1, h2, h3, h4, p {
+html, body {
+    height: 100%;
+}
+body, section, h1 {
     margin: 0;
 }
-article, section {
+section {
+    font-family: serif;
     display: block;
-}
-h1, h2, h3, h4 {
-    font-weight: normal;
 }
 a {
     text-decoration: none;
     color: #0a272b;
     font-size: 16px;
     display: inline-block;
-    margin-right: 10px;
+    margin: 14px 10px;
 }
 a:hover {
     text-decoration: underline;
@@ -26,24 +27,28 @@ body {
     background: #fff;
     word-break: break-all;
     overflow-x: hidden;
+    text-align: center;
 }
-
-#main {
-    border-top: 3px solid #333;
+body:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
-
+.center {
+    display: inline-block;
+    vertical-align: middle;
+}
 header {
-    margin-left: 70px;
     position: relative;
-    width: 744px;
-    height: 552px;
-    transform: scale(.5);
-    -webkit-transform: scale(.5);
-    -moz-transform: scale(.5);
+    width: 372px;
+    height: 276px;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 50px;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
 }
-
 #canvas {
     position: relative;
     width: 100%;
@@ -67,11 +72,6 @@ header {
     background: -webkit-linear-gradient(45deg, #ce4cd4 0%,#0a94d5 100%);
     background: linear-gradient(45deg, #ce4cd4 0%,#0a94d5 100%);
 }
-canvas {
-    position: absolute;
-    top: 0;
-    display: block;
-}
 
 #svg {
     position: absolute;
@@ -85,45 +85,19 @@ svg {
     height: 100%;
 }
 
-article {
-    margin-left: 148px;
-    line-height: 1.6;
-    font-family: sans-serif;
-    padding-bottom: 60px;
-}
-article.font {
-    font-family: 'Sansation_Light', sans-serif;
-}
 h1 {
-    font-size: 20px;
+    font-weight: normal;
+    font-size: 24px;
     color: #1d1f22;
 }
-h3 {
-    font-size: 14px;
-    color: #999;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+.font {
+    font-family: 'Sansation_Light', serif!important;
 }
-#info {
-    margin-bottom: 40px;
+
+body.retina header {
+    transform: scale(.5);
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    margin-bottom: 0;
 }
-@media screen and (max-width: 600px) {
-    header {
-        margin-left: 0;
-    }
-    article {
-        margin-left: 80px;
-        margin-right: 20px;
-    }
-}
-@media screen and (max-width: 400px) {
-    header {
-        transform: scale(.4);
-        -webkit-transform: scale(.4);
-        -moz-transform: scale(.4);
-    }
-    article {
-        margin-left: 20px;
-    }
-}
+
