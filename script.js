@@ -23,22 +23,22 @@ for (var i = 0; i < col; i ++) {
 
     for (var j = 0; j < row; j ++) {
 
-        var mark = '#f9f9f9';
+        var mark = '';
 
         for (var k = 0; k < grid.length; k ++) {
             if (i == grid[k][0] && j == grid[k][1]) {
-                mark = 'grey';
+                mark = 'tf';
                 break;
             }
         }
 
-        html += '<div style="font-size:10px;float:left;width:12px;height:12px;background:'+ mark +'"></div>'
+        html += '<div style="font-size:10px;float:left;width:30px;height:30px" class="'+ mark +'"></div>'
 
     }
 
 }
 
 document.getElementById('test').innerHTML = html;
-document.getElementById('test').style.width = 31 * 12 +'px';
-document.getElementById('test').style.height = 23 * 12 +'px';
+document.getElementById('test').style.width = 31 * 30 +'px';
+document.getElementById('test').style.height = 23 * 30 +'px';
     
