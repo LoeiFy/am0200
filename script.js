@@ -28,13 +28,13 @@ for (var i = 0; i < col; i ++) {
 
         for (var k = 0; k < grid.length; k ++) {
             if (i == grid[k][0] && j == grid[k][1]) {
-                mark = 'tf';
-                bg = 'background-position:'+ -j*30 +'px '+ -i*30 +'px';
+                mark = 'class="tf"';
+                bg = '<div style="background-position:'+ -j*30 +'px '+ -i*30 +'px"></div>';
                 break;
             }
         }
 
-        html += '<div style="font-size:10px;float:left;width:30px;height:30px;'+ bg +'" class="'+ mark +'"></div>'
+        html += '<div style="font-size:10px;float:left;width:30px;height:30px;" '+ mark +'>'+ bg +'</div>'
 
     }
 
