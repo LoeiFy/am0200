@@ -138,16 +138,22 @@ body.retina #canvas img {
 
 
 #test {
+    background: url(cover.jpg) no-repeat center;
 }
 #test div {
+    /*
     background: #f9f9f9;
+    */
 }
 
 #test div.tf {
-    transition: transform 1s;
+    transition: transform .7s;
     transform-style: preserve-3d;
     position: relative;
+    /*
     background: grey;
+    */
+    transform: rotateY(180deg);
 }
 #test .tf:before, #test .tf:after {
     content: '';
