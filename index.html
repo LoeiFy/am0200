@@ -17,7 +17,9 @@
 
 <header>
 
-    <div id="canvas"></div>
+    <div id="canvas">
+        <img src="background.jpg" alt="background" />
+    </div>
     <div id="svg">
         <svg>
             <defs>
@@ -41,12 +43,60 @@
 </section>
 
 </div>
+
+
+<div id="test" style="width: 372px; height: 276px; overflow: hidden; position: absolute; left: 12px; top: 100px;"></div>
+<div id="draggable-element" style="cursor:move; position:absolute; top: 0; left: 0; width: 12px; height: 12px; background: red"></div>
     
 <img src="background.jpg" alt="background" style="display: none;" />
 <span style="display:none" class="font"> </span>
 
 <script>if (window.devicePixelRatio > 1) document.body.classList.add('retina')</script>
-<script src="particles.js"></script>
 <script src="script.js"></script>
+
+<script>
+
+var selected = null, // Object of the element to be moved
+    x_pos = 0, y_pos = 0, // Stores x & y coordinates of the mouse pointer
+    x_elem = 0, y_elem = 0; // Stores top, left values (edge) of the element
+
+// Will be called when user starts dragging an element
+function _drag_init(elem) {
+    // Store the object of the element which needs to be moved
+    selected = elem;
+    x_elem = x_pos - selected.offsetLeft;
+    y_elem = y_pos - selected.offsetTop;
+}
+
+// Will be called when user dragging an element
+function _move_elem(e) {
+    x_pos = document.all ? window.event.clientX : e.pageX;
+    y_pos = document.all ? window.event.clientY : e.pageY;
+    if (selected !== null) {
+        selected.style.left = (x_pos - x_elem) + 'px';
+        selected.style.top = (y_pos - y_elem) + 'px';
+    }
+}
+
+// Destroy the object when we are done
+function _destroy() {
+    selected = null;
+}
+
+// Bind the functions...
+document.getElementById('draggable-element').onmousedown = function () {
+    _drag_init(this);
+    return false;
+};
+document.getElementById('test').onmousedown = function () {
+    _drag_init(this);
+    return false;
+};
+
+document.onmousemove = _move_elem;
+document.onmouseup = _destroy;
+
+</script>
+
 </body>
 </html>
