@@ -100,6 +100,6 @@ setTimeout(function() {
         start ++
         t()
     }
-}, 100)
+}, 300)
 }
     
