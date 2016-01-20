@@ -168,6 +168,7 @@ body.retina #canvas img {
     transform: rotateY(180deg);
     background-color: transparent;
     background-image: url(cover.jpg);
+    background-size: 372px 276px;
 }
 #test .tf:hover {
     transform: rotateY(180deg);
