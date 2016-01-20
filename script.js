@@ -1,17 +1,23 @@
 
+Array.prototype.shuffle = function() {
+    var i = this.length, p, t;
+    while (i--) {
+        p = Math.floor(Math.random()*i);
+        t = this[i];
+        this[i] = this[p];
+        this[p] = t;
+    }
+    return this
+}
+
+console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy")
 
 window.onload = function() {
 
-    document.getElementById('canvas').classList.add('image')
-
-    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy")
-    console.log("%c loeify.github.com %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy/loeify.github.com")
-    console.log("%c particles.js %c","background:#24272A; color:#ffffff","","https://github.com/VincentGarreau/particles.js/")
-    console.log("%c font %c","background:#24272A; color:#ffffff","","Sansation")
 
 }
 
-var gridWidth = 12,
+var grid_width = 10,
     row = 31,
     col = 21;
 
@@ -45,49 +51,33 @@ for (var i = 0; i < col; i ++) {
 
     for (var j = 0; j < row; j ++) {
 
-        var mark = '', bg = '';
+        var _id = '', _class = '', _child = '';
 
         for (var k = 0; k < grid.length; k ++) {
+
             if (i == grid[k][0] && j == grid[k][1]) {
-                mark = 'class="tf"';
-                bg = '<div style="background-position:'+ -j*30 +'px '+ -i*30 +'px"></div>';
+                _id = 'id="w'+ i +'h'+ j +'"';
+                _class = 'class="cover"';
+                _child = '<div style="background-position:'+ -j * grid_width +'px '+ -i * grid_width +'px"></div>';
                 break;
             }
+
         }
 
-        html += '<div id="w'+ i +'h'+ j +'" style="font-size:10px;float:left;width:30px;height:30px;" '+ mark +'>'+ bg +'</div>'
+        html += '<div style="width:'+ grid_width +'px;height:'+ grid_width +'px" '+ _id + _class +'>'+ _child +'</div>'
 
     }
 
 }
 
-document.getElementById('test').innerHTML = html;
-document.getElementById('test').style.width = 31 * 30 +'px';
-document.getElementById('test').style.height = 21 * 30 +'px';
+var dinosaur = document.getElementById('dinosaur');
 
+dinosaur.innerHTML = html;
+dinosaur.style.width = row * grid_width +'px';
+dinosaur.style.height = col * grid_width +'px';
 
-/*
-document.getElementById('test').addEventListener('mouseover', function(e) {
-    if (e.target.classList.contains('tf')) {
-        e.target.classList.add('active')
-    }
-}, false)
-*/
-
-// shuffle Array
-Array.prototype.shuffle = function() {
-    var i = this.length, p, t;
-    while (i--) {
-        p = Math.floor(Math.random()*i);
-        t = this[i];
-        this[i] = this[p];
-        this[p] = t;
-    }
-    return this
-}
-
-// return shuffle covers
-grid = grid.shuffle();
+// grid = grid.shuffle();
+// grid = grid.reverse();
 
 var start = 0;
 
@@ -100,6 +90,6 @@ setTimeout(function() {
         start ++
         t()
     }
-}, 300)
+}, 150)
 }
     
