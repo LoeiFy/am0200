@@ -14,6 +14,12 @@ console.log("%c Github %c","background:#24272A; color:#ffffff","","https://githu
 
 window.onload = function() {
 
+    document.getElementsByTagName('h1')[0].classList.add('font')
+
+    var a = document.getElementsByTagName('a');
+    Array.prototype.forEach.call(a, function(el, i){
+        el.classList.add('font')
+    })
 
 }
 
@@ -58,13 +64,13 @@ for (var i = 0; i < col; i ++) {
             if (i == grid[k][0] && j == grid[k][1]) {
                 _id = 'id="w'+ i +'h'+ j +'"';
                 _class = 'class="cover"';
-                _child = '<div style="background-position:'+ -j * grid_width +'px '+ -i * grid_width +'px"></div>';
+                _child = '<div style="background-size:'+ row * grid_width +'px '+ col * grid_width +'px;background-position:'+ -j * grid_width +'px '+ -i * grid_width +'px"></div>';
                 break;
             }
 
         }
 
-        html += '<div style="width:'+ grid_width +'px;height:'+ grid_width +'px" '+ _id + _class +'>'+ _child +'</div>'
+        html += '<div style="width:'+ grid_width +'px;height:'+ grid_width +'px" '+ _id + _class +'>'+ _child +'</div>';
 
     }
 
@@ -76,20 +82,20 @@ dinosaur.innerHTML = html;
 dinosaur.style.width = row * grid_width +'px';
 dinosaur.style.height = col * grid_width +'px';
 
-// grid = grid.shuffle();
-// grid = grid.reverse();
-
-var start = 0;
-
-t()
-
-function t() {
-setTimeout(function() {
-    document.getElementById('w'+ grid[start][0] +'h'+ grid[start][1]).classList.add('active')
-    if (start < grid.length - 1) {
-        start ++
-        t()
-    }
-}, 150)
+if (Math.random() > 0.5) {
+    grid = grid.shuffle()
 }
-    
+
+var _start = 0, _time;
+
+;(_time = function() {
+
+    setTimeout(function() {
+        document.getElementById('w'+ grid[_start][0] +'h'+ grid[_start][1]).classList.add('active')
+        if (_start < grid.length - 1) {
+            _start ++
+            _time()
+        }
+    }, 100)
+
+}).call(this)
