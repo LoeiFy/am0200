@@ -49,6 +49,37 @@ h1 {
 #dinosaur {
     display: inline-block;
     overflow: hidden;
+    position: relative;
+}
+#dinosaur:after {
+    content: '';
+    border: 3px solid transparent;
+    border-top-color: #7d7d7d;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -13px;
+    margin-top: -13px;
+    -webkit-animation:loading 1s linear forwards infinite;
+    -moz-animation:loading 1s linear forwards infinite;
+}
+#dinosaur.loaded:after {
+    display: none;
+}
+@-webkit-keyframes loading {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes loading {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
 }
 #dinosaur > div {
     float: left;
