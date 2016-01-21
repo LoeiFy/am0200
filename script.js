@@ -16,9 +16,8 @@ window.onload = function() {
 
     document.getElementsByTagName('h1')[0].classList.add('font')
 
-    var a = document.getElementsByTagName('a');
-    Array.prototype.forEach.call(a, function(el, i){
-        el.classList.add('font')
+    Array.prototype.forEach.call(document.getElementsByTagName('a'), function(e, i){
+        e.classList.add('font')
     })
 
 }
@@ -64,7 +63,7 @@ for (var i = 0; i < col; i ++) {
             if (i == grid[k][0] && j == grid[k][1]) {
                 _id = 'id="w'+ i +'h'+ j +'"';
                 _class = 'class="cover"';
-                _child = '<div style="background-size:'+ row * grid_width +'px '+ col * grid_width +'px;background-position:'+ -j * grid_width +'px '+ -i * grid_width +'px"></div>';
+                _child = '<div style="-moz-background-size:'+ row * grid_width +'px '+ col * grid_width +'px;-webkit-background-size:'+ row * grid_width +'px '+ col * grid_width +'px;background-size:'+ row * grid_width +'px '+ col * grid_width +'px;background-position:'+ -j * grid_width +'px '+ -i * grid_width +'px"></div>';
                 break;
             }
 
