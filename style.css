@@ -97,3 +97,12 @@ h1 {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 16px;
+    }
+    a {
+        font-size: 14px;
+    }
+}
