@@ -28,7 +28,7 @@ a {
     color: #717171;
     font-size: 16px;
     display: inline-block;
-    margin: 14px 10px;
+    margin: 14px 10px 10px;
 }
 a:hover {
     text-decoration: underline;
@@ -47,6 +47,7 @@ h1 {
 }
 
 #dinosaur {
+    margin-top: 10px;
     display: inline-block;
     overflow: hidden;
     position: relative;
