@@ -8,23 +8,22 @@ var uglify      = require('gulp-uglify');
 var sourcemaps  = require('gulp-sourcemaps');
 var livereload  = require('gulp-livereload');
 
-
 gulp.task('build', function () {
-    return browserify({entries: './src/js/app.js', debug: true})
+    return browserify({entries: './src/la.js', debug: true})
         .transform('babelify', { presets: ['es2015', 'stage-0'] })
         .bundle()
-        .pipe(source('app.js'))
+        .pipe(source('la.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(uglify())
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./dist/js'))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./'))
         .pipe(livereload())
 })
 
 gulp.task('watch', ['build'], function () {
     livereload.listen()
-    gulp.watch('./src/js/*.js', ['build'])
+    gulp.watch('./src/*.js', ['build'])
 })
 
 gulp.task('default', ['watch'])
