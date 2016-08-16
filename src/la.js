@@ -451,7 +451,7 @@ function activateRandom() {
         return;
     }
 
-    nextRandomAt = now + _.random(300, 1000);
+    nextRandomAt = now + _.random(100, 1000);
 
     createRandomCell();
 }
@@ -807,101 +807,7 @@ const shape = {
     },
 };
 
-let timer;
-
-function queue() {
-    const text = 'BBAE';
-
-    let i = 0;
-    const max = text.length;
-
-    const run = () => {
-        if (i >= max) return;
-
-        shape.print(text.slice(0, ++i));
-        timer = setTimeout(run, 1e3 + i);
-    };
-
-    run();
-}
-
-function countdown() {
-    const arr = _.range(3, 0, -1);
-
-    let i = 0;
-    const max = arr.length;
-
-    const run = () => {
-        if (i >= max) {
-            shape.clear();
-            return galaxy();
-        }
-
-        shape.print(arr[i++]);
-        setTimeout(run, 1e3 + i);
-    };
-
-    run();
-}
-
-function galaxy() {
-    shape.spiral({
-        radius: 0,
-        increment: 1,
-        lifeTime: 100,
-        electronCount: 1,
-    });
-
-    timer = setTimeout(galaxy, 16);
-}
-
-function ring() {
-    shape.spiral();
-
-    timer = setTimeout(ring, 16);
-}
-
-document.getElementById('input').addEventListener('keypress', ({ keyCode, target }) => {
-    if (keyCode === 13) {
-        clearTimeout(timer);
-        const value = target.value.trim();
-        target.value = '';
-
-        switch (value) {
-            case '#destroy':
-                return shape.destroy();
-
-            case '#init':
-                return shape.init();
-
-            case '#explode':
-                return shape.explode();
-
-            case '#clear':
-                return shape.clear();
-
-            case '#queue':
-                return queue();
-
-            case '#countdown':
-                return countdown();
-
-            case '#galaxy':
-                shape.clear();
-                return galaxy();
-
-            case '#ring':
-                shape.clear();
-                return ring();
-
-            default:
-                return shape.print(value);
-        }
-    }
-});
-
-shape.init();
-shape.print('BBAE');
+shape.init()
 
 // prevent zoom
 document.addEventListener('touchmove', e => e.preventDefault());
