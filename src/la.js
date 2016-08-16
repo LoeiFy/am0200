@@ -1,12 +1,12 @@
-const STEP_LENGTH = 1;
-const CELL_SIZE = 10;
+const STEP_LENGTH = 3;
+const LIFE_TIME = 10;
+const CELL_SIZE = 16;
 const BORDER_WIDTH = 2;
-const MAX_FONT_SIZE = 500;
-const MAX_ELECTRONS = 100;
+const MAX_ELECTRONS = 5;
 const CELL_DISTANCE = CELL_SIZE + BORDER_WIDTH;
 
 const BG_COLOR = '#1d2227';
-const BORDER_COLOR = '#13191f';
+const BORDER_COLOR = '#1d2227';
 const CELL_HIGHLIGHT = '#328bf6';
 const ELECTRON_COLOR = '#00b07c';
 
@@ -131,7 +131,7 @@ class Electron {
         x = 0,
         y = 0,
         {
-            lifeTime = 3 * 1e3,
+            lifeTime = LIFE_TIME * 1e3,
             speed = STEP_LENGTH,
             color = ELECTRON_COLOR,
         } = {}
@@ -261,22 +261,6 @@ class Cell {
         this.startX = col * CELL_DISTANCE;
     }
 
-    paintNextTo(layer = new FullscreenCanvas()) {
-        const {
-            startX,
-            startY,
-            background
-        } = this;
-
-        this.createElectrons();
-
-        layer.paint(ctx => {
-            ctx.globalCompositeOperation = 'lighter';
-            ctx.fillStyle = background;
-            ctx.fillRect(startX, startY, CELL_SIZE, CELL_SIZE);
-        });
-    }
-
     popRandom(arr = []) {
         const ramIdx = _.random(arr.length - 1);
 
@@ -324,7 +308,7 @@ function createRandomCell(options = {}) {
         options,
     );
 
-    cell.paintNextTo(mainLayer);
+    cell.createElectrons()
 }
 
 function drawGrid() {
