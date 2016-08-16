@@ -5,25 +5,14 @@ const MAX_FONT_SIZE = 500;
 const MAX_ELECTRONS = 100;
 const CELL_DISTANCE = CELL_SIZE + BORDER_WIDTH;
 
-// shorter for brighter paint
-// be careful of performance issue
-const CELL_REPAINT_INTERVAL = [
-    300, // from
-    500, // to
-];
-
 const BG_COLOR = '#1d2227';
 const BORDER_COLOR = '#13191f';
 const CELL_HIGHLIGHT = '#328bf6';
 const ELECTRON_COLOR = '#00b07c';
-const FONT_COLOR = '#ff5353';
-
-const FONT_FAMILY = 'Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuan Yi Micro Hei", sans-serif';
 
 const DPR = window.devicePixelRatio || 1;
 
 const ACTIVE_ELECTRONS = [];
-const PINNED_CELLS = [];
 
 const MOVE_TRAILS = [
     [0, 1], // down
@@ -84,12 +73,6 @@ class FullscreenCanvas {
         context.scale(scale, scale);
     }
 
-    clear() {
-        const { context } = this;
-
-        context.clearRect(0, 0, this.width, this.height);
-    }
-
     makeCallback(fn) {
         fn(this.context, this);
     }
@@ -104,8 +87,6 @@ class FullscreenCanvas {
     }
 
     paint(fn) {
-        if (!_.isFunction(fn)) return;
-
         const { context } = this;
 
         context.save();
@@ -117,17 +98,7 @@ class FullscreenCanvas {
         return this;
     }
 
-    repaint(fn) {
-        if (!_.isFunction(fn)) return;
-
-        this.clear();
-
-        return this.paint(fn);
-    }
-
     onResize(fn) {
-        if (!_.isFunction(fn)) return;
-
         this.resizeHandlers.push(fn);
     }
 
@@ -153,14 +124,6 @@ class FullscreenCanvas {
         target.appendChild(canvas);
     }
 
-    remove() {
-        if (!this.container) return;
-
-        try {
-            window.removeEventListener('resize', this.handleResize);
-            this.container.removeChild(this.canvas);
-        } catch (e) {}
-    }
 }
 
 class Electron {
@@ -298,35 +261,13 @@ class Cell {
         this.startX = col * CELL_DISTANCE;
     }
 
-    delay(ms = 0) {
-        this.pin(ms * 1.5);
-        this.nextUpdate = Date.now() + ms;
-    }
-
-    pin(lifeTime = -1 >>> 1) {
-        this.expireAt = Date.now() + lifeTime;
-
-        PINNED_CELLS.push(this);
-    }
-
-    scheduleUpdate(
-        t1 = CELL_REPAINT_INTERVAL[0],
-        t2 = CELL_REPAINT_INTERVAL[1],
-    ) {
-        this.nextUpdate = Date.now() + _.random(t1, t2);
-    }
-
     paintNextTo(layer = new FullscreenCanvas()) {
         const {
             startX,
             startY,
-            background,
-            nextUpdate,
+            background
         } = this;
 
-        if (nextUpdate && Date.now() < nextUpdate) return;
-
-        this.scheduleUpdate();
         this.createElectrons();
 
         layer.paint(ctx => {
@@ -372,21 +313,6 @@ class Cell {
 const bgLayer = new FullscreenCanvas();
 const mainLayer = new FullscreenCanvas();
 
-function stripOld(limit = 1000) {
-    const now = Date.now();
-
-    for (let i = 0, max = ACTIVE_ELECTRONS.length; i < max; i++) {
-        const e = ACTIVE_ELECTRONS[i];
-
-        if (e.expireAt - now < limit) {
-            ACTIVE_ELECTRONS.splice(i, 1);
-
-            i--;
-            max--;
-        }
-    }
-}
-
 function createRandomCell(options = {}) {
     if (ACTIVE_ELECTRONS.length >= MAX_ELECTRONS) return;
 
@@ -420,25 +346,20 @@ function drawGrid() {
     });
 }
 
-function iterateItemsIn(list) {
+function drawItems() {
     const now = Date.now();
 
-    for (let i = 0, max = list.length; i < max; i++) {
-        const item = list[i];
+    for (let i = 0, max = ACTIVE_ELECTRONS.length; i < max; i++) {
+        const item = ACTIVE_ELECTRONS[i];
 
         if (now >= item.expireAt) {
-            list.splice(i, 1);
+            ACTIVE_ELECTRONS.splice(i, 1);
             i--;
             max--;
         } else {
             item.paintNextTo(mainLayer);
         }
     }
-}
-
-function drawItems() {
-    iterateItemsIn(PINNED_CELLS);
-    iterateItemsIn(ACTIVE_ELECTRONS);
 }
 
 let nextRandomAt;
@@ -481,32 +402,6 @@ const shape = {
     lastMatrix: null,
     renderID: undefined,
     isAlive: false,
-
-    get electronOptions() {
-        return {
-            speed: 2,
-            color: FONT_COLOR,
-            lifeTime: _.random(300, 500),
-        };
-    },
-
-    get cellOptions() {
-        return {
-            background: FONT_COLOR,
-            electronCount: _.random(1, 4),
-            electronOptions: this.electronOptions,
-        };
-    },
-
-    get explodeOptions() {
-        return {
-            ...this.cellOptions,
-            electronOptions: {
-                ...this.electronOptions,
-                lifeTime: _.random(500, 1500),
-            },
-        };
-    },
 
     init(container = document.body) {
         if (this.isAlive) {

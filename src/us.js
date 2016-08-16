@@ -67,22 +67,6 @@ return setTimeout(function() {
 }, wait);
 });
 
-// Establish the root object, `window` (`self`) in the browser, `global`
-// on the server, or `this` in some virtual machines. We use `self`
-// instead of `window` for `WebWorker` support.
-var root = typeof self == 'object' && self.self === self && self ||
-        typeof global == 'object' && global.global === global && global ||
-        this;
-
-// Optimize `isFunction` if appropriate. Work around some typeof bugs in old v8,
-// IE 11 (#1621), Safari 8 (#1929), and PhantomJS (#2236).
-var nodelist = root.document && root.document.childNodes;
-if (typeof /./ != 'function' && typeof Int8Array != 'object' && typeof nodelist != 'function') {
-_.isFunction = function(obj) {
-  return typeof obj == 'function' || false;
-};
-}
-
 // Return a random integer between min and max (inclusive).
 _.random = function(min, max) {
 if (max == null) {
