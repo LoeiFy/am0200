@@ -1,12 +1,14 @@
+// http://codepen.io/idiotWu/full/AXgbWy/
+
 const STEP_LENGTH = 3;
 const LIFE_TIME = 10;
-const CELL_SIZE = 16;
+const CELL_SIZE = 20;
 const BORDER_WIDTH = 2;
-const MAX_ELECTRONS = 5;
+const MAX_ELECTRONS = 3;
 const CELL_DISTANCE = CELL_SIZE + BORDER_WIDTH;
 
-const BG_COLOR = '#1d2227';
-const ELECTRON_COLOR = '#00b07c';
+const BG_COLOR = '#26303a';
+const ELECTRON_COLOR = '#d34b6a';
 
 const DPR = window.devicePixelRatio || 1;
 
@@ -403,31 +405,14 @@ function render() {
     drawItems();
     activateRandom();
 
-    shape.renderID = requestAnimationFrame(render);
+    requestAnimationFrame(render)
 }
 
-const shape = {
-    renderID: undefined,
-    isAlive: false,
+// start
+bgLayer.onResize(drawGrid)
+mainLayer.onResize(prepaint)
+mainLayer.renderIntoView(document.body)
+prepaint()
+render()
 
-    init(container = document.body) {
-        if (this.isAlive) {
-            return;
-        }
-
-        bgLayer.onResize(drawGrid);
-        mainLayer.onResize(prepaint);
-
-        mainLayer.renderIntoView(container);
-
-        prepaint();
-        render();
-
-        this.isAlive = true;
-    }
-};
-
-shape.init()
-
-// prevent zoom
 document.addEventListener('touchmove', e => e.preventDefault());

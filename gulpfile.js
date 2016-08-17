@@ -8,11 +8,11 @@ var uglify      = require('gulp-uglify');
 var sourcemaps  = require('gulp-sourcemaps');
 var livereload  = require('gulp-livereload');
 
-gulp.task('build', function () {
-    return browserify({entries: './src/la.js', debug: true})
+gulp.task('develop', function () {
+    return browserify({entries: './src/index.js', debug: true})
         .transform('babelify', { presets: ['es2015', 'stage-0'] })
         .bundle()
-        .pipe(source('la.js'))
+        .pipe(source('index.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(uglify())
@@ -21,9 +21,20 @@ gulp.task('build', function () {
         .pipe(livereload())
 })
 
-gulp.task('watch', ['build'], function () {
-    livereload.listen()
-    gulp.watch('./src/*.js', ['build'])
+gulp.task('build', function () {
+    return browserify({entries: './src/index.js', debug: true})
+        .transform('babelify', { presets: ['es2015', 'stage-0'] })
+        .bundle()
+        .pipe(source('index.js'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('./'))
 })
 
-gulp.task('default', ['watch'])
+gulp.task('watch', ['develop'], function () {
+    livereload.listen()
+    gulp.watch('./src/*.js', ['develop'])
+})
+
+gulp.task('dev', ['watch'])
+gulp.task('default', ['build'])
