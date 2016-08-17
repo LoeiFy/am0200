@@ -6,8 +6,6 @@ const MAX_ELECTRONS = 5;
 const CELL_DISTANCE = CELL_SIZE + BORDER_WIDTH;
 
 const BG_COLOR = '#1d2227';
-const BORDER_COLOR = '#1d2227';
-const CELL_HIGHLIGHT = '#328bf6';
 const ELECTRON_COLOR = '#00b07c';
 
 const DPR = window.devicePixelRatio || 1;
@@ -30,6 +28,45 @@ const END_POINTS_OFFSET = [
     x * CELL_DISTANCE - BORDER_WIDTH / 2,
     y * CELL_DISTANCE - BORDER_WIDTH / 2,
 ]);
+
+const _ = {
+    random(min, max) {
+        if (max == null) {
+            max = min;
+            min = 0;
+        }
+        return min + Math.floor(Math.random() * (max - min + 1))
+    },
+    debounce(func, wait) {
+        let timeout, args, context, timestamp, result;
+
+        const later = function() {
+            let last = Date.now - timestamp;
+
+            if (last < wait && last >= 0) {
+                timeout = setTimeout(later, wait - last);
+            } else {
+                timeout = null;
+                result = func.apply(context, args);
+                if (!timeout) {
+                    context = args = null
+                }
+            }
+        };
+
+        return function() {
+            context = this;
+            args = arguments;
+            timestamp = Date.now;
+
+            if (!timeout) {
+                timeout = setTimeout(later, wait)
+            }
+
+            return result
+        }
+    }
+};
 
 class FullscreenCanvas {
     constructor(disableScale = false) {
@@ -315,19 +352,7 @@ function drawGrid() {
     bgLayer.paint((ctx, { width, height }) => {
         ctx.fillStyle = BG_COLOR;
         ctx.fillRect(0, 0, width, height);
-
-        ctx.fillStyle = BORDER_COLOR;
-
-        // horizontal lines
-        for (let h = CELL_SIZE; h < height; h += CELL_DISTANCE) {
-            ctx.fillRect(0, h, width, BORDER_WIDTH);
-        }
-
-        // vertical lines
-        for (let w = CELL_SIZE; w < width; w += CELL_DISTANCE) {
-            ctx.fillRect(w, 0, BORDER_WIDTH, height);
-        }
-    });
+    })
 }
 
 function drawItems() {
@@ -382,8 +407,6 @@ function render() {
 }
 
 const shape = {
-    lastText: '',
-    lastMatrix: null,
     renderID: undefined,
     isAlive: false,
 
@@ -402,7 +425,6 @@ const shape = {
 
         this.isAlive = true;
     }
-
 };
 
 shape.init()
