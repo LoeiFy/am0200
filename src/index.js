@@ -7,7 +7,7 @@ const BORDER_WIDTH = 2;
 const MAX_ELECTRONS = 3;
 const CELL_DISTANCE = CELL_SIZE + BORDER_WIDTH;
 
-const BG_COLOR = '#26303a';
+const BG_COLOR = '#263238';
 const ELECTRON_COLOR = '#d34b6a';
 
 const DPR = window.devicePixelRatio || 1;
@@ -416,3 +416,36 @@ prepaint()
 render()
 
 document.addEventListener('touchmove', e => e.preventDefault());
+
+//
+//
+//
+
+const HTML = `{
+    <p>Bio:<span>"Web/UI Designer and Front-end Developer"</span></p>
+    <p>Email:<span><a target="_blank" href="mailto:LoeiFy@gmail.com">"LoeiFy@gmail.com"</a></span></p>
+    <p>Github: <span><a target="_blank" href="https://github.com/LoeiFy">"https://github.com/LoeiFy"</a></span></p>
+    }`;
+
+const CODE = document.querySelector('.code');
+
+let ct = 0
+
+let inty = setInterval(function() {
+
+    CODE.innerHTML = HTML.substr(0, ct) + '<span class="typing">|</span>';
+
+    ct ++;
+    
+    if (HTML.length < ct) {
+
+        clearInterval(inty)
+
+    /*
+        setTimeout(function() {
+            CODE.innerHTML = HTML[i - 1]
+        }, 400)
+        */
+    }
+
+}, 70)
