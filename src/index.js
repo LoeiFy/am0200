@@ -427,18 +427,41 @@ const HTML = `{
     <p>Github: <span><a target="_blank" href="https://github.com/LoeiFy">"https://github.com/LoeiFy"</a></span></p>
     }`;
 
+const STYLE = `.code p {
+        margin-left: 20px;
+    }
+    .code a {
+        color: #fff;
+    }`;
+
 const CODE = document.querySelector('.code');
+const CSS = document.querySelector('.css');
 
 let ct = 0;
+let cy = 0;
+
+function ity() {
+    CSS.innerHTML = STYLE.substr(0, cy);
+
+    cy ++;
+
+    if (STYLE.length >= cy) {
+        setTimeout(ity, 150)
+    }
+}
 
 function itv() {
-    CODE.innerHTML = HTML.substr(0, ct) + '<em>|</em>';
+    CODE.innerHTML = HTML.substr(0, ct) +'<em>|</em>';
 
     ct ++;
 
     if (HTML.length >= ct) {
         setTimeout(itv, 150)
+    } else {
+        ity()
     }
 }
 
 itv()
+
+
