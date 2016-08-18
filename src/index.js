@@ -429,23 +429,16 @@ const HTML = `{
 
 const CODE = document.querySelector('.code');
 
-let ct = 0
+let ct = 0;
 
-let inty = setInterval(function() {
-
-    CODE.innerHTML = HTML.substr(0, ct) + '<span class="typing">|</span>';
+function itv() {
+    CODE.innerHTML = HTML.substr(0, ct) + '<em>|</em>';
 
     ct ++;
-    
-    if (HTML.length < ct) {
 
-        clearInterval(inty)
-
-    /*
-        setTimeout(function() {
-            CODE.innerHTML = HTML[i - 1]
-        }, 400)
-        */
+    if (HTML.length >= ct) {
+        setTimeout(itv, 150)
     }
+}
 
-}, 70)
+itv()
