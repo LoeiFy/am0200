@@ -423,16 +423,18 @@ document.addEventListener('touchmove', e => e.preventDefault());
 
 const HTML = `{
     <p>Bio:<span>"Web/UI Designer and Front-end Developer"</span></p>
-    <p>Email:<span><a target="_blank" href="mailto:LoeiFy@gmail.com">"LoeiFy@gmail.com"</a></span></p>
-    <p>Github: <span><a target="_blank" href="https://github.com/LoeiFy">"https://github.com/LoeiFy"</a></span></p>
+    <p>Email:<a>"LoeiFy@gmail.com"</a></p>
+    <p>Github: <a>"https://github.com/LoeiFy"</a></p>
     }`;
 
-const STYLE = `.code p {
-        margin-left: 20px;
-    }
-    .code a {
-        color: #fff;
-    }`;
+const STYLE = `
+.code p {
+    margin-left: 20px;
+}
+.code a {
+    color: #fff;
+}
+`;
 
 const CODE = document.querySelector('.code');
 const CSS = document.querySelector('.css');
@@ -450,14 +452,26 @@ function ity() {
     }
 }
 
+function atb() {
+    const a0 = CODE.children[1].querySelector('a');
+    const a1 = CODE.children[2].querySelector('a');
+    
+    a0.setAttribute('target', '_blank')
+    a0.setAttribute('href', 'mailto:LoeiFy@gmail.com')
+
+    a1.setAttribute('target', '_blank')
+    a1.setAttribute('href', 'https://github.com/LoeiFy')
+}
+
 function itv() {
     CODE.innerHTML = HTML.substr(0, ct) +'<em>|</em>';
 
     ct ++;
 
     if (HTML.length >= ct) {
-        setTimeout(itv, 150)
+        setTimeout(itv, 100)
     } else {
+        atb()
         ity()
     }
 }
