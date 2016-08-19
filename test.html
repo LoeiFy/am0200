@@ -46,14 +46,30 @@ body {
     vertical-align: middle;
     display: inline-block;
 }
-style[contenteditable] {
+.style {
     position: absolute;
-    display: block;
-    background: #fff;
     right: 10%;
     top: 10%;
+    background: #242424;
+    padding: 20px 0 10px;
     z-index: 2;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+}
+style[contenteditable] {
+    padding: 0 10px 20px;
+    display: block;
+    background: #000;
     white-space: pre-wrap;
+    color: #eee;
+    font-size: 12px;
+    min-height: 100px;
+    min-width: 200px;
+    outline: none;
+}
+style[contenteditable]:focus {
+    background: #333;
 }
 @-webkit-keyframes flick {
     0% { opacity: 1; }
@@ -88,7 +104,7 @@ style[contenteditable] {
 </head>
 <body>
 
-<div class="cover"><div class="object"></div><style class="css" contenteditable></style></div>
+<div class="cover"><div class="object"></div><div class="style"><style class="css" contenteditable></style></div></div>
 
 </body>
 <script src="index.js"></script>
