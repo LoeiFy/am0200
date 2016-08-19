@@ -443,6 +443,7 @@ const STYLE = `.object {
 
 const CODE = document.querySelector('.object');
 const CSS = document.querySelector('.css');
+const DS = document.querySelector('.style');
 
 let ct = 0;
 let cy = 0;
@@ -469,7 +470,7 @@ function atb() {
     a1.setAttribute('target', '_blank')
     a1.setAttribute('href', 'https://github.com/LoeiFy')
 
-    CSS.style.display = 'block';
+    DS.style.display = 'block';
 }
 
 function itv() {
@@ -487,4 +488,27 @@ function itv() {
 
 itv()
 
+CSS.addEventListener('focus', e => {
+    DS.style.background = '#262c2f';
+})
 
+CSS.addEventListener('blur', e => {
+    DS.style.background = '#000';
+})
+
+CSS.addEventListener('input', e => {
+    console.log(e)
+})
+
+function line(num) {
+    const line = document.querySelector('.line');
+
+    let s = '';
+
+    for (let i = 1; i <= num; i ++) {
+        s += i +'<br />'
+    }
+
+    line.innerHTML = s
+}
+line(12)
