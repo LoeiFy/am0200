@@ -411,7 +411,7 @@ function render() {
 // start
 bgLayer.onResize(drawGrid)
 mainLayer.onResize(prepaint)
-mainLayer.renderIntoView(document.body)
+mainLayer.renderIntoView()
 prepaint()
 render()
 
@@ -422,21 +422,24 @@ document.addEventListener('touchmove', e => e.preventDefault());
 //
 
 const HTML = `{
-    <p>Bio:<span>"Web/UI Designer and Front-end Developer"</span></p>
-    <p>Email:<a>"LoeiFy@gmail.com"</a></p>
+    <p>Bio:    <a>"Web/UI Designer and Front-end Developer"</a>,</p>
+    <p>Email:  <a>"LoeiFy@gmail.com"</a>,</p>
     <p>Github: <a>"https://github.com/LoeiFy"</a></p>
     }`;
 
 const STYLE = `
-.code p {
-    margin-left: 20px;
+.object {
+    color: #d2dee8;
 }
-.code a {
-    color: #fff;
+.object p {
+    margin-left: 40px;
+}
+.object a {
+    color: #93d7f7;
 }
 `;
 
-const CODE = document.querySelector('.code');
+const CODE = document.querySelector('.object');
 const CSS = document.querySelector('.css');
 
 let ct = 0;

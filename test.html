@@ -9,12 +9,28 @@
 <title> Lorem </title>
 <link rel="shortcut icon" href="ico.png">
 <style>
+html, body {
+    height: 100%;
+}
 body {
     margin: 0;
+    line-height: 1;
+    font-family: monospace;
+    font-weight: 300;
 }
-.code {
-    position: relative;
-    z-index: 2;
+.object {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10%;
+    color: #eee;
+    font-size: 14px;
+}
+.object p {
+    white-space: pre;
+}
+.object a {
+    color: #eee;
+    text-decoration: none;
 }
 .cover {
     position: absolute;
@@ -24,10 +40,19 @@ body {
     height: 100%;
     z-index: 1;
 }
+.cover:before {
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+    display: inline-block;
+}
 style[contenteditable] {
-    position: relative;
-    z-index: 2;
+    position: absolute;
     display: block;
+    background: #fff;
+    right: 10%;
+    top: 10%;
+    z-index: 2;
     white-space: pre-wrap;
 }
 @-webkit-keyframes flick {
@@ -48,11 +73,13 @@ style[contenteditable] {
     50% { opacity: 0; }
     99.99% { opacity: 0; }
 }
-.code em {
+.object em {
     display: inline-block;
-    width: 8px;
+    width: 6px;
+    vertical-align: text-bottom;
+    margin-left: 4px;
     background: #fff;
-    color: transparent;
+    text-indent: -9999px;
     -webkit-animation: flick 1s infinite;
     -moz-animation: flick 1s infinite;
     animation: flick 1s infinite;
@@ -61,11 +88,7 @@ style[contenteditable] {
 </head>
 <body>
 
-<div class="cover"></div>
-
-<div class="code"></div>
-
-<style class="css" contenteditable></style>
+<div class="cover"><div class="object"></div><style class="css" contenteditable></style></div>
 
 </body>
 <script src="index.js"></script>
