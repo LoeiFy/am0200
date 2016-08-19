@@ -427,11 +427,13 @@ const HTML = `{
     <p>Github: <a>"https://github.com/LoeiFy"</a></p>
     }`;
 
-const STYLE = `
-.object {
+const STYLE = `.object {
     color: #d2dee8;
+    font-size: 14px;
+    font-family: monospace;
 }
 .object p {
+    white-space: pre;
     margin-left: 40px;
 }
 .object a {
@@ -451,7 +453,9 @@ function ity() {
     cy ++;
 
     if (STYLE.length >= cy) {
-        setTimeout(ity, 150)
+        setTimeout(ity, 100)
+    } else {
+        CSS.setAttribute('contenteditable', true)
     }
 }
 
@@ -464,6 +468,8 @@ function atb() {
 
     a1.setAttribute('target', '_blank')
     a1.setAttribute('href', 'https://github.com/LoeiFy')
+
+    CSS.style.display = 'block';
 }
 
 function itv() {

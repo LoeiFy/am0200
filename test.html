@@ -15,18 +15,15 @@ html, body {
 body {
     margin: 0;
     line-height: 1;
-    font-family: monospace;
-    font-weight: 300;
 }
 .object {
     display: inline-block;
     vertical-align: middle;
     margin-left: 10%;
     color: #eee;
-    font-size: 14px;
 }
 .object p {
-    white-space: pre;
+    margin: 14px 0;
 }
 .object a {
     color: #eee;
@@ -47,6 +44,7 @@ body {
     display: inline-block;
 }
 .style {
+    font-family: monospace;
     position: absolute;
     right: 10%;
     top: 10%;
@@ -57,19 +55,19 @@ body {
     border-top-left-radius: 2px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
 }
-style[contenteditable] {
-    padding: 0 10px 20px;
-    display: block;
+.css {
+    padding: 14px 10px;
     background: #000;
     white-space: pre-wrap;
     color: #eee;
-    font-size: 12px;
+    font-size: 13px;
     min-height: 100px;
-    min-width: 200px;
+    width: 300px;
+    overflow-x: auto;
     outline: none;
 }
-style[contenteditable]:focus {
-    background: #333;
+.css:focus {
+    background: #262c2f;
 }
 @-webkit-keyframes flick {
     0% { opacity: 1; }
@@ -104,7 +102,7 @@ style[contenteditable]:focus {
 </head>
 <body>
 
-<div class="cover"><div class="object"></div><div class="style"><style class="css" contenteditable></style></div></div>
+<div class="cover"><div class="object"></div><div class="style"><style class="css"></style></div></div>
 
 </body>
 <script src="index.js"></script>
