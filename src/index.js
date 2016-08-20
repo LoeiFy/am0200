@@ -523,7 +523,7 @@ let mouse = {};
 let isDown = false;
 
 DS.addEventListener('mousedown', e => {
-    if (e.target.className == 'style') {
+    if (e.target.tagName == 'P') {
         isDown = true;
         offset = [
             DS.offsetLeft - e.clientX,
@@ -533,15 +533,12 @@ DS.addEventListener('mousedown', e => {
 }, false)
 
 DS.addEventListener('touchstart', e => {
-    if (e.target.className == 'style') {
-        isDown = true;
-        offset = [
-            DS.offsetLeft - e.touches[0].clientX,
-            DS.offsetTop - e.touches[0].clientY,
-        ];
-        console.log(offset)
-    }
-})
+    isDown = true;
+    offset = [
+        DS.offsetLeft - e.touches[0].clientX,
+        DS.offsetTop - e.touches[0].clientY,
+    ];
+}, false)
 
 document.addEventListener('mouseup', e => isDown = false)
 document.addEventListener('touchend', e => isDown = false)

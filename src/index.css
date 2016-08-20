@@ -38,20 +38,31 @@ body {
     display: inline-block;
 }
 .style {
-    cursor: move;
     display: none;
     font-family: monospace;
     position: absolute;
     right: 10%;
     top: 10%;
     background: #000;
-    border-top: 20px solid #242424;
-    border-bottom: 10px solid #242424;
+    border-bottom: 6px solid #242424;
     z-index: 2;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
     white-space: nowrap;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    overflow: hidden;
+}
+.style p {
+    cursor: move;
+    font-size: 12px;
+    color: #646464;
+    text-align: center;
+    background: #242424;
+    margin: 0;
+    padding: 6px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 .css {
     display: inline-block;
