@@ -422,9 +422,9 @@ document.addEventListener('touchmove', e => e.preventDefault());
 //
 
 const HTML = `{
-    <p>Bio:    <a>"Web/UI Designer and Front-end Developer"</a>,</p>
-    <p>Email:  <a>"LoeiFy@gmail.com"</a>,</p>
-    <p>Github: <a>"https://github.com/LoeiFy"</a></p>
+    <p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>
+    <p>Email:<a>"LoeiFy@gmail.com"</a>,</p>
+    <p>Github:<a>"https://github.com/LoeiFy"</a></p>
     }`;
 
 const STYLE = `.object {
@@ -433,11 +433,12 @@ const STYLE = `.object {
     color: #d2dee8;
 }
 .object p {
-    white-space: pre;
     margin-left: 40px;
+    line-height: 1.4;
 }
 .object a {
     color: #93d7f7;
+    margin-left: 10px;
 }
 `;
 
@@ -471,8 +472,8 @@ function atb() {
     a1.setAttribute('target', '_blank')
     a1.setAttribute('href', 'https://github.com/LoeiFy')
 
-    DS.style.top = _.random(10, 30) +'%';
-    DS.style.right = _.random(10, 20) +'%';
+    DS.style.top = _.random(8, 20) +'%';
+    DS.style.right = _.random(6, 18) +'%';
     DS.style.display = 'block';
 }
 
@@ -497,6 +498,7 @@ CSS.addEventListener('focus', e => {
 
 CSS.addEventListener('blur', e => {
     DS.style.background = '#000';
+    window.scroll(0, 0)
 })
 
 CSS.addEventListener('input', e => {
@@ -526,11 +528,23 @@ DS.addEventListener('mousedown', e => {
         offset = [
             DS.offsetLeft - e.clientX,
             DS.offsetTop - e.clientY,
-        ]
+        ];
     }
 }, false)
 
+DS.addEventListener('touchstart', e => {
+    if (e.target.className == 'style') {
+        isDown = true;
+        offset = [
+            DS.offsetLeft - e.touches[0].clientX,
+            DS.offsetTop - e.touches[0].clientY,
+        ];
+        console.log(offset)
+    }
+})
+
 document.addEventListener('mouseup', e => isDown = false)
+document.addEventListener('touchend', e => isDown = false)
 
 document.addEventListener('mousemove', e => {
     e.preventDefault()
@@ -539,6 +553,21 @@ document.addEventListener('mousemove', e => {
         mouse = {
             x: e.clientX,
             y: e.clientY
+        }
+
+        DS.style.right = 'auto';
+        DS.style.left = (mouse.x + offset[0]) +'px';
+        DS.style.top = (mouse.y + offset[1]) +'px';
+    }
+})
+
+document.addEventListener('touchmove', e => {
+    e.preventDefault()
+
+    if (isDown) {
+        mouse = {
+            x: e.touches[0].clientX,
+            y: e.touches[0].clientY
         }
 
         DS.style.right = 'auto';
