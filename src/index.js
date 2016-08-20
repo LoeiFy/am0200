@@ -428,9 +428,9 @@ const HTML = `{
     }`;
 
 const STYLE = `.object {
-    color: #d2dee8;
-    font-size: 14px;
     font-family: monospace;
+    font-size: 14px;
+    color: #d2dee8;
 }
 .object p {
     white-space: pre;
@@ -454,6 +454,7 @@ function ity() {
     cy ++;
 
     if (STYLE.length >= cy) {
+        line()
         setTimeout(ity, 100)
     } else {
         CSS.setAttribute('contenteditable', true)
@@ -497,18 +498,18 @@ CSS.addEventListener('blur', e => {
 })
 
 CSS.addEventListener('input', e => {
-    console.log(e)
+    line()
 })
 
-function line(num) {
+function line() {
     const line = document.querySelector('.line');
+    const row = (CSS.offsetHeight - 2 * 14) / 16;
 
     let s = '';
 
-    for (let i = 1; i <= num; i ++) {
+    for (let i = 1; i <= row; i ++) {
         s += i +'<br />'
     }
 
     line.innerHTML = s
 }
-line(12)

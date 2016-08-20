@@ -7,6 +7,7 @@ var buffer      = require('vinyl-buffer');
 var uglify      = require('gulp-uglify');
 var sourcemaps  = require('gulp-sourcemaps');
 var livereload  = require('gulp-livereload');
+var cssmin      = require('gulp-cssmin');
 
 gulp.task('develop', function () {
     return browserify({entries: './src/index.js', debug: true})
@@ -31,10 +32,17 @@ gulp.task('build', function () {
         .pipe(gulp.dest('./'))
 })
 
-gulp.task('watch', ['develop'], function () {
+gulp.task('css', function() {
+    gulp.src('./src/index.css')
+        .pipe(cssmin())
+        .pipe(gulp.dest('./'))
+})
+
+gulp.task('watch', ['develop', 'css'], function () {
     livereload.listen()
     gulp.watch('./src/*.js', ['develop'])
+    gulp.watch('./src/*.css', ['css'])
 })
 
 gulp.task('dev', ['watch'])
-gulp.task('default', ['build'])
+gulp.task('default', ['build', 'css'])
