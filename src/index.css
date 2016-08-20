@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 body {
     margin: 0;
@@ -10,6 +11,9 @@ body {
     vertical-align: middle;
     margin-left: 10%;
     color: #eee;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 .object p {
     margin: 14px 0;
@@ -33,6 +37,7 @@ body {
     display: inline-block;
 }
 .style {
+    cursor: move;
     display: none;
     font-family: monospace;
     position: absolute;
@@ -45,6 +50,7 @@ body {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+    white-space: nowrap;
 }
 .css {
     display: inline-block;
@@ -58,8 +64,10 @@ body {
     overflow-x: auto;
     outline: none;
     vertical-align: top;
+    cursor: text;
 }
 .line {
+    cursor: default;
     display: inline-block;
     vertical-align: top;
     padding: 14px 5px 14px 0;

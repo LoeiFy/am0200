@@ -471,6 +471,8 @@ function atb() {
     a1.setAttribute('target', '_blank')
     a1.setAttribute('href', 'https://github.com/LoeiFy')
 
+    DS.style.top = _.random(10, 30) +'%';
+    DS.style.right = _.random(10, 20) +'%';
     DS.style.display = 'block';
 }
 
@@ -513,3 +515,34 @@ function line() {
 
     line.innerHTML = s
 }
+
+let offset = [];
+let mouse = {};
+let isDown = false;
+
+DS.addEventListener('mousedown', e => {
+    if (e.target.className == 'style') {
+        isDown = true;
+        offset = [
+            DS.offsetLeft - e.clientX,
+            DS.offsetTop - e.clientY,
+        ]
+    }
+}, false)
+
+document.addEventListener('mouseup', e => isDown = false)
+
+document.addEventListener('mousemove', e => {
+    e.preventDefault()
+
+    if (isDown) {
+        mouse = {
+            x: e.clientX,
+            y: e.clientY
+        }
+
+        DS.style.right = 'auto';
+        DS.style.left = (mouse.x + offset[0]) +'px';
+        DS.style.top = (mouse.y + offset[1]) +'px';
+    }
+})
