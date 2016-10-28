@@ -65,7 +65,7 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
 }
-.css {
+.code {
     display: inline-block;
     padding: 14px 10px;
     white-space: pre-wrap;
@@ -124,10 +124,10 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .css {
+    .code {
         width: 240px;
     }
-    .object {
+    .me {
         margin-left: 3%;
     }
 }

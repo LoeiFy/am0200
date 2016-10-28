@@ -10,16 +10,53 @@ var random = function(min, max) {
 
 var html = '{<p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
 
-var css = '.me {\n    font-family: monospace;\n   font-size: 14px;\n  color: #d2dee8;\n}\n.me p {\n   margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #93d7f7;\n    margin-left: 10px;\n}'
+var css = '.me {\n    font-family: monospace;\n    font-size: 14px;\n    color: #d2dee8;\n}\n.me p {\n    margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #93d7f7;\n    margin-left: 10px;\n}\n'
 
 document.addEventListener('DOMContentLoaded', function() {
     var me = document.querySelector('.me')
     var code = document.querySelector('.code')
     var style = document.querySelector('.style')
+    var line = document.querySelector('.line')
 
     var html_index = 0
     var css_index = 0
     var write_html
+
+    var write_line = function() {
+        var row = (code.offsetHeight - 2 * 14) / 16
+        var nums = ''
+
+        for (let i = 1; i <= row; i ++) {
+            nums += i +'<br />'
+        }
+
+        line.innerHTML = nums
+    }
+
+    var write_css = function() {
+        code.innerHTML = css.substr(0, css_index)
+        css_index ++
+
+        if (css.length >= css_index) {
+            write_line()    
+            setTimeout(write_css, 100)
+        } else {
+            code.setAttribute('contenteditable', true)
+
+            code.addEventListener('focus', function() {
+                style.style.background = '#262c2f';
+            })
+
+            code.addEventListener('blur', function() {
+                style.style.background = '#000';
+                window.scroll(0, 0)
+            })
+
+            code.addEventListener('input', function() {
+                write_line()
+            })
+        }
+    }
 
     ;(write_html = function() {
         me.innerHTML = html.substr(0, html_index) +'<em>|</em>'
@@ -35,83 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             as[2].setAttribute('target', '_blank')
             as[2].setAttribute('href', 'https://github.com/LoeiFy')
+
+            style.style.top = random(8, 20) +'%'
+            style.style.right = random(6, 18) +'%'
+            style.style.display = 'block'
+
+            write_css()
         }
-    }).call()
+    })()
 })
 
 /*
-let ct = 0;
-let cy = 0;
-
-function ity() {
-    CSS.innerHTML = STYLE.substr(0, cy);
-
-    cy ++;
-
-    if (STYLE.length >= cy) {
-        line()
-        setTimeout(ity, 100)
-    } else {
-        CSS.setAttribute('contenteditable', true)
-    }
-}
-
-function atb() {
-    const a0 = CODE.children[1].querySelector('a');
-    const a1 = CODE.children[2].querySelector('a');
-    
-    a0.setAttribute('target', '_blank')
-    a0.setAttribute('href', 'mailto:LoeiFy@gmail.com')
-
-    a1.setAttribute('target', '_blank')
-    a1.setAttribute('href', 'https://github.com/LoeiFy')
-
-    DS.style.top = _.random(8, 20) +'%';
-    DS.style.right = _.random(6, 18) +'%';
-    DS.style.display = 'block';
-}
-
-function itv() {
-    CODE.innerHTML = HTML.substr(0, ct) +'<em>|</em>';
-
-    ct ++;
-
-    if (HTML.length >= ct) {
-        setTimeout(itv, 100)
-    } else {
-        atb()
-        ity()
-    }
-}
-
-itv()
-
-CSS.addEventListener('focus', e => {
-    DS.style.background = '#262c2f';
-})
-
-CSS.addEventListener('blur', e => {
-    DS.style.background = '#000';
-    window.scroll(0, 0)
-})
-
-CSS.addEventListener('input', e => {
-    line()
-})
-
-function line() {
-    const line = document.querySelector('.line');
-    const row = (CSS.offsetHeight - 2 * 14) / 16;
-
-    let s = '';
-
-    for (let i = 1; i <= row; i ++) {
-        s += i +'<br />'
-    }
-
-    line.innerHTML = s
-}
-
 let offset = [];
 let mouse = {};
 let isDown = false;
