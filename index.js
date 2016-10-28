@@ -10,12 +10,36 @@ var random = function(min, max) {
 
 var html = '{<p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
 
-var style = '.me {\n    font-family: monospace;\n   font-size: 14px;\n  color: #d2dee8;\n}\n.me p {\n   margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #93d7f7;\n    margin-left: 10px;\n}'
+var css = '.me {\n    font-family: monospace;\n   font-size: 14px;\n  color: #d2dee8;\n}\n.me p {\n   margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #93d7f7;\n    margin-left: 10px;\n}'
 
-const CODE = document.querySelector('.object');
-const CSS = document.querySelector('.css');
-const DS = document.querySelector('.style');
+document.addEventListener('DOMContentLoaded', function() {
+    var me = document.querySelector('.me')
+    var code = document.querySelector('.code')
+    var style = document.querySelector('.style')
 
+    var html_index = 0
+    var css_index = 0
+    var write_html
+
+    ;(write_html = function() {
+        me.innerHTML = html.substr(0, html_index) +'<em>|</em>'
+        html_index ++
+
+        if (html.length >= html_index) {
+            setTimeout(write_html, 100)
+        } else {
+            var as = me.querySelectorAll('a')
+
+            as[1].setAttribute('target', '_blank')
+            as[1].setAttribute('href', 'mailto:LoeiFy@gmail.com')
+
+            as[2].setAttribute('target', '_blank')
+            as[2].setAttribute('href', 'https://github.com/LoeiFy')
+        }
+    }).call()
+})
+
+/*
 let ct = 0;
 let cy = 0;
 
@@ -142,3 +166,4 @@ document.addEventListener('touchmove', e => {
         DS.style.top = (mouse.y + offset[1]) +'px';
     }
 })
+*/

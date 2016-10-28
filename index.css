@@ -5,8 +5,9 @@ html, body {
 body {
     margin: 0;
     line-height: 1;
+    background: #333;
 }
-.object {
+.me {
     display: inline-block;
     vertical-align: middle;
     margin-left: 10%;
@@ -15,10 +16,10 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
 }
-.object p {
+.me p {
     margin: 14px 0;
 }
-.object a {
+.me a {
     color: #eee;
     text-decoration: none;
 }
@@ -110,7 +111,7 @@ body {
     50% { opacity: 0; }
     99.99% { opacity: 0; }
 }
-.object em {
+.me em {
     display: inline-block;
     width: 6px;
     vertical-align: text-bottom;
