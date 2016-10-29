@@ -59,7 +59,7 @@ body {
     background: #fafafa;
     border-bottom: 6px solid #a4acb1;
     z-index: 2;
-    box-shadow: 0 3px 7px rgba(128, 142, 150, .4);
+    box-shadow: 0 3px 20px rgba(128, 142, 150, .7);
     white-space: nowrap;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
@@ -124,8 +124,6 @@ body {
     text-indent: -9999px;
     -webkit-animation: flick 1s infinite;
     animation: flick 1s infinite;
-    position: relative;
-    top: 1px;
 }
 
 @media screen and (max-width: 600px) {
@@ -134,5 +132,9 @@ body {
     }
     .me {
         margin-left: 3%;
+    }
+    .square {
+        border-width: 6px;
+        width: 70%;
     }
 }
