@@ -11,7 +11,7 @@ body {
 
 .square {
     position: absolute;
-    width: 70%;
+    width: 50%;
     height: 70%;
     top: 15%;
     left: 15%;
@@ -56,10 +56,10 @@ body {
     position: absolute;
     right: 10%;
     top: 10%;
-    background: #000;
-    border-bottom: 6px solid #242424;
+    background: #fafafa;
+    border-bottom: 6px solid #a4acb1;
     z-index: 2;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+    box-shadow: 0 3px 7px rgba(128, 142, 150, .4);
     white-space: nowrap;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
@@ -68,9 +68,9 @@ body {
 .style p {
     cursor: move;
     font-size: 12px;
-    color: #646464;
+    color: #e7ecf1;
     text-align: center;
-    background: #242424;
+    background: #a4acb1;
     margin: 0;
     padding: 6px 0;
     user-select: none;
@@ -80,7 +80,7 @@ body {
     display: inline-block;
     padding: 14px 10px;
     white-space: pre-wrap;
-    color: #ddd;
+    color: #617078;
     font-size: 14px;
     line-height: 16px;
     min-height: 92px;
@@ -99,7 +99,7 @@ body {
     width: 30px;
     font-size: 14px;
     text-align: right;
-    color: #666;
+    color: #cfd8dc;
     user-select: none;
     -webkit-user-select: none;
 }
@@ -124,6 +124,8 @@ body {
     text-indent: -9999px;
     -webkit-animation: flick 1s infinite;
     animation: flick 1s infinite;
+    position: relative;
+    top: 1px;
 }
 
 @media screen and (max-width: 600px) {

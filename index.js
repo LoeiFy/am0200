@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
             code.setAttribute('contenteditable', true)
 
             code.addEventListener('focus', function() {
-                style.style.background = '#262c2f';
+                style.style.background = '#ebeeef';
             })
 
             code.addEventListener('blur', function() {
-                style.style.background = '#000';
+                style.style.background = '#fafafa';
                 window.scroll(0, 0)
             })
 
