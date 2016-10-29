@@ -8,6 +8,31 @@ var random = function(min, max) {
     return min + Math.floor(Math.random() * (max - min + 1))
 }
 
+;(function() {
+    var lastTime = 0;
+    var vendors = ['webkit', 'moz'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame =
+          window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}())
+
 var html = '{<p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
 
 var css = '.me {\n    font-family: monospace;\n    font-size: 14px;\n    color: #d2dee8;\n}\n.me p {\n    margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #93d7f7;\n    margin-left: 10px;\n}\n'
@@ -39,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (css.length >= css_index) {
             write_line()    
-            setTimeout(write_css, 100)
+            //setTimeout(write_css, 100)
+            requestAnimationFrame(write_css)
         } else {
             code.setAttribute('contenteditable', true)
 
@@ -63,7 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
         html_index ++
 
         if (html.length >= html_index) {
-            setTimeout(write_html, 100)
+            //setTimeout(write_html, 100)
+            requestAnimationFrame(write_html)
         } else {
             var as = me.querySelectorAll('a')
 
@@ -80,12 +107,52 @@ document.addEventListener('DOMContentLoaded', function() {
             write_css()
         }
     })()
+
+    // drop
+    var offset = []
+    var isDown = false
+
+    var setOffset = function(e) {
+        isDown = true
+        offset = [
+            style.offsetLeft - (e.clientX || e.touches[0].clientX),
+            style.offsetTop - (e.clientY || e.touches[0].clientY)
+        ]
+    }
+
+    var setPosition = function(e) {
+        if (isDown) {
+            style.style.right = 'auto'
+            style.style.left = ((e.clientX || e.touches[0].clientX) + offset[0]) +'px'
+            style.style.top = ((e.clientY || e.touches[0].clientY) + offset[1]) +'px'
+        }
+    }
+
+    style.addEventListener('mousedown', function(e) {
+        if (e.target.tagName == 'P') {
+            setOffset(e)
+        }
+    })
+
+    style.addEventListener('touchstart', function(e) {
+        setOffset(e)
+    })
+
+    document.addEventListener('mouseup', function() { isDown = false })
+    document.addEventListener('touchend', function() { isDown = false })
+
+    document.addEventListener('mousemove', function(e) {
+        e.preventDefault()
+        setPosition(e)
+    })
+
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault()
+        setPosition(e)
+    })
 })
 
 /*
-let offset = [];
-let mouse = {};
-let isDown = false;
 
 DS.addEventListener('mousedown', e => {
     if (e.target.tagName == 'P') {
