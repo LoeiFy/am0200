@@ -9,28 +9,24 @@ var random = function(min, max) {
 }
 
 ;(function() {
-    var lastTime = 0;
-    var vendors = ['webkit', 'moz'];
+    var lastTime = 0
+    var vendors = ['webkit', 'moz']
+
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame =
-          window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame']
     }
 
-    if (!window.requestAnimationFrame)
+    if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = function(callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-              timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
+            var currTime = new Date().getTime()
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime))
+            var id = window.setTimeout(function() { callback(currTime + timeToCall) }, timeToCall)
 
-    if (!window.cancelAnimationFrame)
-        window.cancelAnimationFrame = function(id) {
-            clearTimeout(id);
-        };
+            lastTime = currTime + timeToCall
+
+            return id
+        }
+    }
 }())
 
 var html = '{<p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
@@ -151,57 +147,3 @@ document.addEventListener('DOMContentLoaded', function() {
         setPosition(e)
     })
 })
-
-/*
-
-DS.addEventListener('mousedown', e => {
-    if (e.target.tagName == 'P') {
-        isDown = true;
-        offset = [
-            DS.offsetLeft - e.clientX,
-            DS.offsetTop - e.clientY,
-        ];
-    }
-}, false)
-
-DS.addEventListener('touchstart', e => {
-    isDown = true;
-    offset = [
-        DS.offsetLeft - e.touches[0].clientX,
-        DS.offsetTop - e.touches[0].clientY,
-    ];
-}, false)
-
-document.addEventListener('mouseup', e => isDown = false)
-document.addEventListener('touchend', e => isDown = false)
-
-document.addEventListener('mousemove', e => {
-    e.preventDefault()
-
-    if (isDown) {
-        mouse = {
-            x: e.clientX,
-            y: e.clientY
-        }
-
-        DS.style.right = 'auto';
-        DS.style.left = (mouse.x + offset[0]) +'px';
-        DS.style.top = (mouse.y + offset[1]) +'px';
-    }
-})
-
-document.addEventListener('touchmove', e => {
-    e.preventDefault()
-
-    if (isDown) {
-        mouse = {
-            x: e.touches[0].clientX,
-            y: e.touches[0].clientY
-        }
-
-        DS.style.right = 'auto';
-        DS.style.left = (mouse.x + offset[0]) +'px';
-        DS.style.top = (mouse.y + offset[1]) +'px';
-    }
-})
-*/
