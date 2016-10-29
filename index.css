@@ -5,22 +5,34 @@ html, body {
 body {
     margin: 0;
     line-height: 1;
-    background: #333;
+    background: #fff;
+    position: relative;
 }
+
+.square {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 12px solid #eceff1;
+}
+
 .me {
     display: inline-block;
     vertical-align: middle;
     margin-left: 10%;
-    color: #eee;
+    color: #010101;
     user-select: none;
     -webkit-user-select: none;
-    -moz-user-select: none;
 }
 .me p {
     margin: 14px 0;
 }
 .me a {
-    color: #eee;
+    color: #010101;
     text-decoration: none;
 }
 
@@ -63,7 +75,6 @@ body {
     padding: 6px 0;
     user-select: none;
     -webkit-user-select: none;
-    -moz-user-select: none;
 }
 .code {
     display: inline-block;
@@ -91,15 +102,8 @@ body {
     color: #666;
     user-select: none;
     -webkit-user-select: none;
-    -moz-user-select: none;
 }
 @-webkit-keyframes flick {
-    0% { opacity: 1; }
-    49.99% { opacity: 1; }
-    50% { opacity: 0; }
-    99.99% { opacity: 0; }
-}
-@-moz-keyframes flick {
     0% { opacity: 1; }
     49.99% { opacity: 1; }
     50% { opacity: 0; }
@@ -116,10 +120,9 @@ body {
     width: 6px;
     vertical-align: text-bottom;
     margin-left: 4px;
-    background: #fff;
+    background: #9ba5ad;
     text-indent: -9999px;
     -webkit-animation: flick 1s infinite;
-    -moz-animation: flick 1s infinite;
     animation: flick 1s infinite;
 }
 

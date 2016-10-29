@@ -31,7 +31,7 @@ var random = function(min, max) {
 
 var html = '{<p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
 
-var css = '.me {\n    font-family: monospace;\n    font-size: 14px;\n    color: #d2dee8;\n}\n.me p {\n    margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #93d7f7;\n    margin-left: 10px;\n}\n'
+var css = '.me {\n    font-family: monospace;\n    font-size: 14px;\n    color: #5a666f;\n}\n.me p {\n    margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #2d9cd0;\n    margin-left: 10px;\n}\n'
 
 document.addEventListener('DOMContentLoaded', function() {
     var me = document.querySelector('.me')
