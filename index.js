@@ -29,7 +29,7 @@ var random = function(min, max) {
     }
 }())
 
-var html = '{<p>Bio:<a>"Web/UI Designer and Front-end Developer"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
+var html = '{<p>Blog:<a>"http://mirror.am0200.com"</a>,</p>\n<p>Email:<a>"LoeiFy@gmail.com"</a>,</p>\n<p>Github:<a>"https://github.com/LoeiFy"</a></p>\n}'
 
 var css = '.me {\n    font-family: monospace;\n    font-size: 14px;\n    color: #5a666f;\n}\n.me p {\n    margin-left: 40px;\n    line-height: 1.4;\n}\n.me a {\n    color: #2d9cd0;\n    margin-left: 10px;\n}\n'
 
@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             var as = me.querySelectorAll('a')
 
+            as[0].setAttribute('target', '_blank')
+            as[0].setAttribute('href', 'http://mirror.am0200.com')
+
             as[1].setAttribute('target', '_blank')
             as[1].setAttribute('href', 'mailto:LoeiFy@gmail.com')
 
@@ -103,6 +106,22 @@ document.addEventListener('DOMContentLoaded', function() {
             write_css()
         }
     })()
+
+    // title
+    var titleDash = ':'
+    var setTitle = function() {
+        setTimeout(function() { 
+            if (titleDash == ':') {
+                titleDash = ' '
+            } else {
+                titleDash = ':'
+            }
+
+            document.title = 'AM 02' + titleDash + '00'
+            setTitle()
+        }, 1000)
+    }
+    setTitle()
 
     // drop
     var offset = []
