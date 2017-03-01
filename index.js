@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var row = (code.offsetHeight - 2 * 14) / 16
         var nums = ''
 
-        for (let i = 1; i <= row; i ++) {
+        for (var i = 1; i <= row; i ++) {
             nums += i +'<br />'
         }
 
