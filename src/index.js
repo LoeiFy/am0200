@@ -1,4 +1,4 @@
-import './component/title'
+import './component/title.js'
 
 const a = { b: 1 }
 const c = { d: 1, ...a }
