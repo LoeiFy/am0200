@@ -1,3 +1,4 @@
+order: 0,
 title: Mirror
 subtitle: Web App
 description: A blog tool powered by GitHub. Write posts on GitHub issues and your blog will be build immediately
@@ -5,6 +6,7 @@ skills:
   - Node.js
   - ES6
   - PostCSS
+  - Web Design
 url:
   - https://mirror.am0200.com/
   - https://github.com/LoeiFy/Mirror

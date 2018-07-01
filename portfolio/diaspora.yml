@@ -1,0 +1,14 @@
+order: 5
+title: Diaspora
+subtitle: WordPress Theme
+description: Diaspora 是 isujin.com 的网站主题，一个 WordPress 主题。isujin.com 是一个关于文字与图片的网站。
+skills:
+  - WordPress
+  - Web/UI Design
+url:
+  - https://isujin.com/
+  - https://github.com/LoeiFy/Diaspora
+images:
+  - https://user-images.githubusercontent.com/2193211/42135592-8a332360-7d7f-11e8-8e48-2d6e1bba4e21.jpg
+  - https://user-images.githubusercontent.com/2193211/42135593-8a607dec-7d7f-11e8-8019-6d5477ea8b35.jpg
+  - https://user-images.githubusercontent.com/2193211/42135595-8a8a992e-7d7f-11e8-9f7e-49c99c1a34dc.jpg
