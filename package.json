@@ -3,10 +3,9 @@
   "name": "loeify.github.com",
   "version": "0.1.0",
   "scripts": {
-    "start": "parcel index.html",
-    "prebuild": "rm -rf dist",
     "lint": "eslint .",
-    "build": "parcel build index.html"
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -15,13 +14,17 @@
   "author": "LoeiFy@gmali.com",
   "license": "MIT",
   "devDependencies": {
-    "babel-plugin-react-css-modules": "^3.4.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.0.1",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "parcel-bundler": "^1.9.3"
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.6",
+    "rollup-plugin-node-resolve": "^3.3.0"
   }
 }

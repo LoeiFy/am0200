@@ -1,11 +1,12 @@
 {
-  "plugins": [
-    ["react-css-modules", {
-      "generateScopedName": "[path]__[name]__[local]__[hash:base64:5]",
-      "handleMissingStyleName": "warn"
-    }],
-    ["transform-class-properties"],
-    ["transform-object-rest-spread"]
+  "presets": [
+    ["env", {
+      "modules": false
+    }]
   ],
-  "presets": ["env"]
+  "plugins": [
+    "external-helpers",
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ]
 }
