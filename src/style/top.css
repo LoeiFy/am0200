@@ -1,0 +1,23 @@
+.top h3 {
+  color: #171d38;
+  font-size: 16px;
+  font-weight: 500;
+}
+.top p {
+  font-size: 13px;
+  color: #777;
+  margin-top: 7px;
+}
+.top img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top div {
+  margin-left: 5px;
+}

@@ -1,5 +1,33 @@
 @import "./style/reset.css";
+@import "./style/top.css";
 
-.test {
+.main {
+  height: 100%;
   display: flex;
+  align-items: stretch;
+  /* background: #f0484c; */
+}
+.right {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.top {
+  height: 245px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ebebeb;
+  padding: 38px;
+}
+.bottom {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.left {
+  flex: 1;
+  box-sizing: border-box;
+  border-right: 1px solid #ebebeb;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }

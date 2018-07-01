@@ -13,8 +13,4 @@ export default {
       exclude: 'node_modules/**',
     }),
   ],
-  watch: {
-    include: 'src/**',
-    exclude: 'node_modules/**',
-  },
 }
