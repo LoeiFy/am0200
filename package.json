@@ -3,10 +3,14 @@
   "name": "loeify.github.com",
   "version": "0.1.0",
   "scripts": {
+    "start": "NODE_ENV=dev node index.js",
+    "poststart": "acyort-server",
     "lint": "eslint .",
     "css": "postcss src/index.css --no-map -u postcss-import -d dist",
-    "prebuild": "rm -rf dist && mkdir dist",
-    "build": "rollup -c"
+    "js": "rollup -c",
+    "prebuild": "npm run lint && rm -rf dist && mkdir dist",
+    "build": "NODE_ENV=prod node index.js",
+    "postbuild": "npm run css && npm run js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +19,7 @@
   "author": "LoeiFy@gmali.com",
   "license": "MIT",
   "devDependencies": {
+    "acyort-server": "^1.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
     "babel-plugin-external-helpers": "^6.22.0",
