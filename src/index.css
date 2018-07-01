@@ -8,16 +8,16 @@
   /* background: #f0484c; */
 }
 .right {
-  width: 350px;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 .top {
-  height: 245px;
+  height: 240px;
   box-sizing: border-box;
   border-bottom: 1px solid #ebebeb;
-  padding: 38px;
+  padding: 40px;
 }
 .bottom {
   flex: 1;
