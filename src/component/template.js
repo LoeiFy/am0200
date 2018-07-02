@@ -1,9 +1,25 @@
-export const list = items => items.map(({ title, name, subtitle }) => `
-  <div data-name="${name}" class="item">
-    <h3>${title}</h3>
-    <p>${subtitle}</p>
-  </div>
-`)
+export const list = items => items
+  .map(({
+    title,
+    name,
+    subtitle,
+    url,
+  }) => {
+    if (url) {
+      return `
+        <a target="_blank" href="${url}" class="item">
+          <h3>${title}</h3>
+        </a>
+      `
+    }
+    return `
+      <div data-name="${name}" class="item">
+        <h3>${title}</h3>
+        <p>${subtitle}</p>
+      </div>
+    `
+  })
+  .join('')
 
 export const detail = (item) => {
   const {

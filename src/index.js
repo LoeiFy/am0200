@@ -1,18 +1,11 @@
 import './component/title.js'
+import Portfolios from './component/portfolios.js'
 
-const a = { b: 1 }
-const c = { d: 1, ...a }
+const portfolios = new Portfolios()
 
-class A {
-  state = null
+portfolios.render()
 
-  render() {
-    return this
-  }
-}
-
-const s = new A()
-
-s.render()
-
-console.log(c)
+;(async () => {
+  await 1
+  console.log('?')
+})()

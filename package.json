@@ -33,7 +33,12 @@
     "postcss-import": "^11.1.0",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.6",
+    "rollup-plugin-multi-entry": "^2.0.2",
     "rollup-plugin-node-resolve": "^3.3.0",
     "yamljs": "^0.3.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "whatwg-fetch": "^2.0.4"
   }
 }
