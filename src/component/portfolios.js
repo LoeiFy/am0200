@@ -1,6 +1,11 @@
 import { list } from './template.js'
+import $ from './query.js'
 
 export default class {
+  constructor(e) {
+    this.container = $(e)
+  }
+
   urls = [
     {
       title: 'GitHub',
@@ -21,6 +26,6 @@ export default class {
       .then(res => res.json())
       .then(res => this.urls.concat(res))
       .then(res => list(res))
-      .then(res => console.log(res))
+      .then(res => this.container.html(res))
   }
 }

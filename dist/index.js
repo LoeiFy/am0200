@@ -551,8 +551,44 @@
     };
   }();
 
+  var Query = function () {
+    function Query(e) {
+      classCallCheck(this, Query);
+
+      if (e) {
+        this.elements = Array.from(document.querySelectorAll(e));
+      }
+    }
+
+    createClass(Query, [{
+      key: 'html',
+      value: function html(content) {
+        this.elements.forEach(function (e) {
+          e.innerHTML = content;
+        });
+        return this;
+      }
+    }, {
+      key: 'ready',
+      value: function ready() {
+        var _this = this;
+
+        return new Promise(function (resolve) {
+          document.addEventListener('DOMContentLoaded', function () {
+            resolve(_this);
+          });
+        });
+      }
+    }]);
+    return Query;
+  }();
+
+  var $ = (function (e) {
+    return new Query(e);
+  });
+
   var _class = function () {
-    function _class() {
+    function _class(e) {
       classCallCheck(this, _class);
       this.urls = [{
         title: 'GitHub',
@@ -564,6 +600,8 @@
         title: 'Blog',
         url: 'https://mirror.am0200.com'
       }];
+
+      this.container = $(e);
     }
 
     createClass(_class, [{
@@ -578,7 +616,7 @@
         }).then(function (res) {
           return list(res);
         }).then(function (res) {
-          return console.log(res);
+          return _this.container.html(res);
         });
       }
     }]);
@@ -587,18 +625,16 @@
 
   var _this = undefined;
 
-  var portfolios = new _class();
-
-  portfolios.render();asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+  var portfolios = new _class('.bottom');asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return 1;
+            return $().ready();
 
           case 2:
-            console.log('?');
+            portfolios.render();
 
           case 3:
           case 'end':
