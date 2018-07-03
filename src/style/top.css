@@ -12,12 +12,16 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  margin-left: -5px;
 }
 .top {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 1s ease;
+  background: transparent;
 }
-.top div {
-  margin-left: 5px;
+.top:hover {
+  background: rgba(0, 0, 0, .05);
 }

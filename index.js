@@ -8,7 +8,11 @@ const config = {
   },
   prod: {
     css: '<link rel="stylesheet" href="./dist/index.css" />',
-    js: '<script src="./dist/index.js"></script>',
+    js: `
+      <script src="https://unpkg.com/babel-polyfill/browser.js"></script>
+      <script src="https://unpkg.com/whatwg-fetch/fetch.js"></script>
+      <script src="./dist/index.js"></script>
+    `,
   },
 }
 const { NODE_ENV } = process.env

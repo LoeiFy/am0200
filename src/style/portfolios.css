@@ -1,0 +1,24 @@
+.bottom .item {
+  height: 74px;
+  display: block;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #171d38;
+  background: transparent;
+  transition: all .7s ease;
+}
+.bottom .item h3 {
+  font-size: 15px;
+  opacity: .8;
+  margin-left: 40px;
+}
+.bottom .item p {
+  margin: 5px 0 0 40px;
+  font-size: 13px;
+  opacity: .6;
+}
+.bottom .item:hover {
+  background: rgba(0, 0, 0, .05);
+}

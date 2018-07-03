@@ -4,8 +4,6 @@ import multiEntry from 'rollup-plugin-multi-entry'
 
 export default {
   input: [
-    './node_modules/babel-polyfill/browser.js',
-    './node_modules/whatwg-fetch/fetch.js',
     'src/index.js',
   ],
   output: {

@@ -1,5 +1,6 @@
 @import "./style/reset.css";
 @import "./style/top.css";
+@import "./style/portfolios.css";
 
 .main {
   height: 100%;
@@ -23,6 +24,7 @@
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
 }
 .left {
   flex: 1;
