@@ -1,12 +1,12 @@
 @import "./style/reset.css";
 @import "./style/top.css";
 @import "./style/portfolios.css";
+@import "./style/left.css";
 
 .main {
   height: 100%;
   display: flex;
   align-items: stretch;
-  /* background: #f0484c; */
 }
 .right {
   width: 360px;

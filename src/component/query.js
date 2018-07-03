@@ -12,6 +12,25 @@ class Query {
     return this
   }
 
+  addClass(name) {
+    this.elements.forEach(e => e.classList.add(name))
+    return this
+  }
+
+  removeClass(name) {
+    this.elements.forEach(e => e.classList.remove(name))
+    return this
+  }
+
+  append(items) {
+    if (Array.isArray(items)) {
+      items.forEach(item => this.elements[0].appendChild(item))
+      return this
+    }
+    this.elements[0].appendChild(items)
+    return this
+  }
+
   ready() {
     return new Promise((resolve) => {
       document.addEventListener('DOMContentLoaded', () => {

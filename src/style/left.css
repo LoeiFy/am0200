@@ -1,0 +1,21 @@
+.left.loading .detail {
+  display: none;
+}
+.left.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left.loading::after {
+  content: '';
+  animation: loading 1s linear forwards infinite;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid transparent;
+  border-top-color: #ddd;
+  border-right-color: #ddd;
+  border-radius: 50%;
+}
+
+@keyframes loading { 100% { transform: rotate(360deg) } }

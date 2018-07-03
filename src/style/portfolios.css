@@ -8,6 +8,7 @@
   color: #171d38;
   background: transparent;
   transition: all .7s ease;
+  border-left: 3px solid transparent;
 }
 .bottom .item h3 {
   font-size: 15px;
@@ -20,5 +21,9 @@
   opacity: .6;
 }
 .bottom .item:hover {
+  background: rgba(0, 0, 0, .05);
+}
+.bottom .item.active {
+  border-left-color: #f0484c;
   background: rgba(0, 0, 0, .05);
 }

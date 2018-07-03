@@ -1,4 +1,4 @@
-import { list } from './template.js'
+import list from './template/list.js'
 import $ from './query.js'
 
 export default class {
@@ -10,6 +10,6 @@ export default class {
     window.fetch('/json/portfolios.json')
       .then(res => res.json())
       .then(res => list(res))
-      .then(res => this.container.html(res))
+      .then(res => this.container.append(res))
   }
 }

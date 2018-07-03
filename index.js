@@ -27,7 +27,9 @@ const portfolios = fs.readdirSync('./portfolio', 'utf8')
     const data = yaml.load(`./portfolio/${portfolio}`)
     return { name: portfolio.split('.yml')[0], ...data }
   })
-const list = portfolios.map(({ title, name, subtitle }) => ({ title, name, subtitle }))
+const list = portfolios
+  .filter(({ name }) => name !== 'default')
+  .map(({ title, name, subtitle }) => ({ title, name, subtitle }))
 
 fs.writeFileSync('./index.html', index, 'utf8')
 fs.writeFileSync('./json/portfolios.json', JSON.stringify(list), 'utf8')
