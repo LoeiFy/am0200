@@ -30,14 +30,6 @@ class Query {
     this.elements[0].appendChild(items)
     return this
   }
-
-  ready() {
-    return new Promise((resolve) => {
-      document.addEventListener('DOMContentLoaded', () => {
-        resolve(this)
-      })
-    })
-  }
 }
 
 export default e => new Query(e)

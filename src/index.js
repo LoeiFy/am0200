@@ -1,10 +1,12 @@
 import './component/title.js'
+import './component/konami.js'
 import Portfolios from './component/portfolios.js'
-import $ from './component/query.js'
+import Top from './component/top.js'
 
 const portfolios = new Portfolios('.bottom')
+const top = new Top('.top')
 
-;(async () => {
-  await $().ready()
+window.onload = () => {
   portfolios.render()
-})()
+  top.render()
+}

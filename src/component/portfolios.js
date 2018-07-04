@@ -1,4 +1,4 @@
-import list from './template/list.js'
+import { list } from './template/list.js'
 import $ from './query.js'
 
 export default class {

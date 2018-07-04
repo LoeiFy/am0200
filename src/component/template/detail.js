@@ -2,8 +2,8 @@ export default function (item) {
   const {
     title,
     description,
-    skills,
-    images,
+    skills = [],
+    images = [],
     url,
   } = item
   const skillsTpl = skills

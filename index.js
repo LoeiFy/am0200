@@ -29,7 +29,17 @@ const portfolios = fs.readdirSync('./portfolio', 'utf8')
   })
 const list = portfolios
   .filter(({ name }) => name !== 'default')
-  .map(({ title, name, subtitle }) => ({ title, name, subtitle }))
+  .map(({
+    title,
+    name,
+    subtitle,
+    order,
+  }) => ({
+    title,
+    name,
+    subtitle,
+    order,
+  }))
 
 fs.writeFileSync('./index.html', index, 'utf8')
 fs.writeFileSync('./json/portfolios.json', JSON.stringify(list), 'utf8')
