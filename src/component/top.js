@@ -9,4 +9,9 @@ export default class {
   render() {
     this.container.append(user())
   }
+
+  start() {
+    $('.top > div').context.click()
+    return this
+  }
 }

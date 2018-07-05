@@ -10,7 +10,8 @@ window.onload = () => {
   const top = new Top('.top')
   const konami = new Konami()
 
+  konami.active = () => popup.open()
   portfolios.render()
   top.render()
-  konami.active = () => popup.open()
+  top.start()
 }

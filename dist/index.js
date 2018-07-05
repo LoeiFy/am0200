@@ -184,6 +184,11 @@
         this.elements[0].appendChild(items);
         return this;
       }
+    }, {
+      key: 'context',
+      get: function get$$1() {
+        return this.elements[0];
+      }
     }]);
     return Query;
   }();
@@ -325,6 +330,12 @@
       value: function render() {
         this.container.append(user());
       }
+    }, {
+      key: 'start',
+      value: function start() {
+        $('.top > div').context.click();
+        return this;
+      }
     }]);
     return _class;
   }();
@@ -372,11 +383,12 @@
     var top = new _class$3('.top');
     var konami = new _class();
 
-    portfolios.render();
-    top.render();
     konami.active = function () {
       return popup.open();
     };
+    portfolios.render();
+    top.render();
+    top.start();
   };
 
 }());

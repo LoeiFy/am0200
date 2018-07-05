@@ -48,6 +48,10 @@ class Query {
     this.elements[0].appendChild(items)
     return this
   }
+
+  get context() {
+    return this.elements[0]
+  }
 }
 
 export default e => new Query(e)
