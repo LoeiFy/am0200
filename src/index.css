@@ -4,6 +4,7 @@
 @import "./style/right.css";
 @import "./style/toast.css";
 @import "./style/popup.css";
+@import "./style/detail.css";
 
 .main {
   height: 100%;
@@ -12,9 +13,9 @@
 }
 .right {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 .top {
   height: 240px;
@@ -29,10 +30,10 @@
   padding: 20px 0;
 }
 .left {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 400px;
   flex-shrink: 0;
-  box-sizing: border-box;
   border-right: 1px solid #ebebeb;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
 }
