@@ -1,7 +1,7 @@
 import Portfolio from '../portfolio.js'
 import $ from '../query.js'
 
-const portfolio = new Portfolio('.left')
+const portfolio = new Portfolio('.right')
 
 let loading = false
 

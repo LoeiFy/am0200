@@ -1,12 +1,12 @@
-.left.loading .detail {
+.right.loading .detail {
   display: none;
 }
-.left.loading {
+.right.loading {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.left.loading::after {
+.right.loading::after {
   content: '';
   animation: loading 1s linear forwards infinite;
   display: block;
