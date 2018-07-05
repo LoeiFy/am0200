@@ -2,6 +2,8 @@
 @import "./style/top.css";
 @import "./style/portfolios.css";
 @import "./style/left.css";
+@import "./style/toast.css";
+@import "./style/popup.css";
 
 .main {
   height: 100%;

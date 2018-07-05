@@ -39,6 +39,13 @@ export function user() {
   img.src = 'https://avatars2.githubusercontent.com/u/2193211'
   img.onclick = (e) => {
     e.stopPropagation()
+    const ts = $('#toast')
+    if (!ts.hasClass('active')) {
+      ts.addClass('active')
+      setTimeout(() => {
+        ts.removeClass('active')
+      }, 1000)
+    }
   }
   container.appendChild(img)
   container.appendChild(div)

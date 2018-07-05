@@ -17,6 +17,24 @@ class Query {
     return this
   }
 
+  hasClass(name) {
+    return this.elements[0].classList.contains(name)
+  }
+
+  on(events, callback) {
+    const evs = events
+      .split(',')
+      .map(ev => ev.trim())
+
+    this.elements.forEach((e) => {
+      evs.forEach((ev) => {
+        e.addEventListener(ev, callback, false)
+      })
+    })
+
+    return this
+  }
+
   removeClass(name) {
     this.elements.forEach(e => e.classList.remove(name))
     return this
