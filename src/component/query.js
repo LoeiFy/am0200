@@ -1,7 +1,9 @@
 class Query {
   constructor(e) {
+    const regex = /HTML.*?Element/
     if (e) {
-      this.elements = Array.from(document.querySelectorAll(e))
+      const type = Object.prototype.toString.call(e)
+      this.elements = regex.test(type) ? [e] : Array.from(document.querySelectorAll(e))
     }
   }
 
@@ -19,6 +21,15 @@ class Query {
 
   hasClass(name) {
     return this.elements[0].classList.contains(name)
+  }
+
+  css(styles) {
+    this.elements.forEach((e) => {
+      Object.keys(styles).forEach((key) => {
+        e.style[key] = styles[key]
+      })
+    })
+    return this
   }
 
   on(events, callback) {

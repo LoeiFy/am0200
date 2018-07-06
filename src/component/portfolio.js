@@ -6,6 +6,21 @@ export default class {
     this.container = $(e)
   }
 
+  setImgs(imgs) {
+    const { elements } = $(imgs)
+    for (let i = 0; i < elements.length; i += 1) {
+      elements[i].onload = function load() {
+        const { width, height } = this
+        $(this).css({
+          display: 'inline-block',
+          width: `${width * 0.5}px`,
+          height: `${height * 0.5}px`,
+        })
+      }
+    }
+    return this
+  }
+
   render(name, callback) {
     this.container.addClass('loading')
 
@@ -16,6 +31,7 @@ export default class {
         setTimeout(() => {
           this.container.removeClass('loading')
           this.container.html(res)
+          this.setImgs('.detail img')
           callback()
         }, 500)
       })

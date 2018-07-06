@@ -121,8 +121,10 @@
     function Query(e) {
       classCallCheck(this, Query);
 
+      var regex = /HTML.*?Element/;
       if (e) {
-        this.elements = Array.from(document.querySelectorAll(e));
+        var type = Object.prototype.toString.call(e);
+        this.elements = regex.test(type) ? [e] : Array.from(document.querySelectorAll(e));
       }
     }
 
@@ -146,6 +148,16 @@
       key: 'hasClass',
       value: function hasClass(name) {
         return this.elements[0].classList.contains(name);
+      }
+    }, {
+      key: 'css',
+      value: function css(styles) {
+        this.elements.forEach(function (e) {
+          Object.keys(styles).forEach(function (key) {
+            e.style[key] = styles[key];
+          });
+        });
+        return this;
       }
     }, {
       key: 'on',
@@ -205,6 +217,26 @@
     }
 
     createClass(_class, [{
+      key: 'setImgs',
+      value: function setImgs(imgs) {
+        var _$ = $(imgs),
+            elements = _$.elements;
+
+        for (var i = 0; i < elements.length; i += 1) {
+          elements[i].onload = function load() {
+            var width = this.width,
+                height = this.height;
+
+            $(this).css({
+              display: 'inline-block',
+              width: width * 0.5 + 'px',
+              height: height * 0.5 + 'px'
+            });
+          };
+        }
+        return this;
+      }
+    }, {
       key: 'render',
       value: function render(name, callback) {
         var _this = this;
@@ -219,6 +251,7 @@
           setTimeout(function () {
             _this.container.removeClass('loading');
             _this.container.html(res);
+            _this.setImgs('.detail img');
             callback();
           }, 500);
         });
