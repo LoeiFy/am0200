@@ -1,0 +1,39 @@
+@import "./style/reset.css";
+@import "./style/top.css";
+@import "./style/portfolios.css";
+@import "./style/right.css";
+@import "./style/toast.css";
+@import "./style/popup.css";
+@import "./style/detail.css";
+
+.main {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.right {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+.top {
+  height: 240px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ebebeb;
+  padding: 40px;
+}
+.bottom {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 400px;
+  flex-shrink: 0;
+  border-right: 1px solid #ebebeb;
+}
