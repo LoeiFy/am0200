@@ -3,6 +3,7 @@ import Konami from './component/konami.js'
 import Portfolios from './component/portfolios.js'
 import Top from './component/top.js'
 import Popup from './component/popup.js'
+import $ from './component/query.js'
 
 window.onload = () => {
   const popup = new Popup()
@@ -14,4 +15,6 @@ window.onload = () => {
   portfolios.render()
   top.render()
   top.start()
+
+  $('#menu').on('click', () => $('.left').addClass('active'))
 }

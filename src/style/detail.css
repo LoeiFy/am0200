@@ -12,7 +12,7 @@
   vertical-align: top;
 }
 .detail h2 {
-  font-size: 30px;
+  font-size: 40px;
   margin: 30px 0 100px;
 }
 .detail .info {
@@ -36,9 +36,11 @@
   margin-bottom: 10px;
 }
 .detail .url {
+  word-break: break-all;
   margin: 50px 0 70px;
 }
 .detail .url a {
+  line-height: 1.4;
   color: #171d38;
   text-decoration: underline;
   display: block;

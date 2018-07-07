@@ -277,10 +277,14 @@
       e.className = 'item';
       e.innerHTML = '<h3>' + title + '</h3><p>' + subtitle + '</p>';
       e.onclick = function () {
+        $('.left').removeClass('active');
+
         if (loading || e.classList.contains('active')) {
           return;
         }
+
         loading = true;
+
         portfolio.render(name, function () {
           loading = false;
           $('.item').removeClass('active');
@@ -313,10 +317,14 @@
     container.appendChild(img);
     container.appendChild(div);
     container.onclick = function () {
+      $('.left').removeClass('active');
+
       if (loading || container.classList.contains('active')) {
         return;
       }
+
       loading = true;
+
       portfolio.render('default', function () {
         loading = false;
         $('.item').removeClass('active');
@@ -422,6 +430,10 @@
     portfolios.render();
     top.render();
     top.start();
+
+    $('#menu').on('click', function () {
+      return $('.left').addClass('active');
+    });
   };
 
 }());

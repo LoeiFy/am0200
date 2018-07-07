@@ -14,10 +14,14 @@ export function list(items) {
       e.className = 'item'
       e.innerHTML = `<h3>${title}</h3><p>${subtitle}</p>`
       e.onclick = () => {
+        $('.left').removeClass('active')
+
         if (loading || e.classList.contains('active')) {
           return
         }
+
         loading = true
+
         portfolio.render(name, () => {
           loading = false
           $('.item').removeClass('active')
@@ -50,10 +54,14 @@ export function user() {
   container.appendChild(img)
   container.appendChild(div)
   container.onclick = () => {
+    $('.left').removeClass('active')
+
     if (loading || container.classList.contains('active')) {
       return
     }
+
     loading = true
+
     portfolio.render('default', () => {
       loading = false
       $('.item').removeClass('active')
