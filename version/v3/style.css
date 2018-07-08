@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Sansation_Light';
+    src: url('Sansation_Light.ttf') format('truetype');
+}
+body, article, section, h1, h2, h3, h4, p {
+    margin: 0;
+}
+article, section {
+    display: block;
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: #0a272b;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background: #fff;
+    word-break: break-all;
+    overflow-x: hidden;
+}
+
+#main {
+    border-top: 3px solid #333;
+}
+
+header {
+    margin-left: 70px;
+    position: relative;
+    width: 320px;
+    height: 360px;
+    transform: scale(.5);
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+#canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+#canvas.image {
+    background: #000 url(background.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
+#canvas:before {
+    width: 100%;
+    content: '';
+    display: block;
+    height: 100%;
+    opacity: .3;
+    background: -moz-linear-gradient(45deg, #ce4cd4 0%, #0a94d5 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#ce4cd4), color-stop(100%,#0a94d5));
+    background: -webkit-linear-gradient(45deg, #ce4cd4 0%,#0a94d5 100%);
+    background: linear-gradient(45deg, #ce4cd4 0%,#0a94d5 100%);
+}
+canvas {
+    position: absolute;
+    top: 0;
+    display: block;
+}
+
+#svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+article {
+    margin-left: 148px;
+    line-height: 1.6;
+    font-family: sans-serif;
+    padding-bottom: 60px;
+}
+article.font {
+    font-family: 'Sansation_Light', sans-serif;
+}
+h1 {
+    font-size: 20px;
+    color: #1d1f22;
+}
+h3 {
+    font-size: 14px;
+    color: #999;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+section {
+    margin-bottom: 40px;
+}
+#info {
+    margin-bottom: 40px;
+}
+section h2 a {
+    color: #1d1f22;
+    font-size: 22px;
+}
+section p {
+    margin-top: 3px;
+    color: #888;
+}
+section a {
+    margin-top: 3px;
+}
+@media screen and (max-width: 600px) {
+    header {
+        margin-left: 0;
+    }
+    article {
+        margin-left: 80px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    header {
+        transform: scale(.4);
+        -webkit-transform: scale(.4);
+        -moz-transform: scale(.4);
+    }
+    article {
+        margin-left: 20px;
+    }
+}

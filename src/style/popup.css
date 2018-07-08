@@ -19,9 +19,9 @@
 #popup .inner {
   background: #fff;
   margin-top: -200px;
-  width: 340px;
+  width: 400px;
   border-radius: 5px;
-  padding: 15px 0;
+  padding: 15px 0 20px;
   text-align: center;
 }
 #popup h3 {
