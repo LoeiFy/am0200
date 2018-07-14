@@ -1,7 +1,7 @@
 order: 0
 title: Mirror
 subtitle: Web App
-description: A blog tool powered by GitHub. Write posts on GitHub issues and your blog will be build immediately
+description: A blogging tool powered by GitHub. Write blog on GitHub issues and it will be built immediately
 skills:
   - Node.js
   - ES6

@@ -1,7 +1,7 @@
 order: 4
 title: AcyOrt
 subtitle: Node.js Framework
-description: AcyOrt is a simple static website framework. Powered by GitHub and NodeJS. You can write posts on GitHub issues and your website can be deploy automatically.
+description: AcyOrt is a simple static website framework. Powered by Node.js.
 skills:
   - Node.js
   - ES6

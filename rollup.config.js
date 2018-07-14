@@ -4,6 +4,7 @@ import multiEntry from 'rollup-plugin-multi-entry'
 
 export default {
   input: [
+    './node_modules/whatwg-fetch/fetch.js',
     'src/index.js',
   ],
   output: {

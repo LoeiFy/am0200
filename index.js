@@ -9,8 +9,16 @@ const config = {
   prod: {
     css: '<link rel="stylesheet" href="./dist/index.css" />',
     js: `
-      <script src="https://unpkg.com/babel-polyfill/browser.js"></script>
-      <script src="https://unpkg.com/whatwg-fetch/fetch.js"></script>
+      <script>
+      var ua = window.navigator.userAgent
+      if (ua.match(/(Trident|MSIE)/g)) {
+        var head = document.getElementsByTagName('head')[0]
+        var script = document.createElement('script')
+        script.type = 'text/javascript'
+        script.src = './vendor/promise.js'
+        head.appendChild(script)
+      }
+      </script>
       <script src="./dist/index.js"></script>
     `,
   },

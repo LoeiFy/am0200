@@ -39,7 +39,7 @@ export function user() {
   const img = document.createElement('img')
   const div = document.createElement('div')
 
-  div.innerHTML = '<h3>LoeiFy</h3><p>Front-End Developer</p>'
+  div.innerHTML = '<h3>LoeiFy</h3><p>Software Engineer</p>'
   img.src = 'https://avatars2.githubusercontent.com/u/2193211'
   img.onclick = (e) => {
     e.stopPropagation()

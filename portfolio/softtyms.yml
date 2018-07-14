@@ -4,7 +4,7 @@ subtitle: WeChat Mini-Programs
 description: Softtyms 是一个基于 WordPress REST API 的微信小程序. 是 isujin.com 网站的小程序版本
 skills:
   - WordPress REST API
-  - ES6/7
+  - ES6
   - 微信开发者工具
   - App Design
 url:
