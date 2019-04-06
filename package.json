@@ -1,43 +1,21 @@
 {
   "private": true,
   "name": "loeify.github.com",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
-    "start": "NODE_ENV=dev node index.js",
-    "poststart": "acyort-server",
-    "lint": "eslint .",
-    "css": "postcss src/index.css --no-map -u postcss-import -d dist",
-    "js": "rollup -c",
-    "prebuild": "npm run lint && rm -rf dist && mkdir dist",
-    "build": "NODE_ENV=prod node index.js",
-    "postbuild": "npm run css && npm run js"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LoeiFy/loeify.github.com.git"
   },
-  "author": "LoeiFy@gmali.com",
+  "author": "LoeiFy <LoeiFy@gmali.com>",
   "license": "MIT",
   "devDependencies": {
-    "acyort-server": "^1.0.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.5",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "postcss-cli": "^5.0.1",
-    "postcss-import": "^11.1.0",
-    "rollup": "^0.62.0",
-    "rollup-plugin-babel": "^3.0.6",
-    "rollup-plugin-multi-entry": "^2.0.2",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "yamljs": "^0.3.0"
-  },
-  "dependencies": {
-    "whatwg-fetch": "^2.0.4"
+    "@babel/core": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
