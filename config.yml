@@ -1,0 +1,9 @@
+url: https://am0200.com
+
+template: am0200
+
+plugins:
+  - script.js
+  - acyort-server
+
+public: docs
