@@ -1,4 +1,5 @@
 const { join } = require('path')
+const CleanCSS = require('clean-css')
 const checkSum = require('./checksum')
 
 const githubCssPath = require.resolve('github-markdown-css')
@@ -18,7 +19,7 @@ module.exports = (acyort) => {
 
   cssFiles.push(fs.readFileSync(githubCssPath, 'utf8'))
 
-  cssFiles = cssFiles.join('\n')
+  cssFiles = new CleanCSS().minify(cssFiles.join('\n')).styles
 
   const cssHash = checkSum(cssFiles)
   const cssDest = join(base, publicPath, 'dist', `page.${cssHash}.css`)

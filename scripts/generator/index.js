@@ -4,6 +4,7 @@ module.exports = function generator() {
   const { store, fs, outputHTML } = this
   const data = store.get('data')
   const { hash, dest, file } = getCss(this)
+  const repos = data.slice(1).map(({ name, description }) => ({ name, description }))
 
   data.forEach((item) => {
     outputHTML({
@@ -14,6 +15,7 @@ module.exports = function generator() {
       data: {
         ...item,
         cssHash: hash,
+        repos,
       },
     })
   })
