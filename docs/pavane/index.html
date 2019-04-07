@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="google" content="notranslate" />
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAGFBMVEUAAAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozsmr7C1AAAAB3RSTlMA8o3HRiCjAZ7XVAAAAFRJREFUKM9jGAUMDE6GwiroYkHi5eWFqqhirOnlQFAWgCLIVA4GCiiCjhBBERRBdYhgEYqgOUSwGEVQHCJYSEgQoZ2QRQgnEXI8wpsEAgQRdKOAAQCvriuz6lBMNwAAAABJRU5ErkJggg==" />
+<link rel="stylesheet" href="/dist/page.43043443.css" />
+
+  <title>
+
+AM 02:00 / pavane
+
+</title>
+</head>
+
+<body>
+
+<div class="main">
+  <div class="left">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+  <div class="right">
+  
+<div id="main-content"><div id="readme" class="instapaper_body md" data-path="README.md"><article class="markdown-body entry-content p-5" itemprop="text"><h1><a id="user-content-pavane" class="anchor" aria-hidden="true" href="#pavane"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pavane</h1>
+<p><a href="https://travis-ci.org/fratercula/pavane" rel="nofollow"><img src="https://camo.githubusercontent.com/29d6c115330a098bdd01bda8385f714db04b1191/68747470733a2f2f7472617669732d63692e6f72672f66726174657263756c612f706176616e652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fratercula/pavane.svg?branch=master" style="max-width:100%;"></a>
+<a href="https://codecov.io/gh/fratercula/pavane" rel="nofollow"><img src="https://camo.githubusercontent.com/66c1f39f96aabb74d5ed1318388758aaba0b0645/68747470733a2f2f636f6465636f762e696f2f67682f66726174657263756c612f706176616e652f6272616e63682f6d61737465722f67726170682f62616467652e737667" alt="codecov" data-canonical-src="https://codecov.io/gh/fratercula/pavane/branch/master/graph/badge.svg" style="max-width:100%;"></a></p>
+<p>LiveReload Server</p>
+<p><a href="README.zh-CN.md">中文文档</a></p>
+<h2><a id="user-content-install" class="anchor" aria-hidden="true" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+<div class="highlight highlight-source-shell"><pre>$ npm i pavane -D
+
+<span class="pl-c"><span class="pl-c">#</span> CLI</span>
+$ npm i pavane -g</pre></div>
+<h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>server</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> { <span class="pl-c1">join</span>, <span class="pl-c1">extname</span> } <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>path<span class="pl-pds">'</span></span>)
+<span class="pl-k">const</span> <span class="pl-c1">Pavane</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>pavane<span class="pl-pds">'</span></span>)
+
+<span class="pl-c"><span class="pl-c">/*</span></span>
+<span class="pl-c">  watch path</span>
+<span class="pl-c">  file, dir, glob, or array</span>
+<span class="pl-c">  default: process.cwd()</span>
+<span class="pl-c"><span class="pl-c">*/</span></span>
+<span class="pl-k">const</span> <span class="pl-c1">watches</span> <span class="pl-k">=</span> <span class="pl-en">join</span>(<span class="pl-c1">process</span>.<span class="pl-en">cwd</span>(), <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span>)
+
+<span class="pl-c"><span class="pl-c">/*</span></span>
+<span class="pl-c">  server static files path</span>
+<span class="pl-c">  default: process.cwd()</span>
+<span class="pl-c"><span class="pl-c">*/</span></span>
+<span class="pl-k">const</span> <span class="pl-c1">publics</span> <span class="pl-k">=</span> <span class="pl-c1">__dirname</span>
+
+<span class="pl-k">const</span> <span class="pl-c1">server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Pavane</span>(watches, publics)
+
+<span class="pl-c"><span class="pl-c">//</span> add subscribe</span>
+<span class="pl-smi">server</span>.<span class="pl-en">subscribe</span> <span class="pl-k">=</span> (<span class="pl-smi">args</span>) <span class="pl-k">=&gt;</span> {
+  <span class="pl-k">const</span> {
+    <span class="pl-c1">event</span>,        <span class="pl-c"><span class="pl-c">//</span> watch files change event</span>
+    path,         <span class="pl-c"><span class="pl-c">//</span> changed file path</span>
+    port,         <span class="pl-c"><span class="pl-c">//</span> server port</span>
+    clients,      <span class="pl-c"><span class="pl-c">//</span> current clients number</span>
+    status,       <span class="pl-c"><span class="pl-c">//</span> server status, `stop`, `start`, `running`</span>
+    trigger,      <span class="pl-c"><span class="pl-c">//</span> trigger clients reload `css` or `page`</span>
+  } <span class="pl-k">=</span> args
+  <span class="pl-k">const</span> { <span class="pl-c1">log</span> } <span class="pl-k">=</span> <span class="pl-c1">global</span>.<span class="pl-smi">console</span>
+
+  <span class="pl-k">if</span> (status <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>start<span class="pl-pds">'</span></span>) {
+    <span class="pl-en">log</span>(<span class="pl-s"><span class="pl-pds">`</span>Server running: http://127.0.0.1:<span class="pl-s1"><span class="pl-pse">${</span>port<span class="pl-pse">}</span></span><span class="pl-cce">\n</span>  CTRL + C to shutdown<span class="pl-pds">`</span></span>)
+    <span class="pl-k">return</span>
+  }
+
+  <span class="pl-k">if</span> (status <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>running<span class="pl-pds">'</span></span>) {
+    <span class="pl-en">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Server is already running...<span class="pl-pds">'</span></span>)
+    <span class="pl-k">return</span>
+  }
+
+  <span class="pl-k">if</span> (<span class="pl-c1">event</span>) {
+    <span class="pl-k">if</span> (<span class="pl-k">...</span>) {
+      <span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>custom message<span class="pl-pds">'</span></span>) <span class="pl-c"><span class="pl-c">//</span> custom</span>
+      <span class="pl-k">return</span>
+    }
+
+    <span class="pl-k">if</span> (<span class="pl-en">extname</span>(path) <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>.css<span class="pl-pds">'</span></span>) {
+      <span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>css<span class="pl-pds">'</span></span>) <span class="pl-c"><span class="pl-c">//</span> reload style</span>
+    } <span class="pl-k">else</span> {
+      <span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>page<span class="pl-pds">'</span></span>) <span class="pl-c"><span class="pl-c">//</span> reload page</span>
+    }
+    <span class="pl-en">log</span>(<span class="pl-s"><span class="pl-pds">`</span><span class="pl-s1"><span class="pl-pse">${</span><span class="pl-c1">event</span><span class="pl-pse">}</span></span>: <span class="pl-s1"><span class="pl-pse">${</span>path<span class="pl-pse">}</span></span><span class="pl-pds">`</span></span>)
+    <span class="pl-k">return</span>
+  }
+
+  <span class="pl-en">log</span>(<span class="pl-s"><span class="pl-pds">`</span>clients: <span class="pl-s1"><span class="pl-pse">${</span>clients<span class="pl-pse">}</span></span><span class="pl-pds">`</span></span>) <span class="pl-c"><span class="pl-c">//</span> current clients number</span>
+}
+
+<span class="pl-smi">server</span>.<span class="pl-c1">start</span>(<span class="pl-c1">2222</span>) <span class="pl-c"><span class="pl-c">//</span> default 2333</span>
+
+<span class="pl-smi">server</span>.<span class="pl-c1">close</span>() <span class="pl-c"><span class="pl-c">//</span> close server</span></pre></div>
+<p>client</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> by default, browser subscribes for server socket messafes and automatically refreshes `style` or `page`</span>
+<span class="pl-c"><span class="pl-c">//</span> but you can custom subscribes</span>
+<span class="pl-c"><span class="pl-c">//</span> set scripts after `&lt;head&gt;&lt;/head&gt;` tag</span>
+
+<span class="pl-c1">window</span>.<span class="pl-smi">__PAVANE__</span>.<span class="pl-en">subscribe</span> <span class="pl-k">=</span> (<span class="pl-smi">data</span>) <span class="pl-k">=&gt;</span> {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(data) <span class="pl-c"><span class="pl-c">//</span> server socket message</span>
+  <span class="pl-c"><span class="pl-c">//</span> do other things</span>
+}</pre></div>
+<h2><a id="user-content-cli" class="anchor" aria-hidden="true" href="#cli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI</h2>
+<p><strong>default</strong></p>
+<div class="highlight highlight-source-shell"><pre>$ pavane
+
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+$ pv</pre></div>
+<p><strong>server port</strong></p>
+<div class="highlight highlight-source-shell"><pre>$ pavane -p 2000
+
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+$ pv -p 2222</pre></div>
+<p><strong>custom path</strong></p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> watch `src`, and set `dist` server path</span>
+$ pavane -w src -s dist
+
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+$ pv -w src -s dist</pre></div>
+<p><strong>use config</strong></p>
+<p>setup <code>pavane.config.js</code></p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> { <span class="pl-c1">extname</span> } <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>path<span class="pl-pds">'</span></span>)
+
+<span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> {
+  watches<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>*.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>*.css<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>*.html<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>**/*.html<span class="pl-pds">'</span></span>],
+  publics<span class="pl-k">:</span> <span class="pl-c1">__dirname</span>,
+  port<span class="pl-k">:</span> <span class="pl-c1">2222</span>, <span class="pl-c"><span class="pl-c">//</span> server port</span>
+  <span class="pl-en">subscribe</span>(<span class="pl-smi">args</span>) {
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+  },
+}</pre></div>
+<p>start width config</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> start width config</span>
+$ pavane -c
+
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+$ pv -c</pre></div>
+<h2><a id="user-content-use-on-other-server" class="anchor" aria-hidden="true" href="#use-on-other-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use on other server</h2>
+<p>if your web application run on other server (python server, php server ...), add this <code>script</code> in main template</p>
+<div class="highlight highlight-text-html-basic"><pre><span class="pl-c"><span class="pl-c">&lt;!--</span> if the server port is 2333 <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://127.0.0.1:2333/_.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<h2><a id="user-content-development" class="anchor" aria-hidden="true" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Development</h2>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> server</span>
+$ npm start
+
+<span class="pl-c"><span class="pl-c">#</span> lint</span>
+$ npm run test:lint
+
+<span class="pl-c"><span class="pl-c">#</span> unit test</span>
+$ npm run test:unit
+
+<span class="pl-c"><span class="pl-c">#</span> coverage test</span>
+$ npm run test:unit
+
+<span class="pl-c"><span class="pl-c">#</span> cli</span>
+<span class="pl-c"><span class="pl-c">#</span> port</span>
+$ <span class="pl-c1">cd</span> <span class="pl-c1">test</span> <span class="pl-k">&amp;&amp;</span> node ../bin/index.js -p 2000
+
+<span class="pl-c"><span class="pl-c">#</span> config</span>
+$ <span class="pl-c1">cd</span> <span class="pl-c1">test</span> <span class="pl-k">&amp;&amp;</span> node ../bin/index.js -c</pre></div>
+<h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
+<p>MIT</p>
+</article></div></div>
+
+  </div>
+</div>
+
+<div id="toast">cheats: ↑ ↑ ↓ ↓ ← → ← → b a</div>
+
+<div id="menu"></div>
+
+<div id="popup">
+  <div class="inner">
+    <h3>version</h3>
+    <div>
+      <a target="_blank" href="/version/v1/">v1</a>
+      <a target="_blank" href="/version/v2/">v2</a>
+      <a target="_blank" href="/version/v3/">v3</a>
+      <a target="_blank" href="/version/v4/">v4</a>
+      <a target="_blank" href="/version/v5/">v5</a>
+    </div>
+  </div>
+</div>
+
+<script src=""></script>
+
+
+</body>
+</html>

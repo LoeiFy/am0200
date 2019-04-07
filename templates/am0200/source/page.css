@@ -1,12 +1,3 @@
-@import "./style/reset.css";
-@import "./style/top.css";
-@import "./style/portfolios.css";
-@import "./style/right.css";
-@import "./style/toast.css";
-@import "./style/popup.css";
-@import "./style/detail.css";
-@import "./style/menu.css";
-
 .main {
   height: 100%;
   display: flex;
@@ -39,6 +30,13 @@
   flex-shrink: 0;
   border-right: 1px solid #ebebeb;
   background: #fff;
+}
+
+#main-content {
+  padding: 50px 40px;
+}
+#main-content .markdown-body {
+  font-size: 15px;
 }
 
 @media screen and (max-width: 600px) {

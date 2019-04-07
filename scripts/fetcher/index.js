@@ -1,11 +1,25 @@
 /* eslint-disable no-await-in-loop */
 
+const { join } = require('path')
 const API = require('./api')
 const sleep = require('./sleep')
 const request = require('./request')
 
 module.exports = async function fetcher() {
-  const { config, store, logger } = this
+  const {
+    config,
+    store,
+    logger,
+    fs,
+  } = this
+
+  const cacheFile = join(process.cwd(), 'cache.json')
+
+  if (fs.existsSync(cacheFile)) {
+    store.set('data', require(cacheFile)) // eslint-disable-line
+    return
+  }
+
   const { repos } = config
   const data = []
 
@@ -30,5 +44,6 @@ module.exports = async function fetcher() {
     }
   }
 
+  fs.outputFileSync(cacheFile, JSON.stringify(data))
   store.set('data', data)
 }

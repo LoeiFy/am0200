@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="google" content="notranslate" />
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAGFBMVEUAAAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozsmr7C1AAAAB3RSTlMA8o3HRiCjAZ7XVAAAAFRJREFUKM9jGAUMDE6GwiroYkHi5eWFqqhirOnlQFAWgCLIVA4GCiiCjhBBERRBdYhgEYqgOUSwGEVQHCJYSEgQoZ2QRQgnEXI8wpsEAgQRdKOAAQCvriuz6lBMNwAAAABJRU5ErkJggg==" />
+<link rel="stylesheet" href="/dist/page.43043443.css" />
+
+  <title>
+
+AM 02:00 / falco
+
+</title>
+</head>
+
+<body>
+
+<div class="main">
+  <div class="left">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+  <div class="right">
+  
+<div id="main-content"><div id="readme" class="instapaper_body md" data-path="README.md"><article class="markdown-body entry-content p-5" itemprop="text"><h1><a id="user-content-falco" class="anchor" aria-hidden="true" href="#falco"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Falco</h1>
+<p><a href="https://travis-ci.org/fratercula/falco" rel="nofollow"><img src="https://camo.githubusercontent.com/d4891a8a716549e2286091a8cc38fed17b6359df/68747470733a2f2f7472617669732d63692e6f72672f66726174657263756c612f66616c636f2e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fratercula/falco.svg?branch=master" style="max-width:100%;"></a>
+<a href="https://codecov.io/gh/fratercula/falco" rel="nofollow"><img src="https://camo.githubusercontent.com/1c40e3521e30c583a6e79dd75704ca7fe98c7557/68747470733a2f2f636f6465636f762e696f2f67682f66726174657263756c612f66616c636f2f6272616e63682f6d61737465722f67726170682f62616467652e737667" alt="codecov" data-canonical-src="https://codecov.io/gh/fratercula/falco/branch/master/graph/badge.svg" style="max-width:100%;"></a></p>
+<p>JavaScript Runner. run and build codes with <code>zero</code> configuration</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/2193211/55216793-afa54180-5238-11e9-9cda-f1c702dcd97b.gif"><img src="https://user-images.githubusercontent.com/2193211/55216793-afa54180-5238-11e9-9cda-f1c702dcd97b.gif" alt="falco" style="max-width:100%;"></a></p>
+<h2><a id="user-content-install" class="anchor" aria-hidden="true" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+<div class="highlight highlight-source-js"><pre>$ npm i @fratercula<span class="pl-k">/</span>falco</pre></div>
+<h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">falco</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>@fratercula/falco<span class="pl-pds">'</span></span>)
+
+<span class="pl-c"><span class="pl-c">//</span> see `options` below for more infomation</span>
+<span class="pl-k">const</span> <span class="pl-c1">options</span> <span class="pl-k">=</span> {
+  entry<span class="pl-k">:</span> {
+    main<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>index.js<span class="pl-pds">'</span></span>,
+    path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>path/to/build<span class="pl-pds">'</span></span>,
+  },
+  registry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://registry.npm.taobao.org<span class="pl-pds">'</span></span>,
+  externals<span class="pl-k">:</span> {
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+  },
+  template<span class="pl-k">:</span> <span class="pl-smi">path</span>.<span class="pl-c1">join</span>(<span class="pl-c1">process</span>.<span class="pl-en">cwd</span>(), <span class="pl-s"><span class="pl-pds">'</span>index.html<span class="pl-pds">'</span></span>),
+  port<span class="pl-k">:</span> <span class="pl-c1">8000</span>,
+  mode<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>,
+  esModules<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+  cssModule<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+}
+
+;(<span class="pl-k">async</span> () <span class="pl-k">=&gt;</span> {
+  <span class="pl-k">try</span> {
+    <span class="pl-k">const</span> {
+      <span class="pl-c1">codes</span>,
+      <span class="pl-c1">dependencies</span>,
+      <span class="pl-c1">template</span>,
+      <span class="pl-c1">mode</span>,
+      <span class="pl-c1">server</span>,
+    } <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-en">falco</span>(options)
+    <span class="pl-c"><span class="pl-c">//</span> mode: `development` or `production`</span>
+    <span class="pl-c"><span class="pl-c">//</span> template: html template, for production mode</span>
+    <span class="pl-c"><span class="pl-c">//</span> codes: converted code, and sourceMap</span>
+    <span class="pl-c"><span class="pl-c">//</span> dependencies: package dependencies</span>
+    <span class="pl-c"><span class="pl-c">//</span> server: webpack dev server, `development` mode only</span>
+  } <span class="pl-k">catch</span> (e) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(e)
+  }
+})()</pre></div>
+<h2><a id="user-content-cli" class="anchor" aria-hidden="true" href="#cli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI</h2>
+<p>install</p>
+<div class="highlight highlight-source-js"><pre>$ npm i @fratercula<span class="pl-k">/</span>falco <span class="pl-k">-</span>g</pre></div>
+<p>use</p>
+<div class="highlight highlight-source-shell"><pre>$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html -o lib
+
+<span class="pl-c"><span class="pl-c">#</span> p: server port, for development mode. default 2222</span>
+<span class="pl-c"><span class="pl-c">#</span> d: set development mode</span>
+<span class="pl-c"><span class="pl-c">#</span> r: set npm registry</span>
+<span class="pl-c"><span class="pl-c">#</span> m: build entry. default `index.js`</span>
+<span class="pl-c"><span class="pl-c">#</span> c: use local config: `falco.config.js`</span>
+<span class="pl-c"><span class="pl-c">#</span> t: set html template. default is `index.html`</span>
+<span class="pl-c"><span class="pl-c">#</span> o: set output path, default is `dist`</span></pre></div>
+<h2><a id="user-content-options" class="anchor" aria-hidden="true" href="#options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h2>
+<h3><a id="user-content-entry" class="anchor" aria-hidden="true" href="#entry"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>entry</h3>
+<p>codes entry, <code>object</code> or <code>array</code>, required</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> basic</span>
+{
+  entry<span class="pl-k">:</span> {
+    js<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>console.log(1)<span class="pl-pds">'</span></span>,
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ts<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> `js/jsx` or `ts/tsx`</span>
+    css<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>body { color: red }<span class="pl-pds">'</span></span>,
+  },
+}
+
+<span class="pl-c"><span class="pl-c">//</span> multiple</span>
+{
+  entry<span class="pl-k">:</span> [{ js, css }, { js<span class="pl-k">:</span> js1, css<span class="pl-k">:</span> css1 }],
+}
+
+<span class="pl-c"><span class="pl-c">//</span> directory</span>
+{
+  entry<span class="pl-k">:</span> {
+    main<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>index.js<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> main entry</span>
+    path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/your/codes/directory<span class="pl-pds">'</span></span>,
+  },
+}</pre></div>
+<h3><a id="user-content-externals" class="anchor" aria-hidden="true" href="#externals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>externals</h3>
+<p>modules external config, default <code>[]</code>. you can set external <code>umd</code> url</p>
+<div class="highlight highlight-source-js"><pre>{
+  <span class="pl-c"><span class="pl-c">//</span> note the order in sequence</span>
+  externals<span class="pl-k">:</span> [
+    {
+      name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> package name</span>
+      root<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>React<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> window.React</span>
+      commonjs2<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>,
+      commonjs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>,
+      amd<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>,
+      urls<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://unpkg.com/react@16.7.0/umd/react.production.min.js<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> umd url</span>
+    },
+    {
+      name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>react-dom<span class="pl-pds">'</span></span>,
+      root<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ReactDOM<span class="pl-pds">'</span></span>,
+      urls<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js<span class="pl-pds">'</span></span>,
+    },
+    {
+      <span class="pl-c"><span class="pl-c">//</span> use `https://unpkg.com/vue`</span>
+      name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>vue<span class="pl-pds">'</span></span>,
+      root<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Vue<span class="pl-pds">'</span></span>,
+    },
+    {
+      name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>antd<span class="pl-pds">'</span></span>,
+      root<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>antd<span class="pl-pds">'</span></span>,
+      <span class="pl-c"><span class="pl-c">//</span> `moment` is `antd` dependency</span>
+      urls<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>https://unpkg.com/moment@2.24.0/min/moment.min.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js<span class="pl-pds">'</span></span>],
+    },
+  ],
+}</pre></div>
+<h3><a id="user-content-packages" class="anchor" aria-hidden="true" href="#packages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>packages</h3>
+<p>set npm install packages version. packages list here will be installed, ignore <code>externals</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  packages<span class="pl-k">:</span> {
+    react<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>^13.5.9<span class="pl-pds">'</span></span>,
+  },
+}</pre></div>
+<h3><a id="user-content-registry" class="anchor" aria-hidden="true" href="#registry"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>registry</h3>
+<p>set npm registry</p>
+<div class="highlight highlight-source-js"><pre>{
+  registry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://registry.npm.taobao.org<span class="pl-pds">'</span></span>,
+}</pre></div>
+<h3><a id="user-content-esmodules" class="anchor" aria-hidden="true" href="#esmodules"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>esModules</h3>
+<p><a href="https://babeljs.io/docs/en/babel-preset-env#targetsesmodules" rel="nofollow">@babel/preset-env</a> option, default is <code>true</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  esModules<span class="pl-k">:</span> <span class="pl-c1">true</span>, <span class="pl-c"><span class="pl-c">//</span> always `true` when mode is `development`</span>
+}</pre></div>
+<h3><a id="user-content-cssmodule" class="anchor" aria-hidden="true" href="#cssmodule"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cssModule</h3>
+<p><a href="https://github.com/css-modules/css-modules">css module</a>, default is <code>false</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  cssModule<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+}</pre></div>
+<h3><a id="user-content-template" class="anchor" aria-hidden="true" href="#template"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>template</h3>
+<p>set output <code>index.html</code> template</p>
+<div class="highlight highlight-source-js"><pre>{
+  template<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>path/to/html<span class="pl-pds">'</span></span>,
+}</pre></div>
+<h3><a id="user-content-tmpdir" class="anchor" aria-hidden="true" href="#tmpdir"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tmpDir</h3>
+<p>set temp files directory, default is <code>os.tmpDir()</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  tmpDir<span class="pl-k">:</span> <span class="pl-smi">path</span>.<span class="pl-c1">join</span>(<span class="pl-c1">__dirname</span>, <span class="pl-s"><span class="pl-pds">'</span>temp<span class="pl-pds">'</span></span>),
+}</pre></div>
+<h3><a id="user-content-cache" class="anchor" aria-hidden="true" href="#cache"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cache</h3>
+<p>set if empty <code>node_modules</code> before <code>npm install</code>, set <code>false</code> will remove. default is <code>true</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  cache<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+}</pre></div>
+<h3><a id="user-content-output" class="anchor" aria-hidden="true" href="#output"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>output</h3>
+<p>webpack <a href="https://webpack.js.org/configuration/output/" rel="nofollow">output</a> option
+cannot set <code>path</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  output<span class="pl-k">:</span> {
+    filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>index.[hash:8].js<span class="pl-pds">'</span></span>,
+    library<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>someLibName<span class="pl-pds">'</span></span>,
+    libraryTarget<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>umd<span class="pl-pds">'</span></span>,
+  }
+}</pre></div>
+<h3><a id="user-content-vue" class="anchor" aria-hidden="true" href="#vue"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vue</h3>
+<p><code>falco</code> will automatic detection of using <code>vue</code> normally, except code <code>circular dependency</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  vue<span class="pl-k">:</span> <span class="pl-c1">false</span>, <span class="pl-c"><span class="pl-c">//</span> not vue</span>
+}</pre></div>
+<h3><a id="user-content-debug" class="anchor" aria-hidden="true" href="#debug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>debug</h3>
+<p>show <code>bable-loader</code> debug infomation, default is <code>false</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  debug<span class="pl-k">:</span> <span class="pl-c1">true</span>, <span class="pl-c"><span class="pl-c">//</span> only for `production` mode</span>
+}</pre></div>
+<h3><a id="user-content-sourcemap" class="anchor" aria-hidden="true" href="#sourcemap"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sourceMap</h3>
+<p>enable <code>sourceMap</code>, default is <code>true</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  sourceMap<span class="pl-k">:</span> <span class="pl-c1">false</span>, <span class="pl-c"><span class="pl-c">//</span> always `true` in `development` mode</span>
+}</pre></div>
+<h3><a id="user-content-targets" class="anchor" aria-hidden="true" href="#targets"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>targets</h3>
+<p>set browsers targets, default is <code>{}</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  targets<span class="pl-k">:</span> { ios<span class="pl-k">:</span> <span class="pl-c1">10</span> }, <span class="pl-c"><span class="pl-c">//</span> only for `production` mode</span>
+}</pre></div>
+<h3><a id="user-content-report" class="anchor" aria-hidden="true" href="#report"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>report</h3>
+<p>use <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer">webpack-bundle-analyzer</a>, default <code>false</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  report<span class="pl-k">:</span> <span class="pl-c1">true</span>, <span class="pl-c"><span class="pl-c">//</span> only for `production` mode</span>
+}</pre></div>
+<h2><a id="user-content-other" class="anchor" aria-hidden="true" href="#other"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other</h2>
+<ul>
+<li>support <code>ES6+/React/Vue/TypeScript/Less</code></li>
+<li>template set default DOM <code>&lt;div id="root"&gt;&lt;/div&gt;</code></li>
+<li>css preprocessor only support <code>less</code></li>
+<li>file extension supports <code>js/jsx/ts/tsx/css/less/vue/json</code></li>
+<li>default output files name are <code>index.js</code>, <code>index.js.map</code> and <code>index.html</code></li>
+<li>default output directory is <code>dist</code></li>
+<li>default externals umd url is <code>https://unpkg.com/${packageName}</code></li>
+<li>not support webpack multiple entry</li>
+</ul>
+<h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
+<p>MIT</p>
+<h2><a id="user-content-relevance" class="anchor" aria-hidden="true" href="#relevance"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relevance</h2>
+<p>Falco peregrinus</p>
+</article></div></div>
+
+  </div>
+</div>
+
+<div id="toast">cheats: ↑ ↑ ↓ ↓ ← → ← → b a</div>
+
+<div id="menu"></div>
+
+<div id="popup">
+  <div class="inner">
+    <h3>version</h3>
+    <div>
+      <a target="_blank" href="/version/v1/">v1</a>
+      <a target="_blank" href="/version/v2/">v2</a>
+      <a target="_blank" href="/version/v3/">v3</a>
+      <a target="_blank" href="/version/v4/">v4</a>
+      <a target="_blank" href="/version/v5/">v5</a>
+    </div>
+  </div>
+</div>
+
+<script src=""></script>
+
+
+</body>
+</html>

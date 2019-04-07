@@ -13,8 +13,8 @@ public: docs
 repos:
   - LoeiFy/am0200
   - acyortjs/acyort
-  # - fratercula/nycticorax
-  # - LoeiFy/Mirror
-  # - fratercula/pavane
-  # - fratercula/falco
-  # - LoeiFy/Diaspora
+  - fratercula/nycticorax
+  - LoeiFy/Mirror
+  - fratercula/pavane
+  - fratercula/falco
+  - LoeiFy/Diaspora
