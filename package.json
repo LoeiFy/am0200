@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "acyort-server": "^2.2.0",
+    "github-markdown-css": "^3.0.1",
     "request": "^2.88.0"
   }
 }

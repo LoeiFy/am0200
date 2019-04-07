@@ -19,7 +19,11 @@ module.exports = async function fetcher() {
     const { name, description } = await request(repoUrl)
     const content = await request(readmeUrl, 'file')
 
-    data.push({ name, description, content })
+    data.push({
+      name: name === 'am0200' ? 'index' : name,
+      description,
+      content,
+    })
 
     if (i < repos.length - 1) {
       await sleep()

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{% if page.name === 'index' %}
+{{ config.title }}
+{% else %}
+{{ config.title }} / {{ page.name }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="content">{{ page.content }}</div>
+{% endblock %}

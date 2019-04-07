@@ -1,5 +1,7 @@
 url: https://am0200.com
 
+title: AM 02:00
+
 template: am0200
 
 plugins:
@@ -9,6 +11,7 @@ plugins:
 public: docs
 
 repos:
+  - LoeiFy/am0200
   - acyortjs/acyort
   # - fratercula/nycticorax
   # - LoeiFy/Mirror

@@ -1,6 +1,6 @@
 # About
 
-Hello, I’m a Front-End Engineer, and now working at `Alibaba Group`
+Hello, I’m a Front-End Engineer, and now working at \`Alibaba Group\`
 
 Here are links about me
 

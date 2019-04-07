@@ -9,7 +9,7 @@ module.exports = (url, type = 'json') => new Promise((resolve, reject) => {
   }
 
   if (type === 'file') {
-    options.headers.Accept = 'application/vnd.github.v3.raw'
+    options.headers.Accept = 'application/vnd.github.VERSION.html'
   }
 
   request(options, (err, res, body) => {
