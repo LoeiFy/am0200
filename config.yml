@@ -7,3 +7,11 @@ plugins:
   - acyort-server
 
 public: docs
+
+repos:
+  - acyortjs/acyort
+  # - fratercula/nycticorax
+  # - LoeiFy/Mirror
+  # - fratercula/pavane
+  # - fratercula/falco
+  # - LoeiFy/Diaspora
