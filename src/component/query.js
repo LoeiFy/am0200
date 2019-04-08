@@ -60,7 +60,7 @@ class Query {
     return this
   }
 
-  get context() {
+  get ctx() {
     return this.elements[0]
   }
 }

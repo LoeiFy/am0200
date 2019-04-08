@@ -1,20 +1,23 @@
-import './component/title.js'
-import Konami from './component/konami.js'
-import Portfolios from './component/portfolios.js'
-import Top from './component/top.js'
-import Popup from './component/popup.js'
-import $ from './component/query.js'
+import './component/title'
+import $ from './component/query'
+import Konami from './component/konami'
+import Popup from './component/popup'
+import Top from './component/top'
+import Portfolios from './component/portfolios'
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   const popup = new Popup()
-  const portfolios = new Portfolios('.bottom')
-  const top = new Top('.top')
   const konami = new Konami()
+  const top = new Top('.top')
+  const portfolios = new Portfolios('.bottom')
 
-  konami.active = () => popup.open()
-  portfolios.render()
   top.render()
-  top.start()
+  portfolios.render()
+  konami.active = () => popup.open()
+
+  top.link = (path) => {
+    console.log(path)
+  }
 
   $('#menu').on('click', () => $('.left').addClass('active'))
-}
+})

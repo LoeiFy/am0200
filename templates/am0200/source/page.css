@@ -57,30 +57,6 @@
   .detail {
     padding: 30px;
   }
-  .detail h2 {
-    margin-bottom: 50px;
-    margin-top: 80px;
-  }
-  .detail .info {
-    display: block;
-    font-size: 14px;
-  }
-  .detail .info div {
-    width: auto;
-  }
-  .detail .info ul {
-    width: auto;
-    margin: 0 0 30px 0;
-  }
-  .detail .url {
-    margin: 20px 0;
-  }
-  .detail img {
-    width: 100%!important;
-    height: auto!important;
-    padding: 3px;
-    margin: 15px 0 0 0;
-  }
   #menu {
     display: block;
   }

@@ -1,1 +1,3 @@
-<script src="{{ config.script }}"></script>
+{% if page.scriptHash %}
+<script src="page.{{ page.scriptHash }}.js"></script>
+{% endif %}
