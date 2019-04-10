@@ -24,6 +24,7 @@ export default class {
     img.onclick = (e) => {
       e.stopPropagation()
       const ts = $('#toast')
+      ts.html('cheats: ↑ ↑ ↓ ↓ ← → ← → b a')
       if (!ts.hasClass('active')) {
         ts.addClass('active')
         setTimeout(() => {

@@ -8,6 +8,9 @@ export default class {
   }
 
   goto(name, initiative = true) {
+    const toast = $('#toast')
+    $('.left').removeClass('active')
+
     if (this.loading || name === this.prev) {
       return
     }
@@ -17,6 +20,7 @@ export default class {
     this.container.html('')
     this.container.addClass('loading')
 
+    toast.removeClass('active')
     $('.item').removeClass('active')
     if (name !== '/') {
       $(`.${name.split('/')[1]}`).addClass('active')
@@ -44,6 +48,11 @@ export default class {
 
         this.loading = false
         this.container.removeClass('loading')
+      })
+      .catch(({ message }) => {
+        this.loading = false
+        toast.html(message || 'loading error')
+        toast.addClass('active')
       })
   }
 }

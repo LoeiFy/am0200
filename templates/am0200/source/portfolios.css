@@ -10,7 +10,7 @@
   border-right: 3px solid transparent;
 }
 .bottom .item h3 {
-  font-size: 15px;
+  font-size: 16px;
   opacity: .8;
   margin-left: 40px;
 }
@@ -18,6 +18,7 @@
   margin: 5px 0 0 40px;
   font-size: 13px;
   opacity: .6;
+  line-height: 1.4;
 }
 .bottom .item:hover {
   background: rgba(0, 0, 0, .05);
