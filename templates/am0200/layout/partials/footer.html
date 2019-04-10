@@ -4,5 +4,5 @@ window.repos = '{{ page.repos | json_encode }}'
 </script>
 
 {% if page.scriptHash %}
-<script src="page.{{ page.scriptHash }}.js"></script>
+<script src="{{ config.url }}/dist/page.{{ page.scriptHash }}.js"></script>
 {% endif %}

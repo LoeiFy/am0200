@@ -6,17 +6,18 @@ module.exports = function generator() {
   const data = store.get('data')
   const { hash, dest, file } = getCss(this)
   const repos = data.slice(1).map(({ name, description }) => ({ name, description }))
-  const status = store.get('status', 'acyort-server') || {}
-  const { path } = status
+  const status = store.get('status', 'acyort-server')
 
   let scriptHash
 
   if (!status) {
-    const js = fs.readdirSync(dirname(dest)).filter(n => n.includes('.js'))
+    const js = fs.readdirSync(dirname(dest)).find(n => n.includes('.js'))
     if (js) {
-      [scriptHash] = js.split('.')
+      [, scriptHash] = js.split('.')
     }
   }
+
+  const { path } = status || {}
 
   if (!path || extname(path) !== '.css') {
     data.forEach((item) => {
@@ -36,7 +37,6 @@ module.exports = function generator() {
   }
 
   if (!path || extname(path) === '.css') {
-    fs.removeSync(dirname(dest))
     fs.outputFileSync(dest, file)
   }
 }

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint .",
-    "start": "falco -d -c",
+    "start": "NODE_ENV=dev acyort server & falco -d -c",
     "prebuild": "rm -rf docs/dist",
     "build": "falco -c -o docs/dist",
     "postbuild": "acyort flow && rm docs/dist/index.html"
