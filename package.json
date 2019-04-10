@@ -1,9 +1,13 @@
 {
   "private": true,
-  "name": "loeify.github.com",
+  "name": "am0200.com",
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start": "falco -d -c",
+    "prebuild": "rm -rf docs/dist",
+    "build": "falco -c -o docs/dist",
+    "postbuild": "acyort flow && rm docs/dist/index.html"
   },
   "repository": {
     "type": "git",
