@@ -33,7 +33,7 @@ export default class {
     }
     container.appendChild(img)
     container.appendChild(div)
-    container.onclick = () => this.onLink('')
+    container.onclick = () => this.onLink()
 
     return container
   }

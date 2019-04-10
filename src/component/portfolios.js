@@ -19,9 +19,9 @@ export default class {
       .map(({ name, description }) => {
         const e = document.createElement('div')
 
-        e.className = 'item'
+        e.className = `item ${name.toLowerCase()}`
         e.innerHTML = `<h3>${name}</h3><p>${description}</p>`
-        e.onclick = () => this.onLink(name)
+        e.onclick = () => this.onLink(`/${name.toLowerCase()}`)
 
         return e
       })

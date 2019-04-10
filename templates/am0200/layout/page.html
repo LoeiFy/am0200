@@ -10,8 +10,4 @@
 
 {% block content %}
 <div id="main-content">{{ page.content }}</div>
-<script>
-window.host = '{{ config.url }}'
-window.repos = '{{ page.repos | json_encode }}'
-</script>
 {% endblock %}
