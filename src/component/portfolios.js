@@ -18,8 +18,10 @@ export default class {
     return JSON.parse(window.repos || '[]')
       .map(({ name, description }) => {
         const e = document.createElement('div')
+        const { pathname } = window.location
+        const c = pathname.split('/')[1]
 
-        e.className = `item ${name.toLowerCase()}`
+        e.className = `item ${name.toLowerCase()}${c === name ? ' active' : ''}`
         e.innerHTML = `<h3>${name}</h3><p>${description}</p>`
         e.onclick = () => this.onLink(`/${name.toLowerCase()}`)
 
