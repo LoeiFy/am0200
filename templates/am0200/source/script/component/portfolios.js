@@ -1,4 +1,4 @@
-import $ from './query'
+import $ from './query.js'
 
 export default class {
   constructor(e) {

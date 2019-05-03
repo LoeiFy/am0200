@@ -20,7 +20,7 @@ module.exports = async function fetcher() {
     return
   }
 
-  const { repos } = config
+  const repos = config.get('repos')
   const data = []
 
   for (let i = 0; i < repos.length; i += 1) {

@@ -1,10 +1,10 @@
-import './component/title'
-import $ from './component/query'
-import Konami from './component/konami'
-import Popup from './component/popup'
-import Top from './component/top'
-import Portfolios from './component/portfolios'
-import Portfolio from './component/portfolio'
+import './component/title.js'
+import $ from './component/query.js'
+import Konami from './component/konami.js'
+import Popup from './component/popup.js'
+import Top from './component/top.js'
+import Portfolios from './component/portfolios.js'
+import Portfolio from './component/portfolio.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const popup = new Popup()

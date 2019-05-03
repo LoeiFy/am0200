@@ -10,5 +10,4 @@ module.exports = {
   output: {
     filename: 'page.[hash:8].js',
   },
-  template: join(__dirname, 'docs', 'index.html'),
 }

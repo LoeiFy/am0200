@@ -2,7 +2,7 @@ const { extname, dirname } = require('path')
 const getCss = require('./css')
 
 module.exports = function generator() {
-  const { store, fs, outputHTML } = this
+  const { store, fs, util } = this
   const data = store.get('data')
   const { hash, dest, file } = getCss(this)
   const repos = data.slice(1).map(({ name, description }) => ({ name, description }))
@@ -21,7 +21,7 @@ module.exports = function generator() {
 
   if (!path || extname(path) !== '.css') {
     data.forEach((item) => {
-      outputHTML({
+      util.outputHTML({
         template: 'page',
         path: item.name === 'index'
           ? 'index.html'
