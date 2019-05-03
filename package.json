@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "acyort server",
-    "prebuild": "rm -rf docs/dist",
+    "prebuild": "rm -rf docs/dist docs/style docs/script",
     "build": "falco -c -o docs/dist",
     "postbuild": "acyort flow && rm docs/dist/index.html"
   },

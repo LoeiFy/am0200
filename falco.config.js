@@ -1,13 +1,12 @@
 const { join } = require('path')
 
 module.exports = {
-  port: 2333,
   entry: {
     main: 'index.js',
-    path: join(__dirname, 'src'),
+    path: join(__dirname, 'templates/am0200/source/script'),
   },
   sourceMap: false,
   output: {
-    filename: 'page.[hash:8].js',
+    filename: 'index.[hash:8].js',
   },
 }

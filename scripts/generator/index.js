@@ -1,5 +1,5 @@
-const { join } = require('path')
-// const getCss = require('./css')
+const { join, dirname } = require('path')
+const getCss = require('./css')
 
 module.exports = function generator() {
   const { store, util, fs } = this
@@ -9,7 +9,7 @@ module.exports = function generator() {
 
   const repos = data.slice(1).map(({ name, description }) => ({ name, description }))
 
-  const html = () => {
+  const html = (css, script) => {
     data.forEach((item) => {
       util.outputHTML({
         template: 'page',
@@ -18,8 +18,8 @@ module.exports = function generator() {
           : `${item.name.toLowerCase()}/index.html`,
         data: {
           ...item,
-          css: '/style/index.css',
-          script: '/script/index.js',
+          css,
+          script,
           repos,
         },
       })
@@ -44,50 +44,19 @@ module.exports = function generator() {
       return
     }
     if (path.includes('/layout/page.html')) {
-      html()
+      html('/style/index.css', '/script/index.js')
       return
     }
 
-    html()
+    html('/style/index.css', '/script/index.js')
     source()
+    return
   }
 
-  // const { store, fs, util } = this
-  // const data = store.get('data')
-  // const repos = data.slice(1).map(({ name, description }) => ({ name, description }))
-  // const status = store.get('status', 'acyort-server')
+  const { hash, dest, file } = getCss(this)
+  const buildJs = fs.readdirSync(dirname(dest)).find(n => n.includes('.js'))
+  const buildCss = `index.${hash}.css`
 
-  // const { hash, dest, file } = getCss(this)
-
-  // let scriptHash
-
-  // if (!status) {
-  //   const js = fs.readdirSync(dirname(dest)).find(n => n.includes('.js'))
-  //   if (js) {
-  //     [, scriptHash] = js.split('.')
-  //   }
-  // }
-
-  // const { path } = status || {}
-
-  // if (!path || extname(path) !== '.css') {
-  //   data.forEach((item) => {
-  //     util.outputHTML({
-  //       template: 'page',
-  //       path: item.name === 'index'
-  //         ? 'index.html'
-  //         : `${item.name.toLowerCase()}/index.html`,
-  //       data: {
-  //         ...item,
-  //         cssHash: hash,
-  //         scriptHash,
-  //         repos,
-  //       },
-  //     })
-  //   })
-  // }
-
-  // if (!path || extname(path) === '.css') {
-  //   fs.outputFileSync(dest, file)
-  // }
+  fs.outputFileSync(dest, file)
+  html(`/dist/${buildCss}`, `/dist/${buildJs}`)
 }
