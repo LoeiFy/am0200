@@ -7,6 +7,7 @@ const githubCssPath = require.resolve('github-markdown-css')
 module.exports = (acyort) => {
   const { fs, config } = acyort
   const { base, public: publicPath, templatePath } = config.get()
+
   const cssPath = join(templatePath, 'source')
   const cssList = fs.readdirSync(cssPath)
 

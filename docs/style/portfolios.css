@@ -1,0 +1,29 @@
+.bottom .item {
+  height: 74px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #171d38;
+  background: transparent;
+  transition: all .7s ease;
+  border-right: 3px solid transparent;
+}
+.bottom .item h3 {
+  font-size: 16px;
+  opacity: .8;
+  margin-left: 40px;
+}
+.bottom .item p {
+  margin: 5px 0 0 40px;
+  font-size: 13px;
+  opacity: .6;
+  line-height: 1.4;
+}
+.bottom .item:hover {
+  background: rgba(0, 0, 0, .05);
+}
+.bottom .item.active {
+  border-right-color: #f0484c;
+  background: rgba(0, 0, 0, .05);
+}

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="google" content="notranslate" />
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAGFBMVEUAAAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozsmr7C1AAAAB3RSTlMA8o3HRiCjAZ7XVAAAAFRJREFUKM9jGAUMDE6GwiroYkHi5eWFqqhirOnlQFAWgCLIVA4GCiiCjhBBERRBdYhgEYqgOUSwGEVQHCJYSEgQoZ2QRQgnEXI8wpsEAgQRdKOAAQCvriuz6lBMNwAAAABJRU5ErkJggg==" />
-<link rel="stylesheet" href="/dist/page.5fc545ca.css" />
+<link rel="stylesheet" href="/style/index.css" />
 
   <title>
 
@@ -40,7 +40,9 @@ AM 02:00 / falco
     main<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>index.js<span class="pl-pds">'</span></span>,
     path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>path/to/build<span class="pl-pds">'</span></span>,
   },
-  registry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://registry.npm.taobao.org<span class="pl-pds">'</span></span>,
+  npm<span class="pl-k">:</span> {
+    registry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://registry.npm.taobao.org<span class="pl-pds">'</span></span>,
+  },
   externals<span class="pl-k">:</span> {
     <span class="pl-c"><span class="pl-c">//</span> ...</span>
   },
@@ -73,11 +75,10 @@ AM 02:00 / falco
 <p>install</p>
 <div class="highlight highlight-source-js"><pre>$ npm i @fratercula<span class="pl-k">/</span>falco <span class="pl-k">-</span>g</pre></div>
 <p>use</p>
-<div class="highlight highlight-source-shell"><pre>$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html -o lib
+<div class="highlight highlight-source-shell"><pre>$ falco -p 2222 -d -c -m vue.js -t template.html -o lib
 
 <span class="pl-c"><span class="pl-c">#</span> p: server port, for development mode. default 2222</span>
 <span class="pl-c"><span class="pl-c">#</span> d: set development mode</span>
-<span class="pl-c"><span class="pl-c">#</span> r: set npm registry</span>
 <span class="pl-c"><span class="pl-c">#</span> m: build entry. default `index.js`</span>
 <span class="pl-c"><span class="pl-c">#</span> c: use local config: `falco.config.js`</span>
 <span class="pl-c"><span class="pl-c">#</span> t: set html template. default is `index.html`</span>
@@ -144,11 +145,6 @@ AM 02:00 / falco
     react<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>^13.5.9<span class="pl-pds">'</span></span>,
   },
 }</pre></div>
-<h3><a id="user-content-registry" class="anchor" aria-hidden="true" href="#registry"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>registry</h3>
-<p>set npm registry</p>
-<div class="highlight highlight-source-js"><pre>{
-  registry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://registry.npm.taobao.org<span class="pl-pds">'</span></span>,
-}</pre></div>
 <h3><a id="user-content-esmodules" class="anchor" aria-hidden="true" href="#esmodules"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>esModules</h3>
 <p><a href="https://babeljs.io/docs/en/babel-preset-env#targetsesmodules" rel="nofollow">@babel/preset-env</a> option, default is <code>true</code></p>
 <div class="highlight highlight-source-js"><pre>{
@@ -169,10 +165,24 @@ AM 02:00 / falco
 <div class="highlight highlight-source-js"><pre>{
   tmpDir<span class="pl-k">:</span> <span class="pl-smi">path</span>.<span class="pl-c1">join</span>(<span class="pl-c1">__dirname</span>, <span class="pl-s"><span class="pl-pds">'</span>temp<span class="pl-pds">'</span></span>),
 }</pre></div>
-<h3><a id="user-content-cache" class="anchor" aria-hidden="true" href="#cache"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cache</h3>
-<p>set if empty <code>node_modules</code> before <code>npm install</code>, set <code>false</code> will remove. default is <code>true</code></p>
-<div class="highlight highlight-source-js"><pre>{
-  cache<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+<h3><a id="user-content-npm" class="anchor" aria-hidden="true" href="#npm"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm</h3>
+<p>set npm options, cannot set <code>no-package-lock</code> and <code>prefix</code></p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> default</span>
+{
+  npm<span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>no-audit<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    production<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+  },
+}
+
+<span class="pl-c"><span class="pl-c">//</span> example</span>
+{
+  npm<span class="pl-k">:</span> {
+    registry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://registry.npm.taobao.org<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>prefer-offline<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    disturl<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://npm.taobao.org/dist<span class="pl-pds">'</span></span>,
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+  },
 }</pre></div>
 <h3><a id="user-content-output" class="anchor" aria-hidden="true" href="#output"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>output</h3>
 <p>webpack <a href="https://webpack.js.org/configuration/output/" rel="nofollow">output</a> option
@@ -209,6 +219,11 @@ cannot set <code>path</code></p>
 <div class="highlight highlight-source-js"><pre>{
   report<span class="pl-k">:</span> <span class="pl-c1">true</span>, <span class="pl-c"><span class="pl-c">//</span> only for `production` mode</span>
 }</pre></div>
+<h3><a id="user-content-env" class="anchor" aria-hidden="true" href="#env"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>env</h3>
+<p>set <code>NODE_ENV</code></p>
+<div class="highlight highlight-source-js"><pre>{
+  env<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>,
+}</pre></div>
 <h2><a id="user-content-other" class="anchor" aria-hidden="true" href="#other"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other</h2>
 <ul>
 <li>support <code>ES6+/React/Vue/TypeScript/Less</code></li>
@@ -235,7 +250,7 @@ cannot set <code>path</code></p>
 
 <div id="popup">
   <div class="inner">
-    <h3>version</h3>
+    <h3>versions</h3>
     <div>
       <a target="_blank" href="/version/v1/">v1</a>
       <a target="_blank" href="/version/v2/">v2</a>
@@ -247,13 +262,10 @@ cannot set <code>path</code></p>
 </div>
 
 <script>
-window.host = ''
 window.repos = '[{"name":"acyort","description":"A Node.js static website framework"},{"name":"nycticorax","description":"State container for JavaScript application, and React"},{"name":"Mirror","description":"A blogging tool powered by GitHub API. Write your blog on GitHub issue."},{"name":"pavane","description":"LiveReload Server"},{"name":"falco","description":"JavaScript Runner"},{"name":"Diaspora","description":"Diaspora - A WordPress theme"}]'
 </script>
 
-
-<script src="/dist/page.52b08ab5.js"></script>
-
+<script type="module" src="/script/index.js"></script>
 
 
 </body>
