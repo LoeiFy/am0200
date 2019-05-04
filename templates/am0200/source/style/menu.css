@@ -1,13 +1,12 @@
 #menu {
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 20px;
+  top: 24px;
   width: 22px;
   height: 13px;
   border-top: 3px solid #444;
   border-bottom: 3px solid #444;
   display: none;
-  background: #fff;
 }
 #menu::before {
   content: '';

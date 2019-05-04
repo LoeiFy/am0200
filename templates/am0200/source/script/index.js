@@ -25,4 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('#menu').on('click', () => $('.left').addClass('active'))
+
+  if (window.innerWidth <= 800) {
+    $('.left').addClass('active')
+  }
 })

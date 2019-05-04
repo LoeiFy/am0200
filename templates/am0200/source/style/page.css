@@ -40,6 +40,12 @@
 }
 
 @media screen and (max-width: 800px) {
+  #main-content {
+    padding: 50px 20px;
+  }
+  #main-content .markdown-body {
+    font-size: 14px;
+  }
   .left {
     transition: all .3s ease;
     transform: translateX(-100%);
@@ -50,6 +56,7 @@
     z-index: 5;
     box-sizing: border-box;
     height: 100%;
+    border-right: 0;
   }
   .left.active {
     transform: translateX(0);
